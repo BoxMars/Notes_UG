@@ -17,5 +17,24 @@
     To obtain this approximation, the first step is to construct a 
     \textbf{partition} $\mathcal{P}$of $R$ into subrectangles 
     $R_1,R_2,R_3,...,R_k$determined by points
-    $$a=x_0\textless $$
+    $$a=x_0\textless x_1 \textless x_2 \textless ... \textless x_m=b $$of $[a,b]$and,
+    $$c=y_0\textless y_1 \textless y_2 \textless ... \textless y_n=d $$of $[c,d]$.
+    \\ Next we choose an arbitrary point$(x_i ^*,y_i^*)$of the $i$th rectangle $R_i$
+    for each $i$(where $1\leq i \leq k$). The collection of points $S=\{(x_i ^*,y_i^*)|1\leq i \leq k\}$
+    is called a \textbf{selection} for the partition $\mathcal{P}=\{R_i|1\leq i \leq k\}$
+    \\As a measure of the size of the rectangles of the partition $\mathcal{P}$, we define its \textbf{norm} $|\mathcal{P}|$ to be the maximum of the lengths of the diagonals of the rectangles $\{R_i\}$.
+    \\Now consider a rectangular column that rises straight up from the \textit{xy}-plane. Its base is the rectangle $R_i$ and its height is the value $f(x_i^*,y_i^*)$
+    of $f$ at the selected point $(x_i^*,y_i^*)$ of $R_i$ If $\Delta A$ denotes the area of $R_i$,then the volume of the  \textit{i}th column is $f(x_i^*,y_i^*) \Delta A_i$
+    \\The sum of the volumes of all such columns is the \textbf{Ruemann sum}
+    $$\sum _{i=1} ^k f(x_i^*,y_i^*)\Delta A_i$$
+    an approximationto the volume $V$ of the solid region that lies above the rectangle $R$ and under the graph $z=f(x,y)$
+    
+    \subsection{Definition of Double Integral}
+    $$\iint _R f(x,y)dA=\lim _{|\mathcal{P}|\rightarrow 0 }\sum _{i=1} ^k f(x_i^*,y_i^*) \Delta A_i$$
+
+
+    \subsection{Iterated Integrals}
+    \subsubsection{THEOREM 1}
+    Support that $f(x,y)$ is a continuous on the rectangle $R=[a,b]\times [c,d]$. Then
+    $$\iint _R f(x,y)d A=\int_a^b \bigg(\int_c^df(x,y)dy\bigg) dx=\int_c^d \bigg(\int_a^bf(x,y)dx\bigg) dy$$
 \end{document}
