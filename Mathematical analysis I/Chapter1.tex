@@ -1,0 +1,39 @@
+\documentclass{article}
+\title{Chapter 1}
+\author{Hua Kang}
+\usepackage{amsfonts}
+\begin{document}
+    \maketitle
+    \section{Set}
+        \subsection{Definition Part}
+            \subsubsection{Proper Subset}
+                We say that a set $A$ is a \textbf{proper subset} of a set $B$ if $A \subseteq B$, but there is at least one element of $B$ that is not in $A$. In this case we sometimes write
+                $$A \subset B.$$
+                In short, If $A\subseteq B$and $\exists b \in B , b \notin A$, then $A\subset B$.
+            
+            \subsubsection{Two set is equal}
+                If $A\in B$ and $B\in A$, then two set are said to be \textbf{equal}, and we write $A=B$.
+            
+            \subsubsection{Set Operations}
+                The \textbf{union} of sets $A$ and $B$ is the set
+                $$A \cup B =\{x:x\in A \textbf{or} x\in B\} .$$
+                The \textbf{intersection} of the sets $A$ and $B$ is the set
+                $$ A\cap B =\{x:x\in A \textbf{and}x\in B\}.$$
+                The \textbf{complement of} $B$ \textbf{relative to} $A$ is the set
+                $$A\backslash B=\{x:x\in A \textbf{and} x \notin B\}.$$
+
+            \subsubsection{Empty set and disjoint}
+                The set that has no elements is called the \textbf{empty set} and is denoted by the symbol$\emptyset$. Two set $A$ and $B$ are sasid to be \textbf{disjoint} if they have no elements in common, this can be expressed by writing $A \cap B =\emptyset$
+            
+            \subsubsection{Infinite union or intersection}
+                $$\cup _{n=1} ^{\infty} A_n=\{x:x\in A_n ,\exists n \in \mathbb{N} \}$$
+
+                $$\cap _{n=1} ^{\infty} A_n=\{x:x\in A_n ,\forall n \in \mathbb{N} \}$$
+        \subsection{Theorem Part}
+            \subsubsection{De Morgan Law}
+            if $A,B,C$ are sets, then
+            $$A \backslash (B\cup C) = (A\backslash B)\cap (A\backslash C)$$
+            $$A\backslash (B\cap C) = (A\backslash B)\cup (A\backslash C)$$
+
+        \subsection{Other}
+\end{document}
