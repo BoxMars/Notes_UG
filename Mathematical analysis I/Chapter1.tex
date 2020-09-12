@@ -1,66 +1,107 @@
 \documentclass{article}
 \title{Chapter 1}
 \author{Hua Kang}
+% \setlength\parindent{24pt}
 \usepackage{amsfonts}
 \begin{document}
     \maketitle
     \section{Set}
         \subsection{Definition Part}
             \subsubsection{Proper Subset}
-                We say that a set $A$ is a \textbf{proper subset} of a set $B$ if $A \subseteq B$, but there is at least one element of $B$ that is not in $A$. In this case we sometimes write
-                $$A \subset B.$$
-                In short, If $A\subseteq B$and $\exists b \in B , b \notin A$, then $A\subset B$.
+                \paragraph{
+                    We say that a set $A$ is a \textbf{proper subset} of a set $B$ if $A \subseteq B$, but there is at least one element of $B$ that is not in $A$. In this case we sometimes write
+                    $$A \subset B.$$
+                    In short, If $A\subseteq B$and $\exists b \in B , b \notin A$, then $A\subset B$.
+                    }
+                
             
             \subsubsection{Two set is equal}
-                If $A\in B$ and $B\in A$, then two set are said to be \textbf{equal}, and we write $A=B$.
+                \paragraph{
+                    If $A\in B$ and $B\in A$, then two set are said to be \textbf{equal}, and we write $A=B$.
+                }
+                
             
             \subsubsection{Set Operations}
-                The \textbf{union} of sets $A$ and $B$ is the set
+                \paragraph{
+                    The \textbf{union} of sets $A$ and $B$ is the set
                 $$A \cup B =\{x:x\in A \textbf{or} x\in B\} .$$
                 The \textbf{intersection} of the sets $A$ and $B$ is the set
                 $$ A\cap B =\{x:x\in A \textbf{and}x\in B\}.$$
                 The \textbf{complement of} $B$ \textbf{relative to} $A$ is the set
                 $$A\backslash B=\{x:x\in A \textbf{and} x \notin B\}.$$
+                }
+                
 
             \subsubsection{Empty set and disjoint}
-                The set that has no elements is called the \textbf{empty set} and is denoted by the symbol  $\emptyset$. Two set $A$ and $B$ are sasid to be \textbf{disjoint} if they have no elements in common, this can be expressed by writing $A \cap B =\emptyset$
+                \paragraph{
+                    The set that has no elements is called the \textbf{empty set} and is denoted by the symbol  $\emptyset$. Two set $A$ and $B$ are sasid to be \textbf{disjoint} if they have no elements in common, this can be expressed by writing $A \cap B =\emptyset$
+                }
+                
             
             \subsubsection{Infinite union or intersection}
+
                 $$\cup _{n=1} ^{\infty} A_n=\{x:x\in A_n ,\exists n \in \mathbb{N} \}$$
 
                 $$\cap _{n=1} ^{\infty} A_n=\{x:x\in A_n ,\forall n \in \mathbb{N} \}$$
+                
         \subsection{Theorem Part}
             \subsubsection{De Morgan Law}
-            if $A,B,C$ are sets, then
-            $$A \backslash (B\cup C) = (A\backslash B)\cap (A\backslash C)$$
-            $$A\backslash (B\cap C) = (A\backslash B)\cup (A\backslash C)$$
+                \paragraph{If $A,B,C$ are sets, then
+                $$A \backslash (B\cup C) = (A\backslash B)\cap (A\backslash C)$$
+                $$A\backslash (B\cap C) = (A\backslash B)\cup (A\backslash C)$$}
+            
 
         \subsection{Other}
 
     \section{Function}
         \subsection{Definition Part}
             \subsubsection{Cartesian product}
-                If $A$ and $B$ are noempty sets, then the \textbf{Cartesian product} $A \times B$ of $A$ and $B$ is the set of all ordered pairs $(a,b)$ with $a\in A$ and $b\in B$. That is 
-                $$A\times B = \{(a,b):a\in A,b\in B\}$$
+            \paragraph{If $A$ and $B$ are noempty sets, then the \textbf{Cartesian product} $A \times B$ of $A$ and $B$ is the set of all ordered pairs $(a,b)$ with $a\in A$ and $b\in B$. That is 
+            $$A\times B = \{(a,b):a\in A,b\in B\}$$}
+                
 
             \subsubsection{Function}
-                Let $A$ and $B$ be setd. Then a \textbf{function} from $A$ to $B$ is a set $f$ of ordered pairs in $A\times B$ such that for each $a\in A$there exists a unique $b\in B$ with $(a,b)\in f$.
-                \\
-                In other word, if $(a,b)\in f,(a,b')\in f$, then $b=b'$.
+            \paragraph{Let $A$ and $B$ be setd. Then a \textbf{function} from $A$ to $B$ is a set $f$ of ordered pairs in $A\times B$ such that for each $a\in A$there exists a unique $b\in B$ with $(a,b)\in f$.
+            \\
+            In other word, if $(a,b)\in f,(a,b')\in f$, then $b=b'$.}
+                
             \subsubsection{Domain and Range}
-                The set $A$ of first elements of a function $f$ is called the \textbf{domain} of $f$ and is often denoted by $D(f)$
+            \paragraph{The set $A$ of first elements of a function $f$ is called the \textbf{domain} of $f$ and is often denoted by $D(f)$
+            \\
+            The set of all second elements in $f$ is called the \textbf{range} of $f$ and is often denoted by $R(f)$
+            \\
+            \textbf{Note that}, although $D(f)=A$, we only have $R(f)\subseteq B$
+            \textit{B is codomain}
+            }
+
+            \subsubsection{Direct and Inverse Images}
+            \paragraph{
+                Let $f:A\rightarrow B$ be a function with domain $D(f)=A$ and range $R(f)\subseteq B$
                 \\
-                The set of all second elements in $f$ is called the \textbf{range} of $f$ and is often denoted by $R(f)$
-                \\
-                \textbf{Note that}, although $D(f)=A$, we only have $R(f)\subseteq B$
+                If $E$ is a subset of $A$, then the \textbf{direct image} of $E$ unser $f$ is the subset $f(E)$ of B given by
+                $$ f(E)=\{f(x):x\in E\}$$
+            }
+
+                
         \subsection{Theorem Part}
 
         \subsection{Other}
-        A function $f$ from a set $A$ into a set $B$ is a rule of correspondence that assigns to each element $x$ in $A$ a uniquely determined element $f(x)$ in $B$.
+        \paragraph{A function $f$ from a set $A$ into a set $B$ is a rule of correspondence that assigns to each element $x$ in $A$ a uniquely determined element $f(x)$ in $B$.
         \\
         The essential condition that :
         \begin{center}
             $(a,b)\in f$ and $(a,b')\in f$ implies that $b=b'$
         \end{center}
         is sometimes called the \textit{vertical line test}.
+        \\
+        The notation 
+        $$f: A \rightarrow B $$
+        is often used to indicate that $f$ is a function from $A$ to $B$. We will also say that $f$ is a \textbf{mapping} of $A$ into $B$, or that $f$ \textbf{maps} $A$ into $B$.
+        \\
+        If $(a,b)$ is an element in$f$, it is customary to write 
+        \begin{center}
+            $b=f(a)$, or sometimes $a\rightarrow b$.
+        \end{center}
+        }
+        
 \end{document}
