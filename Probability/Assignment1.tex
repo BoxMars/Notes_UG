@@ -80,40 +80,44 @@
     
     \section{}
         Let $A$ be the event that two cards are both greater than $3$ and less than $8$.
-        The card can be $4,5,6$ or $7$, the number of total cards is $12$
-        $$P(A)= \frac{C_{12} ^ 2}{C_{52} ^ 2}=\frac{11}{221}\approx 0.0498$$
+        The card can be $4,5,6$ or $7$, the number of total cards is $16$
+        $$P(A)= \frac{C_{16} ^ 2}{C_{52} ^ 2}=\frac{20}{221}\approx 0.0905$$
 
     \section{}
         \subsection{}
-                $$P=\frac{C_{13}^1C_4^2C_{12}^1C_4^2C_{11}^1C_4^1}{C_{52}^5P_2^2}$$
+                % \subsubsection*{If we consider the suit}
+                $$P=\frac{C_{13}^1C_4^2C_{12}^1C_4^2C_{11}^1C_4^1}{C_{52}^5P_2^2}=\frac{198}{4165} \approx 0.0475$$
+                % \subsubsection*{If we do not consider the suit}
+                % $$P=\frac{C_{13}^1C_{12}^1C_{11}^1}{C_{52}^5P_2^2}$$
         
         \subsection{}
-                $$P=\frac{C_{13}^1}{C_{52}^5}$$
+                $$P=\frac{C_{13}^1 C_{48}^1}{C_{52}^5}=\frac{1}{4165}\approx 2.401\times 10^{-4}$$
 
     \section{}
         \subsection{}
-                $$P=\frac{C_6^3}{C_{10}^3}$$
+                $$P=\frac{C_6^3}{C_{10}^3}=\frac{1}{6}$$
         
         \subsection{}
                 If the first ball is white,
-                        $$P_w=\frac{C_3^1}{C_9^1},$$
+                        $$P_w=\frac{C_3^1}{C_9^1}\times \frac{C_4 ^1}{C_{10}^1},$$
                 if the first ball is red,
-                        $$P_r=\frac{C_4^1}{C_9^1}.$$
-                $$P=P_w+P_r$$
+                        $$P_r=\frac{C_4^1}{C_9^1}\times \frac{C_6 ^1}{C_{10}^1}.$$
+                $$P=P_w+P_r=\frac{2}{5}$$
 
         \subsection{}
-                $$P=\frac{C_6^2C_4^1}{C_{10}^3}$$
+                $$P=\frac{C_6^2C_4^1}{C_{10}^3}=\frac{1}{2}$$
 
     \section{}
                 The numbers which is divisible by $4$ are $4$, $8$ and $12$.
                 The event can be $(1,7),(1,3),(2,10),(2,6),(3,9),(3,5),(4,8),(5,7)$
                 \\
                 Hence,
-                $$P=\frac{8}{C_{10}^2}$$
+                $$P=\frac{8}{C_{10}^2}=\frac{8}{45}\approx 0.1778$$
 
     \section{}
-        \subsection{}               
-                $$T=C_{11}^{3}$$
+        \subsection{}  
+                We have letters 'M','A', 'T','H','E','I','C' and 'S'           
+                $$T=C_{8}^{3}=56$$
         \subsection{}
-                $$P=\frac{C_{13}^2C_{12}^1C_{11}^1}{C_{11}^3}$$
+                $$P=\frac{C_{2}^1C_{1}^1C_{1}^1}{C_{11}^3}=\frac{2}{165}\approx 0.0121$$
 \end{document}
