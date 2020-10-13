@@ -26,25 +26,25 @@
                 The total number of games in a whole basketball play-off $ n\in [m,2m-1]$, for the winner, they should win $m$ games and the last game. For the loser, they will win $n-m$ games and the will lose the last game.
                 \\
                 Hence, 
-                $$Totla\ number=\sum _{i=0} ^{m-1} C_{m+i-1} ^{i}$$
+                $$Total\ number=\sum _{i=0} ^{m-1} C_{m+i-1} ^{i} \times 2$$
                 
         \subsection{}
                 \textbf{2 out of 3 paly-off:}
                 \\
                 \\
-                $m=2, T=\sum _{i=0} ^{2-1} C_{2+i-1} ^{i}=3$
+                $m=2, T=\sum _{i=0} ^{2-1} C_{2+i-1} ^{i}\times 2=6$
                 \\
                 \\
                 \textbf{3 out of 5 paly-off:}
                 \\
                 \\
-                $m=3, T=\sum _{i=0} ^{3-1} C_{3+i-1} ^{i}=10$
+                $m=3, T=\sum _{i=0} ^{3-1} C_{3+i-1} ^{i}\times 2=20$
                 \\
                 \\
                 \textbf{4 out of 7 paly-off:}
                 \\
                 \\
-                $m=4, T=\sum _{i=0} ^{4-1} C_{4+i-1} ^{i}=35$
+                $m=4, T=\sum _{i=0} ^{4-1} C_{4+i-1} ^{i}\times 2=70$
     \section{}
         If we give this three books to three students, each student can get one book,
         $$T_1=P_{12}^3$$
@@ -108,16 +108,20 @@
                 $$P=\frac{C_6^2C_4^1}{C_{10}^3}=\frac{1}{2}$$
 
     \section{}
-                The numbers which is divisible by $4$ are $4$, $8$ and $12$.
-                The event can be $(1,7),(1,3),(2,10),(2,6),(3,9),(3,5),(4,8),(5,7)$
+                The numbers which is divisible by $4$ are $4$, $8$ ,$12$ and $16$.
+                The event can be $(1,7),(1,3),(2,10),(2,6),(3,9),(3,5),(4,8),(5,7),(6,10),(7,9)$
                 \\
                 Hence,
-                $$P=\frac{8}{C_{10}^2}=\frac{8}{45}\approx 0.1778$$
+                $$P=\frac{10}{C_{10}^2}=\frac{2}{9}\approx 0.2222$$
 
     \section{}
         \subsection{}  
-                We have letters 'M','A', 'T','H','E','I','C' and 'S'           
-                $$T=C_{8}^{3}=56$$
+                We have letters 'M','A', 'T','H','E','I','C' and 'S', if there are three different letters in the combination,           
+                $$T_1=C_{8}^{3}=56$$
+                But we have two 'M's , two 'A's and two 'T's, if there are two same letters in the combination,
+                $$T_2=3\times C_7 ^1=21$$
+                Therefore,
+                $$T=T_1+T_2=78$$
         \subsection{}
                 $$P=\frac{C_{2}^1C_{1}^1C_{1}^1}{C_{11}^3}=\frac{2}{165}\approx 0.0121$$
 \end{document}
