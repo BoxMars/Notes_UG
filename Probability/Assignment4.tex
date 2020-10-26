@@ -1,6 +1,8 @@
 \documentclass{article}
 \usepackage{setspace}
 \usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
 \usepackage{graphicx} 
 \usepackage{float} 
 \usepackage{fancyhdr}                                
@@ -73,6 +75,27 @@
                             =&\frac{35}{3\log3}
                     \end{split}
                 \end{equation*}
+
+        \subsection{}
+            \begin{equation*}
+                \begin{split}
+                    \mu'_r=&E[X^r]\\
+                        =&\int _{-\infty} ^\infty x^rf(x)dx\\
+                        =&\int _1 ^3 x^r \frac{1}{x\log 3}dx\\
+                        =&\frac{1}{\log 3}\int _1 ^3 x^{r-1} dx\\
+                        =&\frac{1}{\log 3} \frac{1}{r}x^r|_1^3\\
+                        =&\frac{1}{r\log 3}(3^r-1)
+                \end{split}
+            \end{equation*}
+
+            \begin{equation*}
+                \begin{split}
+                    \sigma^2=&var(X)\\
+                        =&E[X^2]-E[X]^2\\
+                        =&\frac{4}{\log 3}-\frac{2}{\log 3}\\
+                        =&\frac{2}{\log 3}
+                \end{split}
+            \end{equation*}
 
     \section{}
         \begin{equation*}
@@ -176,11 +199,245 @@
             }
     
     \section{}
-        \paragraph{
             \begin{equation*}
                 \begin{split}
-                    
+                    E(Z)=&E(\frac{X-\mu}{\sigma})\\
+                        =&\frac{1}{\sigma}(E(X-\mu))\\
+                        =&\frac{1}{\sigma}(E(X)-E(\mu))\\
+                        =&\frac{1}{\sigma}(\mu-\mu)\\
+                        =&0
                 \end{split}
             \end{equation*}
+
+            \begin{equation*}
+                \begin{split}
+                    var(Z)=&E\{[Z-E(Z)]^2\}\\
+                        =&E(Z^2)-[E(Z)]^2\\
+                        =&E(Z^2)\\
+                        =&E[(\frac{X-\mu}{\sigma} )^2]\\
+                        =&\frac{1}{\sigma^2}E[(X-\mu)^2]\\
+                        =&\frac{1}{\sigma^2}\times \sigma^2\\
+                        =&1
+                \end{split}
+            \end{equation*}
+    
+    \section{}
+        \paragraph{
+            By Chebyshevs inequality, we can know that
+            $$P(|X-\mu|<k\sigma)\geq 1-\frac{1}{k^2}$$
         }
+
+        \subsection*{(a) at least 0.95}
+            $$P(|X-\mu|<k\sigma)\geq 1-\frac{1}{k^2}\geq0.95$$
+            $$k\geq 2\sqrt{5}$$
+        
+        \subsection*{(b) at least 0.99}
+            $$P(|X-\mu|<k\sigma)\geq 1-\frac{1}{k^2}\geq0.99$$
+            $$k\geq 10$$
+    
+    \section{}
+  
+            \begin{equation*}
+                \begin{split}
+                    P(64\leq X\leq 184)=&P(|X-\mu|\leq 60)\\
+                        =&P(|X-\mu|\leq 8\sigma)\\
+                        \geq&1-\frac{1}{8^2}=\frac{63}{64}
+                \end{split}
+            \end{equation*}
+    
+    \section{}
+        \paragraph{
+            From the table we can know that
+            $$E(X)=\frac{1}{3}$$
+            $$E(Y)=\frac{3}{4}$$
+            Therefore,
+        }
+            \begin{equation*}
+                \begin{split}
+                    cov(X,Y)=&E(XY)-E(X)\times E(Y)\\
+                        =&\sum_x \sum_y xyf(x,y)-\frac{1}{4}\\
+                        =&\frac{1}{4}-\frac{1}{4}\\
+                        =&0
+                \end{split}
+            \end{equation*}
+        \paragraph{
+            But, 
+            \begin{equation*}
+                \begin{split}
+                    f(-1,0)=&0\\
+                        \neq& g(-1)\times h(0)=\frac{1}{4}\times\frac{1}{4}=\frac{1}{16}
+                \end{split}
+            \end{equation*}
+            where $g(x)$ and $h(y)$ are the marginal probability distribution of $X$ and $Y$, respectively.
+        }
+
+    \section{}
+        \begin{equation*}
+            \begin{split}
+                var(X+Y)=&E[((X+Y)-E(X+Y))^2]\\
+                    =&E[((X-E[X])+(Y-E[Y]))^2]\\
+                    =&E[(X-E[X])^2]+E[(Y-E[Y])^2]\\
+                        &+2E[(X-E[X])(Y-E[Y])]\\
+                    =&var(X)+var(Y)+2cov(X,Y)
+            \end{split}
+        \end{equation*}
+
+        \begin{equation*}
+            \begin{split}
+                var(X-Y)=&E[((X-Y)-E[X-Y])^2]\\
+                    =&E[((X-E[X])-(Y-E[Y]))^2]\\
+                    =&E[(X-E[X])^2]+E[(Y-E[Y])^2]\\
+                        &-2E[(X-E[X])(Y-E[Y])]\\
+                    =&var(X)+var(Y)-2cov(X,Y)
+            \end{split}
+        \end{equation*}
+
+        \begin{equation*}
+            \begin{split}
+                cov(X+Y,X-Y)=&E[(X+Y)(X-Y)]-E[X+Y]\times E[X-Y]\\
+                    =&E[X^2-Y^2]-(E[X]-E[Y])(E[X]+E[Y])\\
+                    =&E[X^2]-E[Y^2]-E[X]^2+E[Y]^2\\
+                    =&var(X)-var(Y)
+            \end{split}
+        \end{equation*}
+
+    \section{}
+        \subsection{}
+            \begin{equation*}
+                \begin{split}
+                    E[U]=&E[2X-3Y+4Z]\\
+                        =&2E[X]-3E[Y]+4E[Z]\\
+                        =&-7
+                \end{split}
+            \end{equation*}
+
+            \begin{equation*}
+                \begin{split}
+                    E[V]=&E[X+2Y-Z]\\
+                        =&E[X]+2[Y]-E[Z]\\
+                        =&19
+                \end{split}
+            \end{equation*}
+
+            \begin{equation*}
+                \begin{split}
+                    var(U)=&var(2X-3Y+4Z)\\
+                        =&var(2X)+var(-3Y)+var(4Z)\\
+                        =&4var(X)+9var(Y)+16var(Z)\\
+                        =&155
+                \end{split}
+            \end{equation*}
+
+            \begin{equation*}
+                \begin{split}
+                    var(V)=&var(X+2Y-Z)\\
+                        =&var(X)+4var(Y)+var(Z)\\
+                        =&22
+                \end{split}
+            \end{equation*}
+
+
+        \subsection{}
+        \textit{Claim:}
+            $$cov(X+Y,Z)=cov(X,Z)+cov(Y,Z)$$
+           
+        \begin{proof}
+            \begin{equation*}
+                \begin{split}
+                    cov(X+Y,Z)=&E[(X+Y)Z]-E[X+Y]E[Z]\\
+                        =&E[XZ+YZ]-(E[X]+E[Y])E[Z]\\
+                        =&E[XZ]-E[X]E[Z]+E[YZ]-E[Y]E[Z]\\
+                        =&cov(X,Z)+cov(Y,Z)
+                \end{split}
+            \end{equation*}
+        \end{proof}
+
+        \textit{Claim:}
+            $$cov(nX,Y)=n\ cov(X,Y)$$
+           where $n$ is a real number.
+        \begin{proof}
+            \begin{equation*}
+                \begin{split}
+                    cov(nX,Y)=&E[nXY]-E[nX]E[Y]\\
+                        =&nE[XY]-nE[X]E[Y]\\
+                        =&n(E[XY]-E[X]E[Y])\\
+                        =&n\ cov(X,Y)
+                \end{split}
+            \end{equation*}
+        \end{proof}
+        It is easy to know that
+        \begin{equation*}
+            \begin{split}
+                cov(aX,bY)=&a\ cov(X,bY)\\
+                    =&ab\ cov(X,Y)
+            \end{split}
+        \end{equation*}
+
+        \begin{equation*}
+            \begin{split}
+                var(U)=&var((2X-3Y)+4Z)\\
+                    =&var(2X-3Y)+var(4Z)+2cov(2X-3Y,4Z)\\
+                    =&var(2X-3Y)+var(4Z)+2cov(2X,4Z)+2cov(-3Y,4Z)\\
+                    =&var(2X)+var(-3Y)+var(4Z)+16cov(X,Z)-24cov(Y,Z)\\
+                    =&155
+            \end{split}
+        \end{equation*}
+
+        \begin{equation*}
+            \begin{split}
+                var(V)=&var(X+2Y-Z)\\
+                    =&var(X)+4var(Y)+var(Z)+2cov(X+2Y,-Z)\\
+                    =&22+2cov(X,-Z)+2cov(2Y,-Z)\\
+                    =&36
+            \end{split}
+        \end{equation*}
+
+        \begin{equation*}
+            \begin{split}
+                E[U]=&E[2X-3Y+4Z]\\
+                    =&2E[X]-3E[Y]+4E[Z]\\
+                    =&-7
+            \end{split}
+        \end{equation*}
+
+        \begin{equation*}
+            \begin{split}
+                E[V]=&E[X+2Y-Z]\\
+                    =&E[X]+2[Y]-E[Z]\\
+                    =&19
+            \end{split}
+        \end{equation*}
+    
+    \section{}
+    We can get the joint probability distribution $f(z,w)$
+    \textbf{ }\\
+
+    \begin{tabular}{|c|c|c|}
+        \hline        & $z=0$ & $z=1$ \\
+        \hline  $w=0$ & $0.36$ & $0$\\
+        \hline  $w=1$ & $0.24$ & $0.24$  \\
+        \hline  $w=2$ & $0$ & $0.16$ \\
+        \hline
+    \end{tabular} 
+
+    \textit{ }\\
+    Thus, $$E[Z]=0.4$$
+    $$E[W]=0.8$$
+    \begin{equation*}
+        \begin{split}
+            cov(Z,W)=&E[ZW]-E[Z]E[W]\\
+                =&\sum _z \sum _w zwf(z,w)-E[Z]E[W]\\
+                =&-0.4
+        \end{split}
+    \end{equation*}
+
+    \section{}
+    The probability distribution $$f(x,y,z)=\frac{C_3 ^x C_2 ^y C _3 ^z}{C_8 ^2}$$
+    where $x+y+z=2$ , $x$ is the number of statistics texts, $y$ is the number of mathematics texts and $z$ is the number of physics texts.
+        \begin{equation*}
+            \begin{split}
+                E(Y;X=0)=&\sum _y yf(0,y,z)\\
+                    =&\frac{2}{7}
+            \end{split}
+        \end{equation*}
 \end{document}
