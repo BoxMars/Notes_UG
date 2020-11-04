@@ -1,0 +1,180 @@
+\documentclass{article}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx} 
+\usepackage{float} 
+\usepackage{fancyhdr}                                
+\usepackage{lastpage}                                           
+\usepackage{layout}   
+\usepackage{subfigure} 
+\pagestyle{fancy}  
+\lhead{ZHANG HUAKANG}
+\chead{Assignment 5} 
+\rhead{DB92760} 
+\renewcommand{\baselinestretch}{1.05}
+\title{Assignment 5 of MATH 2003}
+\author{ZHANG Huakang/DB92760}
+
+\begin{document}
+    \maketitle
+    \section{}
+        \subsection{}
+        \paragraph{
+            Let $(a_n)=(x_{2n})$ and $(b_n)=(x_{2n-1})$ be the subsequences of $(x_n)$.
+        }
+        \paragraph{
+            We can get the subsequences:
+            \begin{equation*}
+                \begin{split}
+                    a_n=&x_{2n}\\
+                        =&1-(-1)^{2n}+\frac{1}{2n}\\
+                        =&\frac{1}{2n}\\
+                    b_n=&x_{2n-1}\\
+                        =&2+\frac{1}{2n-1}\\
+                \end{split}
+            \end{equation*}
+            Thus
+            $$\lim (a_n)=0\neq2=\lim (b_n)$$
+            Therefore, we know the sequence is divergent since Divergence criteria.
+        }
+        \subsection{}
+        \paragraph{
+            Let$(a_n)=(x_{4n})$ and $(b_n)=(x_{8n-1})$ be the subsequences of $(x_n)$.
+        }
+        \paragraph{
+            Thus
+            \begin{equation*}
+                \begin{split}
+                    a_n=&x_{4n}\\
+                        =&\sin(\frac{4n\pi}{4})\\
+                        =&\sin(n\pi)\\
+                        =&0\\
+                    b_n=&x_{8n-1}\\
+                        =&\sin (\frac{(8n+1)\pi}{4})\\
+                        =&\frac{\pi}{4}\\
+                        =&\frac{\sqrt{2}}{2}
+                \end{split}
+            \end{equation*}
+        }
+        \paragraph{
+            Therefore,
+            $$\lim (a_n)=0\neq\frac{\sqrt{2}}{2}=\lim (b_n)$$
+            which means that the sequence is divergent.
+        }
+    \section{}
+        \paragraph{
+            Because $x_n$ is unbouned sequence, then there exist a subsequence $(x_{n_k})$
+            where
+            $$|x_{n_k}| > k$$
+            i.e.
+            $$0\leq \frac{1}{|x_{n_k}|}\leq \frac{1}{k}$$
+        }
+        \paragraph{
+            By the sandwich theorem
+            $$0= \lim 0 \leq \lim \frac{1}{|x_{n_k}|} \leq \lim \frac{1}{k}=0 $$
+            i.e.
+            $$\lim \frac{1}{|x_{n_k}|}=0$$
+        }
+    
+    \section{}
+        \paragraph{
+            By the definition of supermum,$\forall \epsilon>0,\exists x_n$ that 
+            $$s-\epsilon<x_n<s$$
+        }
+
+        \paragraph{
+            There must exist a subsequence $(x_{n_k})$
+            that
+            $$s-\frac{1}{k}<x_{n_k}<s$$
+            Therefore,by the sandwich theorem,
+            $$s=\lim_{k\rightarrow \infty} (s-\frac{1}{k})<\lim_{k\rightarrow \infty}x_{n_k}<\lim_{k\rightarrow \infty}s=s$$
+            Thus,
+            $$\lim(x_{n_k})=s$$
+        }
+    \section{}
+        \paragraph{
+            $$x^3-5x+1=0$$
+            i.e.
+            $$x=\frac{x^3+1}{5}$$
+            Let $(x_n)$ be a sequence that:
+            $$x_{n+1}=\frac{x_n^3+1}{5}$$
+            where $0<x_1<5$
+        }
+        \paragraph{
+            Because $0<x_1<1$, then $x_1^3+1<2$ and $x_{2}=\frac{x_1^3+1}{5}<\frac{2}{5}<1$\\
+            And assume that $0<x_n<1$,then $x_n^3+1<2$ and $x_{n+1}=\frac{x_n^3+1}{5}<\frac{2}{5}<1$\\
+            Thus, $x_n<1,\forall n$ and it is easy to know that $0<x_n$.\\
+            It is easy to know that 
+            $$\frac{x_{n+1}^2+x_{n+1}x_n+x_n^2}{5}<\frac{3}{5}<1$$
+        }
+            \begin{equation*}
+                \begin{split}
+                    |x_{n+2}-x_{n+1}|=&|\frac{x_{n+1}^3+1}{5}-\frac{x_n^3+1}{5}|\\
+                        =&|\frac{x_{n+1}^3-x_n^3}{5}|\\
+                        =&|\frac{(x_{n+1}-x_n)(x_{n+1}^2+x_{n+1}x_n+x_n^2)}{5}| \\ 
+                        <&\frac{3}{5}|x_{n+1}-x_n|
+                \end{split}
+            \end{equation*}
+        \paragraph{
+            which shows that $(x_n)$ is contractive and the constant of contractive sequence $C=\frac{3}{5}$.\\
+            We know that 
+        }
+            \begin{equation*}
+                \begin{split}
+                    |r-x_n|\leq& \frac{C}{1-C}|x_n-x_{n-1}|\\
+                        =&\frac{3}{2}|x_n-x_{n-1}|\\
+                \end{split}
+            \end{equation*}
+        \paragraph{
+            Let $x_1=0.5$
+        }
+            \begin{equation*}
+                \begin{split}
+                    x_2=& \frac{9}{40}=0.2250000\\
+                    |r-x_2|\leq& \frac{3}{2}|x_2-x_1|=\frac{33}{80}=0.4125000\\
+                    x_3\approx& 0.2022781\\
+                    |r-x_3|\leq& \frac{3}{2}|x_3-x_2|\approx0.0340828\\
+                    x_4\approx& 0.2016553\\
+                    |r-x_4|\leq& \frac{3}{2}|x_4-x_3|\approx0.0009342\\
+                    x_5\approx& 0.2016401\\
+                    |r-x_5|\leq& \frac{3}{2}|x_5-x_4|\approx0.0000229\\
+                \end{split}
+            \end{equation*}
+        \paragraph{
+            $0.2016$ is the approximation of $r$ within $10^{-4}$
+        }
+    
+    \section{}
+    \begin{proof}
+        
+    \end{proof}
+    \section{}
+        \subsection*{(a)}
+        \begin{proof}
+            \begin{equation*}
+                \begin{split}
+                    \lim a_n=&\sum_{k=1}^\infty \frac{1}{k}\\
+                        \geq& 1+(\frac{1}{2}+\frac{1}{2})+(\frac{1}{4}+\frac{1}{4}+\frac{1}{4}+\frac{1}{4})...\\
+                        =&1+1+1+...+1\\
+                        =\infty
+                \end{split}
+            \end{equation*}
+            Thus $(a_n)$ is divergence.
+        \end{proof}
+        \subsection*{b}
+        \begin{proof}
+            It is easy to know that
+            $$\ln(x+1)=\sum_{n=1}^\infty\frac{(-1)^{n+1}}{n}x^n$$
+            by Taylor expansion. When $x=1$,
+            $$\ln(2)=\sum_{n=1}^\infty \frac{(-1)^{n+1}}{n}$$
+            Thus,
+            $$\lim a_n=\sum_{n=1}^\infty \frac{(-1)^{n+1}}{n}=\ln(2)$$
+            $a_n$ is convergence.
+        \end{proof}
+    \section{}
+        \paragraph{
+            $$x_n=\frac{1}{2}((1+(-1)^n)n+(1+(-1)^{n+1})\frac{1}{n})$$
+        }
+\end{document}
