@@ -1,0 +1,76 @@
+\documentclass{article}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx} 
+\usepackage{float} 
+\usepackage{fancyhdr}                                
+\usepackage{lastpage}                                           
+\usepackage{layout}   
+\usepackage{subfigure} 
+\pagestyle{fancy}  
+\lhead{ZHANG HUAKANG}
+\chead{Assignment 5} 
+\rhead{DB92760} 
+\renewcommand{\baselinestretch}{1.05}
+\title{Assignment 4 of MATH 2005}
+\author{ZHANG Huakang/DB92760}
+
+\begin{document}
+    \maketitle
+    \section{}
+    \paragraph{
+        \begin{equation*}
+            \begin{split}
+                E[X]=&\sum_{n=1} ^knf(n)\\
+                    =&\frac{1}{k}\sum_{n=1}^k n\\
+                    =&\frac{1}{k}\ \frac{k(k+1)}{2}\\
+                    =&\frac{k+1}{2}\\
+                var(X)=&\sum_{n=1}^k (n-E[X])^2f(n)\\
+                    =&\frac{1}{k}\sum_{n=1}^k(n-\frac{k+1}{2})^2\\
+                    =&\frac{1}{k}\sum_{n=1}^k(n^2-n(k+1)-\frac{(k+1)^2}{4})\\
+                    =&\frac{1}{k}(\frac{k(k+1)(2k+1)}{6}-\frac{k(k+1)}{2}(k+1)+\frac{k(k+1)^2}{4})\\
+                    =&\frac{(k+1)(2k+1)}{6}-\frac{(k+1)^2}{2}+\frac{(k+1)^2}{4}\\
+                    =&\frac{(k+1)(2k+1)}{6}-\frac{(k+1)^2}{4}\\
+                    =&(k+1)\frac{k-1}{12}\\
+                    =&\frac{k^2-1}{12}
+            \end{split}
+        \end{equation*}
+    }
+
+    \section{}
+    \paragraph{
+        \begin{equation*}
+            \begin{split}
+                b(x;n,\theta)=&C_n^x\theta^x(1-\theta)^{n-x}\\
+                    =& C_{n}^{n-x}(1-\theta)^{n-x}\theta^x\\
+                    =&b(n-x;n,1-\theta)\\
+            \end{split}
+        \end{equation*}
+    }
+    \subsection{}
+        \paragraph{
+            \begin{equation*}
+                \begin{split}
+                    B(n-x;n,1-\theta)-B(n-x-1;n,1-\theta)=&\sum_{y=0}^{n-x}b(y;n,1-\theta)\\
+                        &-\sum_{y=0}^{n-x-1}b(y;n,1-\theta)\\
+                        =&b(n-x;n,1-\theta)\\
+                        =&b(x;n,\theta)
+                \end{split}
+            \end{equation*}
+        }
+    \subsection{}
+        \paragraph{
+            $$B(n;n,1-\theta)=\sum_{y=0}^nb(y;n,\theta)=1$$
+            \begin{equation*}
+                \begin{split}
+                    B(x;n,\theta)=&\sum_{y=0}^xb(y;n,\theta)\\
+                        =&\sum_{y=0}^x[B(n-y;n,1-\theta)-B(n-y-1;n,1-\theta)]\\
+                        =&B(n;n,1-\theta)-B(n-x-1;n,1-\theta)\\
+                        =&1-B(n-x-1;n,1-\theta)\\
+                \end{split}
+            \end{equation*}
+        }
+
+\end{document}

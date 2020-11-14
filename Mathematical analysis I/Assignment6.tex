@@ -1,0 +1,206 @@
+\documentclass{article}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx} 
+\usepackage{float} 
+\usepackage{fancyhdr}                                
+\usepackage{lastpage}                                           
+\usepackage{layout}   
+\usepackage{subfigure} 
+\pagestyle{fancy}  
+\lhead{ZHANG HUAKANG}
+\chead{Assignment 6} 
+\rhead{DB92760} 
+\renewcommand{\baselinestretch}{1.05}
+\title{Assignment 6 of MATH 2003}
+\author{ZHANG Huakang/DB92760}
+
+\begin{document}
+    \maketitle
+    \section{}
+        \subsection{}
+            \paragraph{
+                 Let $\delta=min\{\frac{1}{2},\frac{\epsilon}{2}\}$ and when $|x-2|<\delta$, we have
+                 \begin{equation*}
+                     \begin{split}
+                            |x-2|<\delta<&\frac{1}{2}\\
+                            -\frac{1}{2}<x-2<&\frac{1}{2}\\
+                            \frac{1}{2}<x-1<&\frac{3}{2}\\
+                     \end{split}
+                 \end{equation*}
+                 \begin{equation*}
+                     \begin{split}
+                         |\frac{1}{1-x}+1|=&|\frac{2-x}{1-x}|\\
+                            =&|\frac{x-2}{x-1}|\\
+                            <&2(x-2)\\
+                            <&2\delta\\
+                            \leq & \epsilon\\
+                     \end{split}
+                 \end{equation*}
+                 By the definition, we know:
+                 $$\lim_{x\rightarrow 2}\frac{1}{1-x}=-1$$
+            }
+        \subsection*{}
+            \paragraph{
+                Let $\delta=\epsilon$, for $|x-0|<\delta$, we have
+                \begin{equation*}
+                    \begin{split}
+                        |x|<&\delta\\
+                        |\frac{xx}{x}|<\delta\\
+                        |\frac{x^2}{|x|}|<\delta\\
+                        |\frac{x^2}{|x|}-0|<\epsilon\\
+                    \end{split}
+                \end{equation*}
+                By the definition, we know:
+                $$\lim_{x\rightarrow 0}\frac{x^2}{|x|}=0$$
+            }
+    \section{}
+        \paragraph{
+            $f$ is not continuous
+            \begin{proof}
+                Without loss of generality, for any rational number $x_0\in \mathbb{R}$, we can find a sequence $(a_n)$ that converges to $x_n$ such that $\forall a \in (a_n)$, $a$ is a irrational. We can get a sequence $(f(a_n))$ where $$f(a_n)=x(1+x)$$Therefore, $(f(a_n))$ is converges to $x_0(1+x_0)$ when $f(x_0)=x_0(1-x_0)$. Thus, $f$ is not continuous.
+            \end{proof}
+        }
+        
+    \section{}
+        \paragraph{
+            \begin{proof}
+                For any $x_0 \in [a,b]$, if $$\inf_{a\leq t\leq x_0}f(t)=f(x_0)$$ because $f(x)$ is continuous, $\lim_{x\rightarrow x_0}f(x)=f(x_0)$ and $\forall x\in [a,x_0]$, $f(x)\geq f(x_0)$. Thus $$\lim_{x\rightarrow x_0}\inf_{a\leq t\leq x_0}f(t)=f(x_0)$$
+                If $$\inf_{a\leq t\leq x_0}f(t)=f(b)$$ where $b \in [a,x_0)$ which means that $$\lim_{x\rightarrow x_0} \inf_{a\leq t\leq x}f(t)=f(b)$$
+                Therefore, $\forall x_0\in [a,b]$,$$m(x_0)=\inf_{a\leq t\leq x_0}f(t)=\lim _{x\rightarrow x_0}\inf_{a\leq t\leq x}f(t)$$ which means that $m(x)$ is continuous.
+            \end{proof}
+        }
+
+    \section{}
+        \paragraph{
+            $M=\{\frac{1}{2}\pm \frac{n}{2n+1}:n\in \mathbb{N}\}=\{1-\frac{1}{4n+2},\frac{1}{4n+2}:n\in \mathbb{N}\}$.For every $\delta >0$, when 
+            \begin{equation*}
+                \begin{split}
+                    n>&\frac{1-2\delta}{4\delta}\Rightarrow\\
+                    \delta>&\frac{1}{4n+2}
+                \end{split}
+            \end{equation*}
+            which means $$|\frac{1}{4n+2}-0|<\delta$$
+            or 
+            $$|1-\frac{1}{4n+2}-1|<\delta$$
+            By the definition, $1$ and $0$ are cluster point of $M$
+        }
+    
+    \section{}
+        \begin{proof}
+            By the definition,$$f_2(x):=f(x)$$
+            for every $x\in J$
+            $f$ has limit at $c$ ,i.e. for every $\epsilon>0$, there exists a $\delta>0$ such that if $0<|x-c|<\delta$, then$|f(x)-L|<\epsilon$ where $L$ is the limit of $f(x)$.
+            Because $c\in J$, then $|f_2(x)-L|<\epsilon$ which means that $f_2$ also has a limit at $c$
+        \end{proof}
+        \subsection*{Example}
+        \section{}
+            \begin{proof}
+                We can get
+                $$f(0)=f(0+0)=2f(0)$$
+                which means that $$f(0)=0$$
+                Given that$$\lim_{x\rightarrow 0}=L$$
+                i.e., $\forall \epsilon>0,\exists \delta>0,|x-0|<\delta\rightarrow|f(x)-L|<\epsilon$. When $x\rightarrow 0$, $$|f(x)-L|=|f(0)-L|<\epsilon$$
+                i.e.,$|-L|=|L|<\epsilon$. Because $\epsilon>0$ is arbitrary number.
+                Thus $L=0$ 
+            \end{proof}
+            \begin{proof}
+                For any $c\in \mathbb{R}$, $$f(x)=f(x-c)+f(c)$$
+                Thus, 
+                \begin{equation*}
+                    \begin{split}
+                        \lim_{x\rightarrow c}f(x)=&\lim_{x\rightarrow c}f(x-c)+f(c)\\
+                            =&\lim_{x\rightarrow 0}f(x)+f(c)\\
+                            =&f(c)
+                    \end{split}
+                \end{equation*}
+                Therefore, $f$ has limit at every $c\in \mathbb{R}$
+            \end{proof}
+    \section{}
+        \paragraph{
+            Let
+            \begin{equation*}
+                \begin{split}
+                    \lim_{x\rightarrow c}f(x)=L\\
+                \end{split}
+            \end{equation*}
+            which means that for any $\epsilon>0\in \mathbb{R}$, there exists $\delta>0$ such that if $0<|x-c|<\delta$, then $|f(x)-L|<\epsilon$.
+            $$|f(x)-L|<\epsilon$$
+            $$L-\epsilon<f(x)<L+\epsilon$$
+            $$0<|f(x)|<min\{|L+\epsilon|,|L-\epsilon|\}\leq|L+\epsilon|$$
+            i.e.,
+            $$0<|f(x)|<|L+\epsilon|$$
+            $$-|L|<|f(x)|-|L|<|L+\epsilon|-|L|$$
+            $$0<||f(x)|-|L||<min\{||L|+\epsilon|-|L|,|-|L||\}$$
+            i.e.,
+            $$0<||f(x)|-|L||<min\{||L|+\epsilon|-|L|,|L|\}$$
+            Because $\epsilon>0$, then $|L|+\epsilon|-|L|=\epsilon$
+            $$0<||f(x)|-|L||<min\{||L|+\epsilon|-|L|,|L|\}\leq \epsilon$$
+            i.e.,
+            $$0<||f(x)|-|L||<\epsilon$$
+            $$0<||f(x)|-|\lim_{x\rightarrow c}f(x)||<\epsilon$$
+            which means that
+            $$lim_{x\rightarrow}|f|(x)=|\lim_{x\rightarrow c}f(x)|$$
+        }
+
+    \section{}
+        \paragraph{
+            Let
+            \begin{equation*}
+                \begin{split}
+                    \lim_{x\rightarrow c}f(x)=L\\
+                \end{split}
+            \end{equation*}
+            which means that for any $\epsilon>0\in \mathbb{R}$, there exists $\delta>0$ such that if $0<|x-c|<\delta$, then $|f(x)-L|<\epsilon$.
+            $$|f(x)-L|<\epsilon$$
+            $$L-\epsilon<f(x)<L+\epsilon$$
+            $$\sqrt{L-\epsilon}<\sqrt{f(x)}<\sqrt{L+\epsilon}$$
+            $$\sqrt{L-\epsilon}-\sqrt{L}<\sqrt{f(x)}-\sqrt{L}<\sqrt{L+\epsilon}-\sqrt{L}$$
+            \begin{equation*}
+                \begin{split}
+                    |\sqrt{f(x)}-\sqrt{L}|<&min\{|\sqrt{L+\epsilon}-\sqrt{L}|,|\sqrt{L-\epsilon}-\sqrt{L}|\}\\
+                    \leq&|\sqrt{L+\epsilon}-\sqrt{L}|\\
+                \end{split}
+            \end{equation*}
+            i.e.,
+            $$|\sqrt{f(x)}-\sqrt{L}|<|\sqrt{L+\epsilon}-\sqrt{L}|$$
+            We have $f:(0,\infty)\rightarrow (0,\infty)$ where $f(\epsilon)=|\sqrt{L}-\epsilon|-\sqrt{L}$ is surjective. Then $f(\epsilon)$ is a arbitrary number because $\epsilon$ is a arbitrary number. Therefore,
+            $$\lim_{x\rightarrow c}\sqrt{f}(x)=\sqrt{\lim_{x\rightarrow c}f(x)}$$
+        }
+
+    \section{}
+        \paragraph{
+                Let $c=0$, $f(x)=sgn(x)$ and $g(x)=-sgn(x)$.
+                Then, $$(f+g)(x)=0$$
+                and 
+                $$(f\cdot g)(x)=-1$$
+                when $x\neq 0$
+                $$(f\cdot g)(0)=0$$
+                Therefore
+                $$\lim_{x\rightarrow 0}(f+g)(x)=0$$
+                $$\lim_{x\rightarrow 0}(f\cdot g)(x)=-1$$
+        }
+    
+    \section{}
+        \subsection{}
+            \begin{proof}
+                Let $(\delta_n)$ be a sequence such that $\delta_n>0$ and $\delta_n>\delta_{n+1}$ for all $n\in\mathbb{N}$.
+                Thus $\lim \delta_n$ must exists by monotone convergence theorem.
+                And it is easy to know that $\{x:|x-x_0 |<\delta_{n+1}\}\subseteq\{x:|x-x_0 |<\delta_n\} $.
+                We can get
+                $$M_f(x_0,\delta_n)-m_f(x_0,\delta_n)\geq M_f(x_0,\delta_{n+1})-m_f(x_0,\delta_{n+1})$$
+                which means that the sequence $(M_f(x_0,\delta_n)-m_f(x_0,\delta_n))$ is monotone sequence.
+                And $M_f(x_0,\delta_n)>m_f(x_0,\delta_n))$, i.e., $(M_f(x_0,\delta_n)-m_f(x_0,\delta_n))>0$
+                We can get $\lim (M_f(x_0,\delta_n)-m_f(x_0,\delta_n))$ must exists by monotone convergence theorem.
+            \end{proof}
+                
+            
+        \subsection{}
+            \subsubsection*{if part}
+            \begin{proof}
+                
+            \end{proof}
+
+\end{document}
