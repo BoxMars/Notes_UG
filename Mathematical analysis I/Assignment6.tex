@@ -201,9 +201,21 @@
                 
             
         \subsection{}
-            \subsubsection*{if part}
+            \subsubsection*{\textit{if} Part}
+            \textit{Cliam.} If $\lim_{\delta\rightarrow o^+}(M_f(x_0,\delta)-m_f(x_0,\delta))=0$, then $f(x)$ is continuous.
             \begin{proof}
-                
+                $\lim_{\delta\rightarrow o^+}(M_f(x_0,\delta)-m_f(x_0,\delta))=0$ which means that \\$\lim_{\delta\rightarrow o^+}M_f(x_0,\delta)=\lim_{\delta\rightarrow o^+}m_f(x_0,\delta)$ . Thus, $\lim_{\delta\rightarrow o^+}sup(A)=\lim_{\delta\rightarrow o^+}inf(A)$ where $A=\{f(x):x\in[a,b],|x-x_0|<\delta\}$. Therefore, $A$ has only one element $f(x_0)$.
+                Thus, $$\lim_{x\rightarrow x_0}f(x)=f(x_0)$$
+            \end{proof}
+
+            \subsubsection*{\textit{only if} Part}
+            \textit{Cliam.} If $f(x)$ is continuous, then $\lim_{\delta\rightarrow o^+}(M_f(x_0,\delta)-m_f(x_0,\delta))=0$.
+
+            \begin{proof}
+                $f(x)$ is continuous which means that $\lim_{x\rightarrow x_0}=f(x_0)$.
+                When $\delta\rightarrow 0^+$, $x\rightarrow x_0$,
+                $M_f(x_0,\delta)=sup\{\lim_{x\rightarrow x_0} f(x)\}=f(x_0)$\\,and $m_f(x_0,\delta)=inf\{\lim_{x\rightarrow x_0} f(x)\}=f(x_0)$
+                Therefore,$\lim_{\delta\rightarrow o^+}(M_f(x_0,\delta)-m_f(x_0,\delta))=0$
             \end{proof}
 
 \end{document}
