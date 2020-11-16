@@ -67,10 +67,65 @@
                 \begin{split}
                     B(x;n,\theta)=&\sum_{y=0}^xb(y;n,\theta)\\
                         =&\sum_{y=0}^x[B(n-y;n,1-\theta)-B(n-y-1;n,1-\theta)]\\
+                        =&B(n;n,1-\theta)+(B(n-1;n,1-\theta)-B(n-1;n,1-\theta)...)-B(n-x-1;n,1-\theta)\\
                         =&B(n;n,1-\theta)-B(n-x-1;n,1-\theta)\\
                         =&1-B(n-x-1;n,1-\theta)\\
                 \end{split}
             \end{equation*}
         }
+    \section{}
+        \begin{proof}
+            \begin{equation*}
+                \begin{split}
+                    b(x;n,\theta)=&C_n^x\theta^x(1-\theta)^{n-x}\\
+                        =&\frac{n!}{x!(n-x)!}\theta^x(1-\theta)^{n-x}\\
+                        \\
+                    b(x+1;n,\theta)=&C_n^{x+1}\theta^{x+1}(1-\theta)^{n-x-1}\\
+                        =&\frac{n!}{(x+1)!(n-x-1)!}\theta^{x+1}(1-\theta)^{n-x-1}\\
+                        \\
+                    \frac{b(x;n,\theta)}{b(x+1;n,\theta)}=& \frac{x+1}{n-x}\frac{1-\theta}{\theta}\\
+                        =&\frac{(x+1)(1-\theta)}{\theta(n-x)}\\
+                        \\
+                    b(x+1;n,\theta)=&\frac{\theta(n-x)}{(x+1)(1-\theta)}b(x;n,\theta)\\
+                \end{split}
+            \end{equation*}
+        \end{proof}         
+        \paragraph{
+            By the definition, when $\theta=\frac{1}{2}$
+            $$b(x;n,\frac{1}{2})=C_n^x(\frac{1}{2})^n$$
+            \begin{equation*}
+                \begin{split}
+                    \frac{b(x;n,\theta)}{b(x+1;n,\theta)}=&\frac{(x+1)(1-\theta)}{\theta(n-x)}\\
+                        =&\frac{x+1}{n-x}
+                \end{split}
+            \end{equation*}
+            When 
+            $$\frac{x+1}{n-x}>1$$
+            we can get 
+            $$x>\frac{n-1}{2}$$
+        }
+        \subsection*{a}
+        \paragraph{
+            $n$ is an even number and $x \in \mathbb{N}$.
+            Thus when
+            $x\geq\frac{n}{2}$
+            $$b(x;n,\theta)>b(x+1;n,\theta)$$
+            Similarily, when $x\leq\frac{n}{2}$
+            $$b(x;n,\theta)<b(x+1;n,\theta)$$
+            Therefore, we can get a maximum at $x=\frac{n}{2}$
+        }
+        \subsection*{b}
+        \paragraph{
+            $n$ is an odd number and $x \in \mathbb{N}$.
+            Thus when $x\geq\frac{n-1}{2}$
+            $$b(x;n,\theta)\geq b(x+1;n,\theta)$$
+            When $\frac{x+1}{n-x}=1$,i.e. $x=\frac{n-1}{2}$
+            which means $$b(\frac{n-1}{2};n,\theta)=b(\frac{n+1}{2};n,\theta)$$
+            We can also get that 
+            $$b(x;n,\theta)\leq b(x+1;n,\theta)$$
+            when $x<\frac{n-1}{2}$
+            Therefore, we can get a maximum at $x=\frac{n-1}{2}$ or $x=\frac{n+1}{2}$
+        }
+
 
 \end{document}
