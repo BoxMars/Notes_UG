@@ -6,7 +6,7 @@
 \usepackage{graphicx} 
 \usepackage{float} 
 \usepackage{fancyhdr}                                
-\usepackage{lastpage}            
+\usepackage{lastpage}          
 \usepackage{textcomp}                               
 \usepackage{layout}   
 \usepackage{subfigure} 
@@ -181,6 +181,80 @@
 
     \section{}
         \paragraph{
-            
+            Let $Y=\frac{X}{n}$ be the proportion of successes in $n$ experiments.
+            $$\mathbb{E}[Y]=\theta, \sigma=var(Y)=\frac{\theta(1-\theta)}{n}$$ 
         }
+        \subsection*{a}
+             \paragraph{
+                 We get the equations
+                 \begin{equation*}
+                     \begin{cases}
+                        \theta-c=0.4\\
+                        \theta+c=0.6\\
+                         k\sigma=c
+                     \end{cases}
+                     \Rightarrow
+                     \begin{cases}
+                        \theta=0.5\\
+                         c=0.1\\
+                         k=\frac{nc}{\theta(1-\theta)}=360
+                     \end{cases}
+                 \end{equation*}
+                 $$\mathbb{P}\geq 1-\frac{1}{k^2}=\frac{129599}{129600}\approx 0.9999>\frac{35}{36}$$
+             }
+        \subsection*{b}
+        \paragraph{
+            We get the equations
+            \begin{equation*}
+                \begin{cases}
+                   \theta-c=0.47\\
+                   \theta+c=0.53\\
+                    k\sigma=c
+                \end{cases}
+                \Rightarrow
+                \begin{cases}
+                   \theta=0.5\\
+                    c=0.03\\
+                    k=\frac{nc}{\theta(1-\theta)}=1200
+                \end{cases}
+            \end{equation*}
+            $$\mathbb{P}\geq 1-\frac{1}{k^2}=\frac{1439999}{1440000}\approx 0.9999>\frac{35}{36}$$
+        }
+        \subsection*{c}
+        \paragraph{
+            We get the equations
+            \begin{equation*}
+                \begin{cases}
+                   \theta-c=0.497\\
+                   \theta+c=0.503\\
+                    k\sigma=c
+                \end{cases}
+                \Rightarrow
+                \begin{cases}
+                   \theta=0.5\\
+                    c=0.003\\
+                    k=\frac{nc}{\theta(1-\theta)}=1.2\times10^4
+                \end{cases}
+            \end{equation*}
+            $$\mathbb{P}\geq 1-\frac{1}{k^2}=\frac{143999999}{1.44\times10^8}\approx 0.9999>\frac{35}{36}$$
+        }
+
+    \section{}
+    \paragraph{
+        By the definition
+        \begin{equation*}
+            \begin{split}
+                b^*(y;k,\theta)=&C_{y-1}^{k-1}\theta^k(1-\theta)^{y-k}\\
+                    =&\frac{k}{y}\times b(k;y,\theta)
+            \end{split}
+        \end{equation*}
+        \begin{equation*}
+            \begin{split}
+                \mathbb{E}[Y]=&\sum_{y=k}^\infty yb^*(y;k,\theta)\\
+                    =&\sum_{y=k}^\infty y C_{y-1}^{k-1}\theta^k(1-\theta)^{y-k}\\
+                    =&\sum_{y=k}^\infty y \frac{(y-1)!}{(k-1)!(y-k)!}\theta^k(1-\theta)^{y-k}\\
+                    =&\sum_{y=k}^\infty \frac{y!}{(k-1)!(y-k)!}\theta^k(1-\theta)^{y-k}\\
+            \end{split}
+        \end{equation*}
+    }
 \end{document}
