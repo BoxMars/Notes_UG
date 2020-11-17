@@ -245,7 +245,31 @@
         \begin{equation*}
             \begin{split}
                 b^*(y;k,\theta)=&C_{y-1}^{k-1}\theta^k(1-\theta)^{y-k}\\
-                    =&\frac{k}{y}\times b(k;y,\theta)
+            \end{split}
+        \end{equation*}
+        Consider the function 
+        $$f_m(z)=\sum_{k=0}^\infty C_{k+m}^m z^k$$
+        We know that 
+        $$C_{k+m}^m=C_{k+m-1}^{m-1}+C_{k+m-1}^m$$
+        Thus
+        \begin{equation*}
+            \begin{split}
+                f_m(z)=&\sum_{k=0}^\infty C_{k+m-1}^{m-1} z^k+\sum_{k=1}^\infty C_{k+m-1}^m z^k\\
+                    =&f_{m-1}(z)+z\sum_{k=1}^\infty C_{k+m-1}^m z^{k-1}\\
+                    =&f_{m-1}(z)+zf_m(z)\\
+            \end{split}
+        \end{equation*}
+        Thus,
+        $$f_m(z)=\frac{f_{m-1}(z)}{1-z}$$
+        and 
+        $$f_0(z)=\sum_{k=0}^\infty C_k^0z^k=\frac{1}{1-z}$$
+        Then 
+        $$f_m(z)=(\frac{1}{1-z})^m$$
+        \begin{equation*}
+            \begin{split}
+                \sum_{y=k}^\infty b^*(y;k,\theta)=&\sum_{y=k}^\infty C_{y-1}^{k-1}\theta^k(1-\theta)^{y-k}\\
+                    =&\theta^k\theta^{-k}\\
+                    =&1
             \end{split}
         \end{equation*}
         \begin{equation*}
@@ -254,7 +278,204 @@
                     =&\sum_{y=k}^\infty y C_{y-1}^{k-1}\theta^k(1-\theta)^{y-k}\\
                     =&\sum_{y=k}^\infty y \frac{(y-1)!}{(k-1)!(y-k)!}\theta^k(1-\theta)^{y-k}\\
                     =&\sum_{y=k}^\infty \frac{y!}{(k-1)!(y-k)!}\theta^k(1-\theta)^{y-k}\\
+                    =&\sum_{y=k}^\infty k\frac{y!}{k!(y-k)!}\theta^k(1-\theta)^{y-k}\\
+                    =&\sum_{y=k}^\infty kC_y^k\theta^k(1-\theta)^{y-k}\\
+                    =&k\sum_{y=k}^\infty C_y^k\theta^k(1-\theta)^{y-k}\\
+                    =&\frac{k}{\theta}\sum_{y=k}^\infty C_y^k\theta^{k+1}(1-\theta)^{y-k}\\
+                    =&\frac{k}{\theta}\sum_{y=k+1}^\infty C_{y+1-1}^{k-1}\theta^{k+1}(1-\theta)^{y-k-1}\\
+                    =&\frac{k}{\theta}\sum_{y=k+1}^\infty C_{(y+1)-1}^{k-1}\theta^{k+1}(1-\theta)^{y-(k+1)}\\
+                    =&\frac{k}{\theta}\sum_{y=k+1}^\infty b^*(y+1;k,\theta)\\
+                    =&\frac{k}{\theta}\\
             \end{split}
         \end{equation*}
     }
+
+    \section{}
+        \begin{proof}
+            By the definition,
+            \begin{equation*}
+                \begin{split}
+                    h(x;n,N,k)=&\frac{C_k^xC_{N-k}^{n-x}}{C_N^n}\\
+                        =&\frac{\frac{k!}{x!(k-x)!}\frac{(N-k)!}{(n-x)!(N-k-n+x)!}}{\frac{N!}{n!(N-n)!}}\\
+                        =&\frac{k!(N-k)!n!(N-n)!}{x!(k-x)!(n-x)!(N+x-k-n)!N!}\\
+                \end{split}
+            \end{equation*}
+            Thus
+            $$h(x+1;n,N,k)=\frac{k!(N-k)!n!(N-n)!}{(x+1)!(k-x-1)!(n-x-1)!(N+x-k-n+1)!N!}$$
+            \begin{equation*}
+                \begin{split}
+                    \frac{h(x+1;n,N,k)}{h(x;n,N,k)}&=\frac{x!(k-x)!(n-x)!(N+x-k-n)!}{(x+1)!(k-x-1)!(n-x-1)!(N+x-k-n+1)!}\\
+                        =&\frac{(k-x)(n-x)}{(x+1)(N+x-k-n+1)}
+                \end{split}
+            \end{equation*}
+        \end{proof}
+
+    \section{}
+        \begin{proof}
+            By the definition
+            \begin{equation*}
+                \begin{split}
+                    p(x;\lambda)=\frac{\lambda^x}{x!}e^{-\lambda}
+                \end{split}
+            \end{equation*}
+            Thus
+            $$p(x+1;\lambda)=\frac{\lambda^{x+1}}{(x+1)!}e^{-\lambda}$$
+            \begin{equation*}
+                \begin{split}
+                    \frac{p(x+1;\lambda)}{p(x;\lambda)}=&\frac{\frac{\lambda^{x+1}}{(x+1)!}e^{-\lambda}}{\frac{\lambda^x}{x!}e^{-\lambda}}\\
+                        =&\frac{\lambda}{x+1}
+                \end{split}
+            \end{equation*}
+        \end{proof}
+    
+    \section{}
+        \subsection{}
+            \paragraph{
+                Let $A$ be the event that a family’s fourth child is their first son.
+                \begin{equation*}
+                    \begin{split}
+                        \mathbb{P}(A)=&0.5^3\times 0.5\\
+                            =&\frac{1}{16}
+                    \end{split}
+                \end{equation*}
+            }
+        \subsection{}
+            \paragraph{
+                Let $B$ be the event that a family’s seventh child is their second daught.
+                \begin{equation*}
+                    \begin{split}
+                        \mathbb{P}(B)=&C_6^10.5^5\times 0.5^2\\
+                            =&\frac{7}{128}
+                    \end{split}
+                \end{equation*}
+            }
+        \subsection{}
+            \paragraph{
+                Let $C$ be the event that a family’s tenth child is their fourth or fifth son.
+                \begin{equation*}
+                    \begin{split}
+                        \mathbb{P}(C)=&C_{9}^40.5^6\times 0.5^4+C_{9}^50.5^5\times 0.5^5\\
+                            =&\frac{63}{512}
+                    \end{split}
+                \end{equation*}
+            }
+    
+    \section{}
+        \subsection{}
+            \paragraph{
+                Let $A$ be the event that the eighth person to hear the rumor will be the fifth to believe it.
+                \begin{equation*}
+                    \begin{split}
+                        \mathbb{P}(A)=&C_{7}^4 0.75^5\times 0.25^3\\
+                            =&\frac{8505}{65536}\\
+                            \approx&0.1298
+                    \end{split}
+                \end{equation*}
+            }
+
+        \subsection{}
+            \paragraph{
+                Let $B$ be the event that 2) the fifteenth person to hear the rumor will be the tenth to believe it.
+                \begin{equation*}
+                    \begin{split}
+                        \mathbb{P}(B)=&C_{14}^9 0.75^{10}\times 0.25^5\\
+                            \approx&0.1101
+                    \end{split}
+                \end{equation*}
+            }
+    
+    \section{}
+        \paragraph{
+            Let $A$ be the event that at the switch will not fail during the first 800 times it is turned on or off.
+            \begin{equation*}
+                \begin{split}
+                    \mathbb{P}(A)=&C_{800}^800 0.001^{0}\times (1-0.001)^800\\
+                        \approx&0.4491
+                \end{split}
+            \end{equation*}
+        }           
+    
+    \section{}
+        \subsection{}
+            \paragraph{
+                \begin{equation*}
+                    \begin{split}
+                        \mathbb{P}=&\frac{C_{14}^2}{C_{18}^2}\\
+                            =&\frac{91}{153}\\
+                            \approx&0.5948
+                    \end{split}
+                \end{equation*} 
+            }
+        \subsection{}
+            \paragraph{
+                \begin{equation*}
+                    \begin{split}
+                        \mathbb{P}=&\frac{C_{10}^2}{C_{18}^2}\\
+                            =&\frac{5}{17}\\
+                            \approx&0.2941
+                    \end{split}
+                \end{equation*}    
+            }
+        \subsection{}
+            \paragraph{
+                \begin{equation*}
+                    \begin{split}
+                        \mathbb{P}=&\frac{C_{6}^2}{C_{18}^2}\\
+                            =&\frac{5}{51}\\
+                            \approx&0.0980
+                    \end{split}
+                \end{equation*}
+            }
+
+    \section{}
+        \subsection{}
+            \paragraph{
+                \begin{equation*}
+                    \begin{split}
+                        \mathbb{P}=&\frac{C_4^1C_{76}^2}{C_{80}^3}\\
+                            =&\frac{285}{2054}\\
+                            \approx&0.1388
+                    \end{split}
+                \end{equation*}
+            }
+        \subsection{}
+            \paragraph{
+                $$\theta=\frac{4}{80}=\frac{1}{20}$$ 
+                \begin{equation*}
+                    \begin{split}
+                        \mathbb{P}=&C_3^1\theta^1(1-\theta)^2\\
+                            =&\frac{1083}{8000}\\
+                            \approx&0.1354
+                    \end{split}
+                \end{equation*}  
+            }
+
+    \section{}
+        \paragraph{
+            By the definition,
+            $$\mathbb{P}(X)=\frac{\lambda^x}{x!}e^{-\lambda}$$
+            where $\lambda=np=1.2$
+            \begin{equation*}
+                \begin{split}
+                    \mathbb{P}(X\leq2)=&\mathbb{P}(X=0)+\mathbb{P}(X=1)+\mathbb{P}(X=2)\\
+                        =&e^{-1.2}+1.2e^{-1.2}+\frac{1.2^2}{2}e^{-1.2}\\
+                        =&\frac{73}{25}e^{-1.2}\\
+                        \approx&0.8795\\
+                \end{split}
+            \end{equation*}
+        }
+    
+    \section{}
+        \paragraph{
+            By the definition,
+            $$\mathbb{P}(X)=\frac{\lambda^x}{x!}e^{-\lambda}$$
+            where $\lambda=0.25$
+            \begin{equation*}
+                \begin{split}
+                    \mathbb{P}(X\leq1)=&\mathbb{P}(X=0)+\mathbb{P}(X=1)\\
+                        =&e^{-0.25}+0.25e^{-0.25}\\
+                        \approx&0.0.9735\\
+                \end{split}
+            \end{equation*}
+        }
 \end{document}
