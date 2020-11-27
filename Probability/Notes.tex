@@ -1,0 +1,103 @@
+\documentclass[titlepage]{article}
+\title{Notes of MATH 2005}
+\author{Box, ZHANG Huakang}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx} 
+\usepackage{float} 
+\usepackage{fancyhdr}                                
+\usepackage{lastpage}          
+\usepackage{textcomp}                               
+\usepackage{layout}   
+\usepackage{subfigure} 
+\newtheorem*{definition}{Definition}
+\newtheorem*{remark}{Remark}
+\begin{document}
+    \maketitle
+    \section{Discrete Uniform Distributions}
+        \subsection*{Definition}
+            A discrete random variable $X$ is said to have a \textit{discrete uniform distribution}, and it is called a \textit{discrete uniform variable}, if it can take on $k$ different values: $x_1,x_2,...,x_k$, and its probability distribution $f(x)$ is given by
+            $$f(x_i)=\frac{1}{k}$$
+            where $i=1,2,...,k$.
+
+        \subsection*{Mean and Variance}
+            \paragraph{
+                \begin{equation*}
+                    \begin{split}
+                        \mathbb{E}[X]=&\sum_{i=1}^k x_if(x_i)\\
+                        =&\frac{1}{k}\sum x_i\\
+                        \mathbb{E}[X^2]=&\sum_{i=1}^k {x_i}^2f(x_i)\\
+                        =&\frac{1}{k}\sum x_i^2\\
+                        var(X)=&\mathbb{E}[X^2]-(\mathbb{E}[X])^2\\
+                        =&\frac{1}{k}\sum x_i^2-(\frac{1}{k}\sum x_i)^2\\
+                    \end{split}
+                \end{equation*}
+            }
+
+    \section{Bernoulli Distributions}
+        \subsection*{Definition}
+            Support that and experiment has two possible outcomes: success and failure, and their probability are respectively, $\theta$ and $1-\theta$. Then, this experiment is called a \textit{Bernoulli Distributions}. Let $X$ be the number of successes of a Bernoulli experiment, i.e. $X=1$ or $X=0$. Then, $X$ is called a random variable having the Bernoulli probability distribution, which is given by
+            $$f(x;\theta)=\theta^x(1-\theta)^{1-x}$$
+            where $x=0,1$ and $0<\theta<1$ is a parameter.
+
+        \subsection*{Mean and Variance}
+            \paragraph{
+                \begin{equation*}
+                    \begin{split}
+                        \mathbb{E}[X]=&\theta\\
+                        \mathbb{E}[X^2]=&\theta\\
+                        var(X)=&\mathbb{E}[X^2]-(\mathbb{E}[X])^2\\
+                        =&\theta-\theta^2\\
+                        =&\theta(1-\theta)
+                    \end{split}
+                \end{equation*}
+            }
+    \section{Binomial Distributions}
+        \subsection*{Definition}
+            Let $n$ be a nutural number, and let $0<\theta<1$. Then, a discrete random variable $X$ is said to have a \textit{binomial distribution}, and $X$ is called a binomial random variable, if its probability distribution $b(x;n,\theta)$ is given by
+            $$b(x;n,\theta)=C_n^x\theta^x(1-\theta)^{n-x}$$
+            where $x=1,2,...,n$ ,$n$ and $\theta$ are two parameters, and 
+            $$C_n^x=\frac{n!}{x!(n-x)!}$$
+            is the total number of combinations of $n$ distinct numbers taken $x$ numbers at a time.
+        \subsection*{Remark}
+        We consider $n$ independent Bernoullis experiments, in
+        which the parameter $\theta$ (the probability of a success) is the same
+        for each experiment. Let $X$ be the total number of successes in
+        this sequence of $n$ independent Bernoullis experiments. Then, we
+        can see that $X$ is a random variable having a binomial distribution
+        with parameters $n$ and $\theta$, i.e., we have the following result.
+        \\
+        Let $X_1,X_2,...,X_n$ be $n$ independent Bernoulli random variables with the same parameter $\theta$. Then, the random variable $X=X_1+X_2+...+X_n$ has a binomial distribution with parameters $n$ and $\theta$.
+        \subsection*{Mean and Variance}
+            \paragraph{
+                \begin{equation*}
+                    \begin{split}
+                        \mathbb{E}[X]=&n\theta\\
+                        var(X)=&var(x_1+X_2+...+X_n)\\
+                            =&var(X_1+X_2+...+X_{n-1})+var(X_n)-2cov(X_1+X_2+...+X_{n-1},X_n)\\
+                            &...\\
+                            =&var(X_1)+var(X_2)+...+var(X_n)\\
+                            =&n\theta(1-\theta)
+                    \end{split}
+                \end{equation*}
+            }
+        \subsection*{Theorem}
+                \paragraph{
+                    \begin{equation*}
+                        \begin{split}
+                            b(x;n,\theta)=&C_n^x\theta^x(1-\theta)^{n-x}\\
+                                =&C_n^{n-x}(1-\theta)^{1-\theta}\theta^x\\
+                                =&b(n-x;n,1-\theta)\\
+                        \end{split}
+                    \end{equation*}
+                }
+                \paragraph{
+                    Since a binomial random variable $X$ with parameters $n$ and $\theta$ is the total number of successes in $n$ independent Bernoullis experiments. $Y=\frac{X}{n}$ is the proportion of successes in $n$ independent Bernoullis experiments.
+                    $$\mathbb{E}[Y]=\theta$$
+                    $$var(Y)=\frac{\theta(1-\theta)}{n}$$
+                }
+
+
+\end{document}   

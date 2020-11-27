@@ -1,0 +1,72 @@
+\documentclass{article}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amstext}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx} 
+\usepackage{float} 
+\usepackage{fancyhdr}                                
+\usepackage{lastpage}          
+\usepackage{textcomp}                               
+\usepackage{layout}   
+\usepackage{subfigure} 
+\pagestyle{fancy}  
+\lhead{ZHANG HUAKANG}
+\chead{Assignment 6} 
+\rhead{DB92760} 
+\renewcommand{\baselinestretch}{1.05}
+\title{Assignment 6 of MATH 2005}
+\author{ZHANG Huakang/DB92760}
+
+\begin{document}
+    \maketitle
+    \section{}
+        \begin{equation*}
+            \begin{split}
+                \mathbb{P}[X< -\theta\log(1-p)]=&\int_{-\infty}^{-\theta\log(1-p)}f(y)dy\\
+                    =&\int_0^{-\theta\log(1-p)}\frac{1}{\theta}e^{-\frac{y}{\theta}}dy\\
+                    =&-e^{-\frac{y}{\theta}}|_{0}^{-\theta\log(1-p)}\\
+                    =&1-(1-p)\\
+                    =&p
+            \end{split}
+        \end{equation*}
+
+    \section{}
+        \begin{equation*}
+            \begin{split}
+                \mathbb{E}[X]=&\int_{-\infty}^{\infty}xf(x)dx\\
+                    =&\int_{0}^{\infty}x2\alpha xe^{-\alpha x^2}dx\\
+                    =&2\alpha\int_{0}^{\infty} x^2e^{-\alpha x^2}dx\\
+            \end{split}
+        \end{equation*}
+        Let $u=x$ and $v'=xe^{-\alpha x^2}$, thus $u'=1$ and $v=-\frac{1}{2\alpha}e^{-\alpha x^2}$
+        \begin{equation*}
+            \begin{split}
+                \int x^2e^{-\alpha x^2}dx=&-\frac{x}{2\alpha}e^{-\alpha x^2}+\int \frac{1}{2\alpha}e^{-\alpha x^2}dx\\
+                    =&-\frac{x}{2\alpha}e^{-\alpha x^2}+\frac{\sqrt{\pi}erf(\sqrt{\alpha}x)}{2\sqrt{\alpha}}\\
+            \end{split}
+        \end{equation*}
+        Thus
+        \begin{equation*}
+            \begin{split}
+                \mathbb{E}[X]=&[-\frac{x}{2\alpha}e^{-\alpha x^2}+\frac{\sqrt{\pi}erf(\sqrt{\alpha}x)}{2\sqrt{\alpha}}]|_0^{\infty}\\
+                    =&\frac{\sqrt{\pi}}{2\sqrt{\alpha}}
+            \end{split}
+        \end{equation*}
+        And 
+        \begin{equation*}
+            \begin{split}
+                \mathbb{E}[X^2]=&\int_{-\infty}^{\infty}x^2f(x)dx\\
+                    =&\int_{0}^{\infty}x^22\alpha xe^{-\alpha x^2}dx\\
+                    =&2\alpha\int_{0}^{\infty}x^3e^{-\alpha x^2}dx\\
+            \end{split}
+        \end{equation*}
+        Let $u=x^2$ and $v'=xe^{\alpha x^2}$, thus $u'=2x$ and $v=-\frac{1}{2\alpha}e^{-\alpha x^2}$
+        \begin{equation*}
+            \begin{split}
+                \int x^3e^{-\alpha x^2}dx=&-\frac{x^2}{2\alpha}e^{-\alpha x^2}+\int \frac{x}{\alpha}e^{-\alpha x^2}
+            \end{split}
+        \end{equation*}
+
+\end{document}
