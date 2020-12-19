@@ -48,9 +48,98 @@
             $$I\subset \cup_{x\in I}V_\delta(x)$$ 
             When $x\in I$, then $x\in \cup_{x\in I}V_\delta(x)$. Thus $$|f(x)|\leq \sup\{M_i:i\in I,x\in V_{\delta}(i),|f(x)|\leq M_i\}$$ which means $f(x)$ is bounded in $I$.
         \end{proof}
+        \begin{proof}
+            Assume that $f$ is not bounded on $I$ whcih means that $\exists x_0\in I$ such that $x\rightarrow x_0, |f(x_0)|\rightarrow +\infty$. Thus, $\forall x\in V_\delta(x_0)$, there do not exist a real number $M$ such that $|f(x)|\leq M$ which contradicts with $f$ is bounded on a neighborhood $V_{\delta_x}(x), \forall x\in I$
+        \end{proof}
     \section{}
         \paragraph{
-            
+            $$g(x)=\frac{1}{x},x\in(0,1)$$
         }
+    \section{}
+        \subsection{}
+            \begin{proof}
+                Let $\{a_n\}$ and $\{b_n\}$ be two sequences defined as $a_n=n+\frac{1}{n}$ and $b_n=n$. Thus $\lim an-bn=0$. But $|f(a_n)-f(b_n)|=2+\frac{1}{n^2}\geq 2$. Therefore, $f(x)=x^2$ is not uniformly continuous on $A$
+            \end{proof}
+        \subsection{}
+            \begin{proof}
+                Let $\{a_n\}$ and $\{b_n\}$ be two sequences defined as $a_n=\frac{1}{n\pi}$ and $b_n=\frac{1}{2n\pi+\frac{\pi}{2}}$. Thsu $\lim a_n-b_n=0$. But $|g(a_n)-g(b_n)|=1$. Therefore, $g(x)=\sin\frac{1}{x}$ is not uniformly continuous on $B$
+            \end{proof}
+    \section{}
+        \begin{proof}
+            $f(x)$ is continuous on $[0,a]$ for some positive constant $a$. Because $[0,1]$ is closed bounded interval, $f(x)$ is uniformly continuous on $[0,a]$. We know that $f(x)$ is uniformly continuous on $(a,+\infty)$. Then $f(x)$ is uniformly continuous on $(0,+\infty)$ 
+        \end{proof}
+
+    \section{}
+        \begin{proof}
+            $g_\epsilon(x)$ is uniformly continuous on $A$ which means that when $x,u\in A$ and $|x-u|<\delta(\epsilon)$, then $$|g_\epsilon(x)-g_\epsilon(u)|<\epsilon$$
+            We know that
+            $$|f(x)-g_\epsilon(x)|<\epsilon$$
+            and 
+            $$|f(u)-g_\epsilon(u)|<\epsilon$$
+            We can get
+            $$f(x)-g_\epsilon(x)<\epsilon$$
+            and 
+            $$g_\epsilon(u)-f(u)<\epsilon$$
+            Thus
+            $$f(x)-f(u)-(g_\epsilon(x)-g_\epsilon(u))<2\epsilon$$
+            i.e.
+            $$f(x)-f(u)<2\epsilon+g_\epsilon(x)-g_\epsilon(u)<3\epsilon$$
+            Therefore,
+            $$f(x)-f(u)<3\epsilon$$
+            $$|f(x)-f(u)|<3\epsilon$$
+            where $\epsilon$ is arbitrary, then $3\epsilon$ is also arbitrary.
+            whcih means that $f$ is also uniformly continuous on $A$.
+        \end{proof}
+    \section{}
+        
+    \section{}
+        \subsection{}
+            \paragraph{
+                \begin{equation*}
+                    \begin{split}
+                        f'(c)=&\lim _{x\rightarrow c}\frac{f(x)-f(c)}{x-c}\\
+                            =&\lim _{x\rightarrow c} \frac{x^3-c^3}{x-c}\\
+                            =&\lim _{x\rightarrow c} x^2+xc+c^2\\
+                            =&3c^2
+                    \end{split}
+                \end{equation*}
+            }
+        \subsection{}
+            \paragraph{
+                \begin{equation*}
+                    \begin{split}
+                        g'(c)=&\lim _{x\rightarrow c} \frac{g(x)-g(c)}{x-c}\\
+                            =&\lim_{x\rightarrow c}\frac{\frac{1}{x}-\frac{1}{c}}{x-c}\\
+                            =&\lim_{x\rightarrow c}\frac{c-x}{xc(x-c)}\\
+                            =&\lim _{x\rightarrow c} -\frac{1}{cx}\\
+                            =&-\frac{1}{c^2}
+                    \end{split}
+                \end{equation*}
+            }
+        \subsection{}
+            \paragraph{
+                \begin{equation*}
+                    \begin{split}
+                        h'(c)=&\lim _{x\rightarrow c} \frac{h(x)-h(c)}{x-c}\\
+                            =&\lim_{x\rightarrow c}\frac{\sqrt{x}-\sqrt{c}}{x-c}\\
+                            =&\lim_{x\rightarrow c}\frac{\sqrt{x}-\sqrt{c}}{(\sqrt{x}-\sqrt{c})(\sqrt{c}+\sqrt{x})}\\
+                            =&\lim_{x\rightarrow c}\frac{1}{\sqrt{x}+\sqrt{c}}\\
+                            =&\frac{1}{2\sqrt{c}}
+                    \end{split}
+                \end{equation*}
+            }
+        \subsection{}
+            \paragraph{
+                \begin{equation*}
+                    \begin{split}
+                        k'(c)=&\lim_{x\rightarrow c}\frac{k(x)-k(c)}{x-c}\\
+                            =&\lim_{x\rightarrow c}\frac{\frac{1}{\sqrt{x}}-\frac{1}{\sqrt{c}}}{x-c}\\
+                            =&\lim_{x\rightarrow c} \frac{\sqrt{c}-\sqrt{x}}{\sqrt{cx}(x-c)}\\
+                            =&\lim_{x\rightarrow c}\frac{\sqrt{c}-\sqrt{x}}{\sqrt{xc}(\sqrt{x}-\sqrt{c})(\sqrt{c}+\sqrt{x})}\\
+                            =&\lim_{x\rightarrow c}-\frac{1}{\sqrt{cx}(\sqrt{x}+\sqrt{c})}\\
+                            =&-\frac{1}{2c\sqrt{c}}
+                    \end{split}
+                \end{equation*}
+            }
 \end{document}
 
