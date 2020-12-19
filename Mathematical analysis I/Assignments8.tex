@@ -16,7 +16,7 @@
 \renewcommand{\baselinestretch}{1.05}
 \title{Assignment 8 of MATH 2003}
 \author{ZHANG Huakang/DB92760}
-
+\newenvironment{claim}[1]{\par\noindent\textit{Claim.}\space#1}{}
 \begin{document}
     \maketitle
 
@@ -91,7 +91,10 @@
             whcih means that $f$ is also uniformly continuous on $A$.
         \end{proof}
     \section{}
-        
+        \begin{proof}
+            Assume that $f:[0,p]\rightarrow\mathbb{R}$. $[0,p]$ is closed bounded interval and $f$ is continuous, then $f([0,p])$ is also closed bounded interval. Then $f$ is bounded. and $f$ is uniformly continuous since $[0,p]$ is closed bounded interval. Because $f([0,p])=f([np.(n+1)p]), n\in\mathbb{Z}$, we can get that $f:[np,(n+1)p]\rightarrow \mathbb{R}$ is also bounded and uniformly continuous.
+            Therefor $f$ is bounded and uniformly continuous on $\mathbb{R}$ 
+        \end{proof}
     \section{}
         \subsection{}
             \paragraph{
@@ -141,5 +144,90 @@
                     \end{split}
                 \end{equation*}
             }
+    \section{}
+        \begin{claim}
+            If $f:\mathbb{R}\rightarrow \mathbb{R}$ is an even function and  has a derivative at every point, then the derivative $f'$ is an odd function.
+        \end{claim}
+        \begin{proof}
+            \begin{equation*}
+                \begin{split}
+                    f'(c)=&\lim_{x\rightarrow c}\frac{f(x)-f(c)}{x-c}\\
+                    f'(-c)=&\lim_{x\rightarrow -c}\frac{f(x)-f(-c)}{x+c}\\
+                        =&\lim_{x\rightarrow -c}\frac{f(x)-f(c)}{x+c}\\
+                        =&\lim_{x\rightarrow c}\frac{f(-x)-f(c)}{-x+c}\\
+                        =&\lim_{x\rightarrow c}\frac{f(x)-f(c)}{c-x}\\
+                        =&-\lim_{x\rightarrow c}\frac{f(x)-f(c)}{x-c}\\
+                        =&-f'(c)
+                \end{split}
+            \end{equation*}
+            $f'(x)$ is odd function.
+        \end{proof}
+        \begin{claim}
+            If $f:\mathbb{R}\rightarrow \mathbb{R}$ is an odd function and  has a derivative at every point, then the derivative $f'$ is an even function.
+        \end{claim}
+        \begin{proof}
+            \begin{equation*}
+                \begin{split}
+                    g'(c)=&\lim_{x\rightarrow c}\frac{g(x)-g(c)}{x-c}\\
+                    g'(-c)=&\lim_{x\rightarrow -c}\frac{g(x)-g(-c)}{x+c}\\
+                        =&\lim_{x\rightarrow -c}\frac{g(x)+g(c)}{x+c}\\
+                        =&\lim_{x\rightarrow c}\frac{g(-x)+g(c)}{-x+c}\\
+                        =&\lim_{x\rightarrow c}\frac{-g(x)+g(c)}{c-x}\\
+                        =&\lim_{x\rightarrow c}\frac{g(x)-g(c)}{x-c}\\
+                        =&g'(c)\\
+                \end{split}
+            \end{equation*}
+            $f'(x)$ is even function.
+        \end{proof}
+
+    \section{}
+        \begin{claim}
+            $g$ is differentiable for all $x\in\mathbb{R}$
+        \end{claim}
+        \begin{proof}
+            When $c\neq 0$
+            \begin{equation*}
+                \begin{split}
+                    g'(c)=&\lim_{x\rightarrow c}\frac{g(x)-g(c)}{x-c}\\
+                        =&\lim_{x\rightarrow c} \frac{x^2\sin\frac{1}{x^2}-c^2\sin\frac{1}{c^2}}{x-c}\\
+                        =&2c\sin\frac{1}{c^2}-\frac{2}{c}\cos\frac{1}{c^2}\\
+                \end{split}
+            \end{equation*}
+            and when $c=0$
+            \begin{equation*}
+                \begin{split}
+                    g'(0)=&\lim_{x\rightarrow 0}\frac{g(x)-g(0)}{x-0}\\
+                        =&\lim_{x\rightarrow 0}\frac{g(x)}{x}\\
+                        =&\lim_{x\rightarrow 0}x\sin\frac{1}{x^2}\\
+                        =&0
+                \end{split}
+            \end{equation*}
+            Therefore, $f$ is differentiable on $\mathbb{R}$
+        \end{proof}
+        \begin{claim}
+            The derivative $g'$ is not bounded on the interval $[-1,1]$
+        \end{claim}
+        \begin{proof}
+            When $x\rightarrow 0$, $2c\sin \frac{1}{c^2}\rightarrow 0$, $\frac{2}{c}\rightarrow \infty$and $|\cos \frac{1}{x^2}|\leq 1$ which means that $g'$ can not be bounded on the neighborhood of $0$ and therefore $g'$ is not bounded on $[-1,1]$
+        \end{proof}
+    \section{}
+        \begin{proof}
+            \begin{equation*}
+                \begin{split}
+                    f'(0)=&\lim_{x\rightarrow 0}\frac{f(x)-f(0)}{x-0}\\ 
+                        =&\lim_{x\rightarrow 0} \frac{x^r\sin \frac{1}{x}}{x}\\
+                        =&\lim_{x\rightarrow 0} x^{r-1}\sin \frac{1}{x}\\
+                \end{split}
+            \end{equation*}
+            When $r>1$,\\
+            $$\lim_{x\rightarrow 0} x^{r-1}\sin \frac{1}{x}=0$$
+            since $\lim_{x\rightarrow 0} x=0$ and $|\sin \frac{1}{x}|<1$.\\
+            When $r=1$,\\
+            $$\lim_{x\rightarrow 0} x^{r-1}\sin \frac{1}{x}=\lim_{x\rightarrow 0}\sin\frac{1}{x}$$
+            Limit do not exist.\\
+            When $0<r<1$,\\
+            $$\frac{1}{x^{1-r}}$$ is not bounded on neighborhood of $0$ and therefore limit do not exist.\\
+            Thus, $f'(0)$exists when $r>1$.
+        \end{proof}
 \end{document}
 
