@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx} 
+\usepackage{float} 
+\usepackage{fancyhdr}                                
+\usepackage{lastpage}                                           
+\usepackage{layout}   
+\usepackage{subfigure} 
+\pagestyle{fancy}  
+\lhead{ZHANG HUAKANG}
+\chead{Assignment 8} 
+\rhead{DB92760} 
+\renewcommand{\baselinestretch}{1.05}
+\title{Assignment 8 of MATH 2003}
+\author{ZHANG Huakang/DB92760}
+
+\begin{document}
+    \maketitle
+
+    \section{}
+        \paragraph{
+            By the definition of continuous,$\forall \epsilon >0, \exists \delta >0$ s.t. if $|x-x_0|<\delta$ then $|f(x)-f(x_0)|<\epsilon$ and  $|g(x)-g(x_0)|<\epsilon$ i.e., 
+            \begin{equation*}
+                \begin{split}
+                    -\epsilon<f(x)-f(x_0)<&\epsilon\\
+                    -\epsilon<g(x)-g(x_0)<&\epsilon\\
+                    f(x)-f(x_0)-(g(x)-g(x_0))<&\epsilon-\epsilon\\
+                    f(x)-g(x)-(f(x_0)-g(x_0))<& 0\\
+                    f(x)-g(x)<& f(x_0)-g(x_0)<0\\
+                    f(x)-g(x)<&0\\
+                \end{split}
+            \end{equation*}
+            when $|x-x_0|<\delta$ which means that $x\in V_\delta(x_0)$
+        }
+    \section{}
+        Yes.
+        \begin{proof}
+            Assume that $f$ is not constant. Then is must exist $x$, $y\in [0,1]$ such that $f(x)$ and $f(y)$ are rational values and $f(x)\neq f(y)$. By \textit{Bolzano’s Intermediate Value Theorem} we know that $\forall k\in (\mathbb{R}\backslash \mathbb{Q})$ satisfies $\inf\{f(x),f(y)\}<k<\sup\{f(x),f(y)\}$,there exists a point $c\in (\inf\{x,y\},\sup\{x,y\})$ such that $f(c)=k$ whcih contradicts with that $f(x)$ is rational value. Therefore, $f(x)$ is constant.
+        \end{proof}
+    \section{}
+        \begin{proof}
+            We know that $\forall x_i\in I,\exists M_i\in \mathbb{R}$, such that
+            $|f(x)|\leq M_i$ where $x\in V_\delta(i)$. Therefore,$|f(x)|\leq \sup\{M_i,M_j\}$ where $x\in V_{\delta_i}(i)\cup V_{\delta_j}(j)$
+            It is easy to get that
+            $$I\subset \cup_{x\in I}V_\delta(x)$$ 
+            When $x\in I$, then $x\in \cup_{x\in I}V_\delta(x)$. Thus $$|f(x)|\leq \sup\{M_i:i\in I,x\in V_{\delta}(i),|f(x)|\leq M_i\}$$ which means $f(x)$ is bounded in $I$.
+        \end{proof}
+    \section{}
+        \paragraph{
+            
+        }
+\end{document}
+
