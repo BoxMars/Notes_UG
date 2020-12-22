@@ -71,7 +71,6 @@
         \\
         Let $X_1,X_2,...,X_n$ be $n$ independent Bernoulli random variables with the same parameter $\theta$. Then, the random variable $X=X_1+X_2+...+X_n$ has a binomial distribution with parameters $n$ and $\theta$.
         \subsection*{Mean and Variance}
-            \paragraph{
                 \begin{equation*}
                     \begin{split}
                         \mathbb{E}[X]=&n\theta\\
@@ -82,9 +81,8 @@
                             =&n\theta(1-\theta)
                     \end{split}
                 \end{equation*}
-            }
+            
         \subsection*{Theorem}
-                \paragraph{
                     \begin{equation*}
                         \begin{split}
                             b(x;n,\theta)=&C_n^x\theta^x(1-\theta)^{n-x}\\
@@ -92,12 +90,45 @@
                                 =&b(n-x;n,1-\theta)\\
                         \end{split}
                     \end{equation*}
-                }
-                \paragraph{
                     Since a binomial random variable $X$ with parameters $n$ and $\theta$ is the total number of successes in $n$ independent Bernoullis experiments. $Y=\frac{X}{n}$ is the proportion of successes in $n$ independent Bernoullis experiments.
                     $$\mathbb{E}[Y]=\theta$$
                     $$var(Y)=\frac{\theta(1-\theta)}{n}$$
-                }
+                
 
+    \section{Negative Binomial Distributions}
+        \subsection*{Definition}
+                Let $k$ be a nutural number and let $0<\theta<1$. Then, a discrete random variable $Y$ is said ti have a (Pascal) negative binomial distribution, and it is called a (Pascal) negative binomial random variable, if its probability distribution $b^*(y;k,\theta)$ is given by
+                $$b^*(y;k,\theta)=C_{y-1}^{k-1}\theta^k(1-\theta)^{y-k}$$
+                where $k$ and $\theta$ are two parameters.
 
+        \subsection*{Mean and Variance}
+            \begin{equation*}
+                \begin{split}
+                    \mathbb{E}[Y]=&\sum_{i=k}^\infty ib^*(i;k.\theta)\\
+                        =&\sum_{i=k}^\infty iC_{i-1}^{k-1}\theta^k(1-\theta)^{i-k}\\
+                        &...\\
+                        =&\frac{k}{\theta}\\
+                    var(Y)=&\frac{k}{\theta}(\frac{1}{\theta}-1)
+                \end{split}
+            \end{equation*}
+
+        \subsection*{Theorem}
+            Let $Y$ be a negative binomial random variable with parameters $k$ and $\theta$. Then for each $y=k,k+1...$,
+            $$b^*(y;k,\theta)=\frac{k}{y}b(k;y,\theta)$$
+            \begin{proof}
+                By the definition, we have 
+                \begin{equation*}
+                    \begin{split}
+                        b^*(y;k,\theta)=&C_{y-1}^{k-1}\theta^k(1-\theta)^{y-k}\\
+                            =&\frac{(y-1)!}{(k-1)!(y-k)!}\theta^k(1-\theta)^{y-k}\\
+                            =&\frac{k}{y}\frac{y!}{k!(y-k)!}\theta^k(1-\theta)^{y-k}\\
+                            =&\frac{k}{y}b(k;y,\theta)
+                    \end{split}
+                \end{equation*}
+            \end{proof}
+    \section{Geometric Distributions}
+        \subsection*{Definition}
+            If $X$ is a (Pascal) negative binomial random variable with parameters $k=1$ and $\theta$, we say that this random variable $X$ has a geometric distribution, and we also call this random variable as a geometric random variable. By the definition of negative binomial distribution, we see that the probability distribution $g(x;\theta)=b^*(x;1,\theta)$ of geometric distribution is given by 
+            $$g(x;\theta)=\theta(1-\theta)^{x-1}$$
+            where $\theta$ is a parameter.
 \end{document}   
