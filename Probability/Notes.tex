@@ -12,10 +12,29 @@
 \usepackage{textcomp}                               
 \usepackage{layout}   
 \usepackage{subfigure} 
-\newtheorem*{definition}{Definition}
 \newtheorem*{remark}{Remark}
+
 \begin{document}
     \maketitle
+    \tableofcontents
+    \section{Probability Measure}
+        \paragraph{
+            A probability measure must datisfy the following three postulates:
+        }
+        \begin{enumerate}
+            \item $\mathbb{P}(S)=1$
+            \item For each event $A$, the probability of $A$ is a nonnegative real number, i.e., $\mathbb{P}(A)\geq 0$
+            \item if $\{A_n\}$ is an infty sequence of events if $F$ such that, for any $i\neq j$, $A_i\cap A_j=\emptyset$, then $$\mathbb{P}(\cup_{n=1}^\infty)=\sum_{n=1}^\infty\mathbb{P}(A_n)$$
+        \end{enumerate}
+    \section{Conditional Probability}
+        \paragraph{
+            Let $(S,F,\mathbb{P})$ be a probability space, and let $A$ and $B$ are two random events in the sample space $S$ with $\mathbb{P}(B)\neq 0$. Then the Conditional probability of $A$ given $B$ is defined by 
+            $$\mathbb{P}(A|B)=\frac{\mathbb{P}(A\cap B)}{\mathbb{P}(B)}$$
+            $$\mathbb{P}(A\cap B)=\mathbb{P}(A|B)\mathbb{P}(B)=\mathbb{P}(B|A)\mathbb{P}(A)$$
+        }
+        \paragraph{
+            Let $n$ random events
+        }
     \section{Discrete Uniform Distributions}
         \subsection*{Definition}
             A discrete random variable $X$ is said to have a \textit{discrete uniform distribution}, and it is called a \textit{discrete uniform variable}, if it can take on $k$ different values: $x_1,x_2,...,x_k$, and its probability distribution $f(x)$ is given by
@@ -131,4 +150,280 @@
             If $X$ is a (Pascal) negative binomial random variable with parameters $k=1$ and $\theta$, we say that this random variable $X$ has a geometric distribution, and we also call this random variable as a geometric random variable. By the definition of negative binomial distribution, we see that the probability distribution $g(x;\theta)=b^*(x;1,\theta)$ of geometric distribution is given by 
             $$g(x;\theta)=\theta(1-\theta)^{x-1}$$
             where $\theta$ is a parameter.
+        \subsection*{Mean and Variance}
+            \begin{equation*}
+                \begin{split}
+                    \mathbb{E}[X]=&\frac{1}{\theta}\\
+                    var(X)=&\frac{1}{\theta}(\frac{1}{\theta}-1)
+                \end{split}
+            \end{equation*}
+            % \begin{proof}
+            %     For any $0<\theta<1$, Since $0<1-\theta<1$ by the geometric series we have the following identity
+            %     $$\sum_{x=1}^\infty \theta(1-\theta)^{x-1}=\theta\frac{1}{1-(1-\theta)}=1$$
+
+            % \end{proof}
+        \subsection*{Theorem}
+            \paragraph{
+                The geometric distribution has the memoryless property, i.e. if $X$ is a geometric random variable, then, for any nature $n$,
+                $$\mathbb{P}(X=x+n|X>n)=\mathbb{P}(X=x)$$
+            }
+    \section{Hyper-geometric Distributions}
+        \subsection*{Definition}
+            \paragraph{
+                A random variable $X$ is said to have a hyper-geometric distribution, and it is referred to as a hyper-geometric random variable, if its probability distribution is given by 
+                $$h(x;n,N,k)=\frac{C_k^xC_{N-k}^{n-x}}{C_N^n}$$
+                for $x=0,1,...,n$ with $x\leq k$ and $n-x\leq N-k$, where $n,N,k$ are parameters.
+            }
+        \subsection*{Mean and Variance}  
+            \begin{equation*}
+                \begin{split}
+                    \mathbb{E}[X]=&\frac{nk}{N}\\
+                    var(X)=&\frac{nk(N-k)(N-n)}{N^2(N-1)}\\
+                \end{split}
+            \end{equation*}
+
+    \section{Possion Distributions}
+        \subsection*{Definition}
+            \paragraph{
+                A discrete random variable $X$ is said to have a Possion distribution, and it is referred to as a Possion random variable, if its probability distribution is given by
+                $$p(x;\lambda)=\frac{\lambda^x}{x!}e^{-\lambda}$$
+            }
+        \subsection*{Mean and Variance}  
+            \paragraph{
+                \begin{equation*}
+                    \begin{split}
+                        \mathbb{E}[X]=&\lambda\\
+                        var(X)=&\lambda
+                    \end{split}
+                \end{equation*}
+            }
+    \section{Multivariate Distributions}
+        \subsection{Polynomial Distributions}
+            \subsubsection*{Definition}
+                \paragraph{
+                    The $k$ random variable $X_1,X_2,...,X_k$ are said to have a polynomial distribution, and they are referred to as polynomial random variable, if their joint probability distribution is given by
+                    $$f(x_1,...,x_k;\theta_1,...,\theta_k)=\frac{n!}{x_1!...x_k!}\theta_1^{x_1}...\theta_k^{x_k}$$
+                    for $x_i=0,1,...,n$ and $0<\theta_i<1$ for each $i=1,...,k$, where 
+                    $$n=\sum_{i=1}^kx_i$$
+                    $$\sum_{x=1}^k\theta_i=1$$
+                }
+        \subsection{Multivariate Hyper-geometric Distributions}
+            \subsubsection*{Definition}
+                \paragraph{
+                    The $k$ random variable $X_1,...,X_k$ are said to have a multivariate hyper-geometric distribution, and ther are referred to as multivariate hyper-geometric random variable, if their joint probability distribution is given by
+                    $$f(x_1,...,x_k;n,j_1,...,j_k)=\frac{C_{j_1}^{x_1}...C_{j_k}^{x_k}}{C_N^n}$$
+                    for $x_i=0,1,...,n$ with $x_i\leq j_i$ for each $i=1,...,k$, where 
+                    $$n=\sum_{i=1}^kx_i$$
+                    $$N=\sum_{i=1}^kj_i$$
+                }
+
+    \section{Uniform Densities}
+        \subsection*{Definition}
+            \paragraph{
+                A continuous random variable $X$ is said to have a uniform density withe parameters $\alpha$ and $\beta$, and it is referred to as a continuous uniform random variable, if its probability density is given bu
+                $$f(x)=\frac{1}{\beta-\alpha}$$ 
+                for $\alpha<x<\beta$, and $f(x)=0$ elsewhere, where $\alpha$ and $\beta$ are two parameters with $\alpha<\beta$.
+            }
+        \subsection*{Mean and Variance}
+            \begin{equation*}
+                \begin{split}
+                    \mathbb{E}[X]=&\frac{\alpha+\beta}{2}\\
+                    var(X)=&\frac{(\beta-\alpha)^2}{12}\\
+                \end{split}
+            \end{equation*}
+    \section{The Gamma Function}
+        \subsection*{Definition}
+            \paragraph{
+                The gamma function $\Gamma(x)$ is a real function which is defined on $(0,\infty)$ and is given by
+                $$\Gamma(x)=\int_0^\infty y^{x-1}e^{-y}dy$$
+                for each $x\in (0,\infty)$
+            }
+        \subsection*{Theorem}
+            \paragraph{
+                $$\Gamma(n)=(n-1d)!$$
+                for each natural number $n$.
+                $$\Gamma(\frac{1}{2})=\sqrt{\pi}$$
+            }
+    \section{The Beta Function}
+        \subsection*{Definition}
+            \paragraph{
+                The beta function $B(u,v)$ is a real bivariate function, which is defined for each $(u,v)\in (0,\infty)\times(0,\infty)$, and is given by 
+                $$B(u,v)=\int_0^1t^{u-1}(1-t)^{v-1}dt$$
+            }
+        \subsection*{Theorem}
+            \paragraph{
+                The gamma function and the beat function satisfy the following equation
+                $$B(u,v)=\frac{\Gamma(u)\Gamma(v)}{\Gamma(u+v)}$$
+                for any $(u,v)\in (0,\infty)\times(0,\infty)$
+            }
+            
+    \section{Gamma Distributions}
+        \subsection*{Definition}
+            \paragraph{
+                A random variable $X$ is said to have a gamma distribution, and it is referred to as a gamma random variable, if its probability density is given by 
+                $$f(x)=\frac{1}{\beta^{\alpha}\Gamma(\alpha)}x^{\alpha-1}e^{-\frac{x}{\beta}}$$
+                for $x>0$, and $f(x)=0$ for $x\leq 0$, where $\alpha>0$ and $\beta>0$ are two parameters.
+            }
+        \subsection*{Theorem}
+            \paragraph{
+                The $r$-th moment of a gamma distribution with parameters $\alpha$ and $\beta$ is given by 
+                $$\mu'_r=\frac{\beta^r\Gamma(\alpha+r)}{\Gamma(\alpha)}$$
+            }
+        \subsection*{Mean and Variance}
+            \begin{equation*}
+                \begin{split}
+                    \mathbb{E}[X]=&\alpha\beta\\
+                    var(X)=&\alpha\beta^2\\
+                \end{split}
+            \end{equation*}
+    \section{Beta Distributions}
+        \subsection*{Definition}
+            \paragraph{
+                A random variable $X$ is said to have a beta distribution, and it is referred to as a beta random variable, if its probability density is given by
+                $$f(x)=\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}x^{\alpha-1}(1-x)^{\beta-1}$$
+            }
+        \subsection*{Theorem}
+            \paragraph{
+                The $r$-th moment of a beta distribution with parameters $\alpha$ and $\beta$ is given by 
+                $$\mu'_r=\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)}\frac{\Gamma(\alpha+r)}{\Gamma(\alpha+\beta
+                +r)}$$
+            }
+        \subsection*{Mean and Variance}
+            \begin{equation*}
+                \begin{split}
+                    \mathbb{E}[X]=&\frac{\alpha}{\alpha+\beta}\\
+                    var(X)=&\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}\\
+                \end{split}
+            \end{equation*}
+    \section{Exponential Distributions}
+        \subsection*{Definition}
+            \paragraph{
+                Let $X$ be a gamma random variable with parameters $\alpha$ and $\beta$. If $\alpha=1$ and $\beta=\theta$, this random variable $X$ is said to have an exponential distribution, and it is referred to as an exponential random variable. The density of exponential distribution is given by 
+                $$f(x)=\frac{1}{\theta}e^{-\frac{x}{\theta}}$$
+                for $x>0$, and $f(x)=0$ for $x\leq 0$
+            }
+        \subsection*{Theorem}
+            \paragraph{
+                The exponential distribution satisfies the memoryless property, i.e., if $X$ is an exponential random variable, then, for each $t>0$,
+                $$\mathbb{P}(X\geq x+t|X\geq t)=\mathbb{P}(X\geq x)$$
+            }
+        \subsection*{Mean and Variance}
+            \begin{equation*}
+                \begin{split}
+                    \mathbb{E}[X]=&\theta\\
+                    var(X)=&\theta^2\\
+                \end{split}
+            \end{equation*}
+    \section{Normal Distributions}
+        \subsection{The Standard Normal Distributions}
+            \subsubsection*{Definition}
+                \paragraph{
+                    A random variable $Z$ is said to have the standard normal distribution, and so that it is called a standard normal distribution variable and it is denoted by $Z\sim N(0,1)$, if its density is given by 
+                    $$\phi(z)=\frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}z^2}$$
+                } 
+        \subsection{Normal Distributions}
+            \subsubsection*{Definition}
+                \paragraph{
+                    Let $X$ be a normal random variable with parameters $\mu$ and $\sigma>0$, and let $Z=\frac{X-\mu}{\sigma}$. Then, $Z$ is a standard normal random variable, i.e., $Z\sim N(0,1)$
+                }
+            \subsubsection*{Mean and Variance}
+                \begin{equation*}
+                    \begin{split}
+                        \mathbb{E}[X]=&\mu\\
+                        var(X)=&\sigma^2\\
+                    \end{split}
+                \end{equation*}
+        \subsection{The Normal Approximation}
+            \paragraph{
+                Let $X_n$ be a random variable having a binomial distribution with parameters $n$ and $\theta$, and let $$Z_n=\frac{X_n-n\theta}{\sqrt{n\theta(1-\theta)}}$$
+            }
+    \section{Bivariate Normal Distributions}
+        \subsection*{Definition}
+            \paragraph{
+                A pair of random variables $(X_1,X_2)$ is said to have a bivariate normal distribution, and $X_1$ and $X_2$ are referred to as jointly normal distributed random variables, if their joint density is given by 
+                $$\Phi(x_1,x_2)=\frac{1}{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}}e^{-\psi(x_1,x_2)}$$
+                for $(x_1,x_2)\in \mathbb{R}^2$
+                where
+                $$\psi(x_1,x_2)=\frac{1}{2(1-\rho^2)}(\frac{(x_1-\mu_1)^2}{\sigma_1^2}-2\rho\frac{(x_1-\mu_1)(x_2-\mu_2)}{\sigma_1\sigma_2}+\frac{(x_2-\mu_2)^2}{\sigma_1^2})$$and $\mu_i,\sigma_i>0$ with $i=1,1$, and $|\rho|<1$ are all parameters.
+            }
+        \subsection*{Theorem}
+            \paragraph{
+                The marginal densities are respectively given by 
+                $$\phi_1(x_1)=\frac{1}{\sigma_1\sqrt{2\pi}}e^{-\frac{(x_1-\mu_1)^2}{2\sigma_1^2}}$$
+                $$\phi_2(x_2)=\frac{1}{\sigma_2\sqrt{2\pi}}e^{-\frac{(x_2-\mu_2)^2}{2\sigma_2^2}}$$
+                The covariance of $X_1$ and $X_2$ is given by 
+                $$cov(X_1,X_2)=\rho\sigma_1\sigma_2$$    
+                $X_1$ and $X_2$ are independent,if and only if $\rho=0$
+            }
+    \section{The Distribution Function Technique}
+            \paragraph{
+                Let $X$ be a random variable with the distribution function $F(x)$, and let $Y=u(X)$, where $u(x)$ is an increasing function such that its inverse function $x=u^{-1}(y)$ exists. Then the distribution function of $Y$ is given by 
+                $$G(y)=F(u^{-1}(y))$$
+                for all real numbers $y$ in the range of $Y$.
+            }
+    \section{The Transformation Technique}
+        \paragraph{
+            Let $X$ be a random variable whose density function is $f(x)$, and let $y=u(x)$ is a differentiable function such that its inverse function $x=u^{-1}(y)$ exists. Then, the density function $g(y)$ of $Y=u(X)$ is given by 
+            $$g(y)=f(w(y))|w'(y)|$$ when $w'(y)\neq 0$ 
+            and $g(y)=0$ elsewhere where $w(y)=u^{-1}(y)$.
+        }
+    \section{Moment Generating Functions}
+        \subsection*{Definition}
+            \paragraph{
+                Let $X$ be a random variable. The moment-generating dunction of $X$ id defined by 
+                $$M_X(t)=\mathbb{E}[e^{tX}]$$
+                for each real number $t$ in which the expectation exists, i.e., when $X$ is continuous with density $f(x)$.
+                $$M_X(t)=\int_{-\infty}^\infty e^{tx}f(x)dx$$
+                when $X$ is discrete with probability distribution $f(x)$,
+                $$M_X(t)=\sum_xe^{tx}f(x)$$
+            }
+        \subsection{Some Moment-generating functions}
+        \subsubsection{Binomial random variable}
+            \paragraph{
+                $$M_X(t)=(1+\theta(e^t-1))^n$$
+            }
+        \subsubsection{Possion random variable}
+            \paragraph{
+                $$M_X(t)=e^{\lambda(e^t-1)}$$
+            }
+        \subsubsection{Gamma random variable}
+            \paragraph{
+                $$M_X(t)=(1-\beta t)^{-\alpha}$$
+            }
+        \subsubsection{Exponential random variable}
+            \paragraph{
+                $$M_X(t)=\frac{1}{1-\theta t}$$
+            }
+        \subsubsection{Chi-square random variable}
+            \paragraph{
+                $$M_X(t)=(1-2t)^{-\frac{v}{2}}$$
+            }
+        \subsubsection{Normal random variable}
+            \paragraph{
+                $$M_X(t)=e^{\mu t+\frac{1}{2}\sigma^2 t^2}$$
+            }
+        \subsection{Properties of Moment Generating Functions}
+            \paragraph{
+                $$\frac{d^kM_X(t)}{dt^k}|_{t=0}=\mu'_k=\mathbb{E}[X^k]$$
+            }
+            \paragraph{
+                $$M_{aX+b}(t)=e^{tb}M_X(at)$$
+            }
+            \paragraph{
+                Let $X$ and $Y$ be two independent random variables,
+                $$M_{X+Y}(t)=M_X(t)M_Y(t)$$
+            }
+    \section{Moment Generating Function Technique}
+        \subsection{Possion Distribution}
+            \paragraph{
+                Let $X_1$ and $X_2$ be two independent random variables, and let $X_1$ and $X_2$ have the Possion distributions $p(x_1,\lambda_1)$ and $p(x_2,\lambda_2)$, respectively. Then, the random variable $Y=X-1+X_2$ ahs a Possion distribution $$p(y,\lambda_1+\lambda_2)$$
+            }
+        \subsection{Normal Distribution}
+            \paragraph{
+                Let $X_1$ and $X_2$ be two independent random variables such that $X_i\sim N(\mu_i,\sigma_i)$, $i=1,2$, respectively, and let $a$ and $b$ be two constants such that $a^2+b^2\neq 0$. then, the random variable $Y=aX_1+bX_2$ has a normal distribution with mean $\mu=a\mu_1+b\mu_2$ and variance $\sigma^2=a^2\sigma_1^2+b^2\sigma_2^2$.
+            }
+        \subsection{Exponential Distribution}
+            \paragraph{
+                Let $X_1$ and $X_2$ be two independent random variables having an exponential distributions with the same parameter $\theta$, respectively. Then the random variable $Y=X_1+X_2$ has a gamma distribution with $\alpha=2$ and $\beta=\theta$
+            }
 \end{document}   
