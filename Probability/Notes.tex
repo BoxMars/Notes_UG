@@ -33,7 +33,66 @@
             $$\mathbb{P}(A\cap B)=\mathbb{P}(A|B)\mathbb{P}(B)=\mathbb{P}(B|A)\mathbb{P}(A)$$
         }
         \paragraph{
-            Let $n$ random events
+            Let $n$ random events $B_1,...B_n$ constitute a partition of the sample space $S$ and satisfy that $\mathbb{P}(B_k)\neq 0$ for each $k=1,...,n$. Then, for any random event $A$,
+            $$\mathbb{P}(A)=\sum_{k=1}^n\mathbb{P}(B_k)\mathbb{P}(A|B_k)$$
+        }
+    \section{Bayes' Theorem}
+        \paragraph{
+            Let $(S,F,\mathbb{P})$ be a probability space,and let $n$ random events $B_1,...B_n$ constitute a partition of the sample space $S$ and satisfy that $\mathbb{P}(B_k)\neq 0$ for each $k=1,...,n$. Then, for any random event $A$ with $\mathbb{A}\neq 0$ and for each $B_k$,
+            $$\mathbb{P}(B_k|A)=\frac{\mathbb{P}(B_k)\mathbb{P}(A|B_k)}{\sum_{j=1}^n\mathbb{P}(B_j)\mathbb{P}(A|B_j)}$$
+        }
+    \section{Independent Events}
+        \paragraph{$$\mathbb{P}(A\cap B)=\mathbb{P}(A)\mathbb{P}(B)$$}
+        $$f(x,y)=g(x)h(y)$$
+    \section{Basic Properties of Expected Values}
+        \paragraph{
+            $$\mathbb{E}[aX+b]=a\mathbb{E}[X]+b$$
+            $$\mathbb{E}[\sum_{k=1}^n c_k\phi_k(X)]=\sum_{k=1}^nc_k\mathbb{E}[\phi_k(X)]$$
+        }
+    \section{Moment of Random Variables}
+        \paragraph{
+            The $r$-th moment of $X$
+            $$\mu'_r=\mathbb{E}[X^r]$$
+            $$\mu'_1=\mu$$
+            The $r$-th central moment of $X$
+            $$\mu_r=\mathbb{E}[(X-\mu)^r]$$
+            $$\mu_2=var(X)=\mathbb{E}[X^2]-\mu^2$$
+        }
+    \section{Basic Properties of Variance}
+        \paragraph{
+            $$var(aX+b)=a^2var(X)$$
+        }
+        \subsection{Chebyshevs inequality}
+            \paragraph{
+                $$0\leq\mathbb{P}(|X-\mu|\geq \epsilon)<\frac{\sigma^2}{\epsilon^2}$$
+                or
+                $$1\geq \mathbb{P}(|X-\mu|<k\sigma)\geq1-\frac{1}{k^2}$$
+            }
+    \section{Product Moments of Random Variables}
+        \paragraph{
+            $$\mathbb{E}[\phi(X,Y)]=\sum_x \sum_y \phi(x,y)f(x,y)$$
+            $$\mathbb{E}[\phi(X,Y)]=\int_{-\infty^\infty} \int_{-\infty}^\infty \phi(x,y)f(x,y)dxdy$$
+            If $X$ and $Y$ are independent,
+            $$\mathbb{E}(XY)=\mathbb{E}(X)\mathbb{E}(Y)$$
+        }
+        \subsection*{$r$th and $s$th product moment about origin}
+            $$\mu'_{r,s}=\mathbb{E}(X^rY^s)$$
+        \subsection*{$r$th and $s$th product moment about mean}
+            $$\mu_{r,s}=\mathbb{E}((X-\mu_X)^r(Y-\mu_Y)^s)$$
+        \subsection*{Covariance}
+            \paragraph{
+                $$cov(X,Y)=\mathbb{E}[(X-\mu_Y)(Y-\mu_Y)]=\mathbb{E}[XY]-\mathbb{E}[X]\mathbb{E}[Y]$$
+                If $X$ and $Y$ are independent,
+                $$cov(X,Y)=0$$
+            }
+    \section{Properties of Mean and Variance}
+        \paragraph{
+            $$\mathbb{E}[X+Y]=\mathbb{E}[X]+\mathbb{E}[Y]$$
+            $$var(X+Y)=var(X)+var(Y)+cov(X,Y)$$
+        }
+    \section{Conditional Expectation}
+        \paragraph{
+            $$\mathbb{E}[X|Y=y]=\sum_x\phi(x)f(x|y)=\int_{-\infty}^\infty \phi(x)f(x|y)dx$$
         }
     \section{Discrete Uniform Distributions}
         \subsection*{Definition}
