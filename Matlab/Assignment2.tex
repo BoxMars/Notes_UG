@@ -58,5 +58,67 @@
         \lstinputlisting[language=Matlab,style=mystyle,caption=Function]{code/Assignment_2_2_f.m}
         \lstinputlisting[language=Matlab,style=mystyle,caption=Matlab Code]{code/Assignment_2_2.m}
         \lstinputlisting[style=mystyle,caption=Output]{code/Assignment_2_2_output}
+    \section{}
+        
+            \paragraph{
+            When $\epsilon_n=\frac{1}{10^n}$
+                \begin{equation*}
+                    \begin{split}
+                        \epsilon_n=&\frac{1}{10^n}\\
+                            =&\frac{1}{10}\epsilon_{n-1}\\
+                        r-\epsilon_n=&r-\frac{1}{10}\epsilon_{n-1}\\
+                            =&r-\epsilon_{n-1}+\frac{9}{10}\epsilon_{n-1}\\
+                        \frac{r-\epsilon_n}{r-\epsilon_{n-1}}=&1+\frac{\frac{9}{10}\epsilon_{n-1}}{r-\epsilon_{n-1}}\\
+                            =&1+\frac{\frac{9}{10}\epsilon_{n-1}}{0-\epsilon_{n-1}}\\
+                            =&1-\frac{9}{10}\\
+                            =&\frac{1}{10}\\
+                        \lim_{n\rightarrow \infty} |\frac{r-\epsilon_n}{r-\epsilon_{n-1}}|=&\lim_{n\rightarrow \infty}| \frac{1}{10}|\\
+                            =&\frac{1}{10}
+                    \end{split}
+                \end{equation*}
+                Therefore, the rate of convergence $\mu=\frac{1}{10}$, and the order of convergence $p=1$
+            }
+                \paragraph{
+            When $\epsilon_n=\frac{1}{100^n}$
+            \begin{equation*}
+                \begin{split}
+                    \epsilon_n=&\frac{1}{100^n}\\
+                        =&\frac{1}{100}\epsilon_{n-1}\\
+                    r-\epsilon_n=&r-\epsilon_{n-1}+\frac{99}{100}\epsilon_{n-1}\\
+                    \frac{r-\epsilon_n}{r-\epsilon_{n-1}}=&1+\frac{\frac{99}{100}\epsilon_{n-1}}{r-\epsilon_{n-1}}\\
+                        =&1-\frac{99}{100}\\
+                        =&\frac{1}{100}\\
+                    \lim_{n\rightarrow \infty} |\frac{r-\epsilon_n}{r-\epsilon_{n-1}}|=&\lim_{n\rightarrow \infty}|\frac{1}{100}|\\
+                        =&\frac{1}{100}\\
+                \end{split}
+            \end{equation*}
+            Therefore, the rate of convergence $\mu=\frac{1}{100}$, and the order of convergence $p=1$
+                }
+                \paragraph{
+                    When $\epsilon_n=\frac{1}{2^{w^n}}$
+                    \begin{equation*}
+                        \begin{split}
+                            \epsilon_n=&\frac{1}{2^{2^n}}\\
+                                =&(\frac{1}{2^{2^{n-1}}})^2\\
+                                =&\epsilon_{n-1}^2\\
+                            r-\epsilon_n=&r-{\epsilon_{n-1}}^2\\
+                            \frac{r-\epsilon_n}{r-\epsilon_{n-1}}=&\frac{r-\epsilon_{n-1}^2}{r-\epsilon_{n-1}}\\
+                                =&\frac{-\epsilon_{n-1}^2}{-\epsilon_{n-1}}\\
+                                =&\epsilon_{n-1}\\
+                            \lim_{n\rightarrow\infty} |\frac{r-\epsilon_n}{r-\epsilon_{n-1}}|=&\lim_{n\rightarrow\infty}|\epsilon_{n-1}|\\
+                                =&0
+                        \end{split}
+                    \end{equation*}
+                    Therefore, the rate of convergence $\mu=0$, and the order of convergence $p=1$
+                }
 
+
+                \subsection*{}
+                \lstinputlisting[language=Matlab,style=mystyle,caption=Matlab Code]{code/Assignment_2_3.m}
+            \begin{figure}[H] 
+                \centering 
+                    \includegraphics[width=0.9\textwidth]{img/Assignement_2_3.jpg}
+                    \caption{Output} 
+            \end{figure}
+   
 \end{document}
