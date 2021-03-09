@@ -1,0 +1,234 @@
+\documentclass{article}
+\usepackage{setspace}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx} 
+\usepackage{float} 
+\usepackage{fancyhdr}                                
+\usepackage{lastpage}                                           
+\usepackage{layout}   
+\usepackage{subfigure} 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\pagestyle{fancy}  
+\lhead{ZHANG HUAKANG}
+\chead{Assignment 3} 
+\rhead{DB92760} 
+\renewcommand{\baselinestretch}{1.05}
+\title{Assignment 3 of CISC 2002}
+\author{ZHANG Huakang/DB92760}
+
+\begin{document}
+    \maketitle
+    \section{}
+        \subsection{}
+            Let $$B=\begin{bmatrix}
+                3&-2&5&2\\
+                4&-7&-1&19\\
+                5&-6&4&13
+            \end{bmatrix}$$
+
+            $\frac{Row 1}{3}$
+
+           $$\begin{bmatrix}
+            1&-\frac{2}{3}&\frac{5}{2}&\frac{2}{3}\\
+            4&-7&-1&19\\
+            5&-6&4&13
+        \end{bmatrix}$$
+            $Row 2- 4 Row 1$
+            
+           $$\begin{bmatrix}
+            1&-\frac{2}{3}&\frac{5}{2}&\frac{2}{3}\\
+            0&-\frac{13}{3}&-11&\frac{49}{3}\\
+            5&-6&4&13
+        \end{bmatrix}$$
+        $Row2 /-\frac{13}{3}$
+        $$\begin{bmatrix}
+            1&-\frac{2}{3}&\frac{5}{2}&\frac{2}{3}\\
+            0&1&\frac{23}{13}&\frac{49}{13}\\
+            5&-6&4&13
+        \end{bmatrix}$$
+        $Row 3-5Row 1$
+        $$\begin{bmatrix}
+            1&-\frac{2}{3}&\frac{5}{2}&\frac{2}{3}\\
+            0&1&\frac{23}{13}&\frac{49}{13}\\
+            0&-\frac{8}{3}&-\frac{13}{3}&\frac{29}{3}
+        \end{bmatrix}$$
+        $Row 1+\frac{2}{3}Row 2$ and
+        $Row 3+\frac{8}{3}Row 2$
+        $$\begin{bmatrix}
+            1&0&\frac{37}{13}&-\frac{24}{13}\\
+            0&1&\frac{23}{13}&\frac{49}{13}\\
+            0&0&-\frac{5}{13}&-\frac{5}{13}
+        \end{bmatrix}$$
+        $Row 3 /\frac{ 5}{13}$
+        $$\begin{bmatrix}
+            1&0&\frac{37}{13}&-\frac{24}{13}\\
+            0&1&\frac{23}{13}&\frac{49}{13}\\
+            0&0&1&-1
+        \end{bmatrix}$$
+        $Row 1 -\frac{37}{13}Row 3$ and $Row 2 -\frac{23}{13}Row 3$
+        $$\begin{bmatrix}
+            1&0&0&1\\
+            0&1&0&-2\\
+            0&0&1&-1
+        \end{bmatrix}$$
+        Thus
+        \begin{equation*}
+            \begin{split}
+                x_1&=1\\
+                x_2&=-2\\
+                x_3&=-1
+            \end{split}
+        \end{equation*}
+        \subsection{}
+        Let $$A=\begin{bmatrix}
+            3&-2&5\\
+            4&-7&-1\\
+            5&-6&4
+        \end{bmatrix}$$
+        From Question $1$ we can know that 
+        \begin{equation*}
+            \begin{split}
+                A=&\begin{bmatrix}
+                    3&-2&5\\
+                    4&-7&-1\\
+                    5&-6&4
+                \end{bmatrix}\\
+                =&\begin{bmatrix}
+                    \frac{1}{3}&0&0\\
+                    0&1&0\\
+                    0&0&1
+                \end{bmatrix}\times
+                \begin{bmatrix}
+                    1&-\frac{2}{3}&\frac{5}{2}\\
+                    4&-7&-1\\
+                    5&-6&4
+                \end{bmatrix}\\
+                =&\begin{bmatrix}
+                    \frac{1}{3}&0&0\\
+                    -\frac{4}{3}&1&0\\
+                    0&0&1
+                \end{bmatrix}\times\begin{bmatrix}
+                    1&-\frac{2}{3}&\frac{5}{2}\\
+                    0&-\frac{13}{3}&-11\\
+                    5&-6&4
+                \end{bmatrix}\\
+                =&\begin{bmatrix}
+                    \frac{1}{3}&0&0\\
+                    -\frac{4}{13}&-\frac{3}{13}&0\\
+                    0&0&1
+                \end{bmatrix}\times
+                \begin{bmatrix}
+                    1&-\frac{2}{3}&\frac{5}{2}\\
+                    0&1&\frac{23}{13}\\
+                    5&-6&4
+                \end{bmatrix}\\
+                =&\begin{bmatrix}
+                    \frac{1}{3}&0&0\\
+                    -\frac{4}{13}&-\frac{3}{13}&0\\
+                    -\frac{5}{3}&0&1
+                \end{bmatrix}\times\begin{bmatrix}
+                    1&-\frac{2}{3}&\frac{5}{2}\\
+                    0&1&\frac{23}{13}\\
+                    0&-\frac{8}{3}&-\frac{13}{3}
+                \end{bmatrix}\\
+                =&\begin{bmatrix}
+                    \frac{1}{3}&0&0\\
+                    -\frac{4}{13}&-\frac{3}{13}&0\\
+                    -\frac{89}{39}&\frac{8}{13}&1
+                \end{bmatrix}\times\begin{bmatrix}
+                    1&-\frac{2}{3}&\frac{5}{2}\\
+                    0&1&\frac{23}{13}\\
+                    0&0&-\frac{353}{39}
+                \end{bmatrix}
+            \end{split}
+        \end{equation*}
+        \subsection{}
+            $$A=\begin{bmatrix}
+                3&-2&5\\
+                4&-7&-1\\
+                5&-6&4
+            \end{bmatrix}$$
+            We can get 
+            $$A^{-1}=
+                \begin{bmatrix}
+                    6.8&4.4&-7.4\\
+                    4.2&2.6&-4.6\\
+                    -2.2&-1.6&2.6
+                \end{bmatrix}
+            $$
+            \begin{equation*}
+                \begin{split}
+                    A\vec{x}_{k+1}=&\vec{x}_{k}\\
+                    \vec{x}_{k+1}=&\vec{x}_kA^{-1}\\
+                    x_0=&\begin{bmatrix}
+                        2\\19\\13
+                    \end{bmatrix}\\
+                    x_1=&\begin{bmatrix}
+                        12.6&8.8&-14.8\\
+                        79.8&49.4&-87.4\\
+                        -28.6&-20.8&33.8
+                    \end{bmatrix}\\
+                    x_2=&\begin{bmatrix}
+                        92.48  & 38.72&  109.52\\
+                        335.160&  128.44&  402.04\\
+                         62.92 & 33.28  & 87.88
+                    \end{bmatrix}\\
+                    x_3=&10^3\times \begin{bmatrix}
+                        0.6289  &  0.1704  & -0.8104\\
+                        1.4077  &  0.3339 &  -1.8494\\
+                       -0.1384 &  -0.0532 &   0.2285
+                    \end{bmatrix}
+                \end{split}
+            \end{equation*}
+
+    \section{}
+        \subsection{}
+            \paragraph{
+                \begin{equation*}
+                    \begin{split}
+                        T_n=&kn^3\\
+                        \frac{T_{40}}{T_{10}}=&\frac{k40^3}{k10^3}\\
+                        T_{40}=&4^3\times T_{10}\\
+                        =&6.4 s
+                    \end{split}
+                \end{equation*}
+            }
+        \subsection{}
+            \paragraph{
+                \begin{equation*}
+                    \begin{split}
+                        C_n=&kn^3\\
+                        \frac{C_{256}}{C_{1024}}=&\frac{k256^3}{k1024^3}\\
+                        C_{256}=&(\frac{2^8}{2^10})^3C_{1024}\\
+                        =&\frac{1}{64}\times 1\\
+                        =&\frac{1}{64}s 
+                    \end{split}
+                \end{equation*}
+            }
+\end{document}
