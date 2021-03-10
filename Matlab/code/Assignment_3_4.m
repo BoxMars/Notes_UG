@@ -1,4 +1,4 @@
-x=1;y=2;
+x=1;y=1;
 d=zeros(2,1); rhs=d;
 answer=[x,y];
 A=zeros(2);
@@ -16,8 +16,8 @@ for i=1:10
     A(2,1)=gx; A(2,2)=gy;
     
     
-    rhs(1)=f;
-    rhs(2)=g;
+    rhs(1)=-f;
+    rhs(2)=-g;
     
     d=A\rhs;
     answer(1)=answer(1)+d(1);
