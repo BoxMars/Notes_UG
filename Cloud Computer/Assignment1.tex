@@ -167,8 +167,7 @@
                             =&0
                     \end{split}
                 \end{equation*}
-                But,
-                when $N>3$,
+                When $N>3$,
                 \begin{equation*}
                     \begin{split}
                         \Delta_{CS,P2P}(N)=&(\frac{N}{2}-\frac{4N}{8+N})Bits/Hz\\
@@ -181,5 +180,90 @@
                 \end{figure}
                 We can know that as $N$ is infty, both of them will need infty time to finish the distribution, but the difference between the two will become larger and larger, and the advantages of P2P will become more and more obvious 
             }
-            
+    \section{}
+            \paragraph{
+                'C' means consistency, 'A' means availabilty and 'P' means partition tolerance. 
+            }
+            \paragraph{
+                CAP Theorem tell us that a distuributed system can only achieve two out of 'C','A' and 'P'.  
+            }
+            \paragraph{
+                A distuributed system can not simulataneously achieve all of them, because  when the content in one node change, we need time to sync the content of all nodes. During the synchronization, if we want to achieve 'C', we should temporarily end of service. This makes us unable to achieve 'A'.
+            }
+    \section{}
+        \paragraph{
+            Yas
+        }
+        \paragraph{
+            Blockchain work with the consensus mechanism, which is a set of rules that decides on the contributions by the various participants of the blockchain, i.e. consensus algorithm(protocol).
+        }
+
+        \begin{itemize}
+            \item Proof of Work(PoW)
+            \item Proof of Stake(PoS)
+            \item Practical Byzantine Fault Tolerance(PBFT)
+        \end{itemize}
+
+        Advantages of PBFT:
+        \begin{itemize}
+            \item NO minting and faster than PoW and PoS
+        \end{itemize}
+
+        Disadvantages of PBFT:
+        \begin{itemize}
+            \item Scalability problem. $Nodes\leq 20$
+        \end{itemize}
+
+    \section{}
+        Advantages
+        \begin{itemize}
+            \item Cost efficiency
+            \item High convenient for deploying new services
+            \item Enhancing accessibility
+        \end{itemize}
+        Disadvantages
+        \begin{itemize}
+            \item Internet connection dependent
+            \item Additional bandwidth-resource usepackage
+            \item Service reliability
+            \item Privacy issue
+            \item Vendor issue
+        \end{itemize}
+    \section{}
+        Difference
+        \begin{itemize}
+            \item Public cloud: everyone can access the network
+            \item Public cloud: User have less control over their data
+            \item Private cloud: users need authorization to access the network
+            \item Private cloud: When and where the user can see the data is controlled
+        \end{itemize}
+        Advantages of Multi-cloud services
+        \begin{itemize}
+            \item Cost efficient
+            \item Enhanced capabilities in service delivery
+            \item Enhanced availability and reliability
+        \end{itemize}
+    \section{}
+        Difference between the IaaS. PaaS, and SaaS
+        \begin{itemize}
+            \item IaaS is providing 'Infrastructure' to customers which means users will driectly control CPUs, storage, networking and other hardwave.
+            \item PaaS is providing 'Platform' to customers which means a deployment environment and users no need to care about system and focue on code, script...
+            \item SaaS is providing 'Software' which means customers use some application that need Cloud to storage, computing and son on.
+        \end{itemize}
+        
+        \begin{itemize}
+            \item VM: Provide a environment to developer that looks like a physical machine.
+            \item Hypervisor: An administrator to control the interaction between the simulataneously renning VMx and resource pool.
+        \end{itemize}
+        \paragraph{
+            VMware use \textit{direct approach} to implement its hypervisor\\
+            Advantages of direct approach
+        }
+        
+        
+        \begin{itemize}
+            \item Directly control and manage the resource pool
+        \end{itemize}
+
+        
 \end{document}
