@@ -23,4 +23,121 @@
 \begin{document}
     \maketitle
     \section{}
+        The Mathematical Expectation of loos
+        \begin{equation*}
+            \begin{split}
+                \mathbb{E}[X]=&200000\times(1\times 0.02+0.5\times 0.01+0.25\times 0.1)\\
+                    =&\$19,000
+            \end{split}
+        \end{equation*}
+        Thus the insurance company should charge
+        $$\mathbb{E}[X]+\$500=\$19,500$$
+    \section{}
+        \subsection{}
+            \begin{equation*}
+                \begin{split}
+                    \mathbb{E}[X]=&\int_{-\infty}^\infty xf(x)dx\\
+                        =&\int_{0}^1 x^2dx+\int_1^2 x(2-x)dx\\
+                        =&1\\
+                \end{split}
+            \end{equation*}
+        \subsection{}
+            \begin{equation*}
+                \begin{split}
+                    var(X)=&\mathbb{E}[X^2]-\mathbb{E}[X]^2\\
+                        =&\int_{0}^1 x^3dx+\int_1^2 x^2(2-x)dx-1\\
+                        =&\frac{7}{6}-1\\
+                        =&\frac{1}{6}
+                \end{split}
+            \end{equation*}
+    \section{}
+        \begin{equation*}
+            \begin{split}
+                \mathbb{E}[X]=&\int_{-\infty}^\infty xf(x)dx\\
+                    =&\int_0^\infty x\frac{1}{2000}e^{-\frac{x}{2000}}dx\\
+                    =&\lim_{t\rightarrow \infty}-e^{-\frac{x}{2000}}(x+2000)|_0^t\\
+                    =&2000
+            \end{split}
+        \end{equation*}
+    \section{}
+        \subsection{}
+            \begin{equation*}
+                \begin{split}
+                    \mathbb{E}[Y]=&\int_{-\infty}^\infty yf(y)dy\\
+                        =&\int_0^1 5y(1-y)^4\\
+                        =&\frac{1}{6}
+                \end{split}
+            \end{equation*}
+        \subsection{}
+            \begin{equation*}
+                \begin{split}
+                    \mathbb{P}(Y>\frac{1}{6})=&\int_\frac{1}{6}^\infty f(y)dy\\
+                        =&\int_\frac{1}{6}^1 5(1-y)^4dy\\
+                        =&\frac{3125}{7776}\\
+                        \approx& 0.4019
+                \end{split}
+            \end{equation*}
+    \section{}
+        \subsection{}
+            \begin{equation*}
+                \begin{split}
+                    \mathbb{E}[X]=&\sum_{x=-\infty}^\infty xf(x)\\
+                        =&\sum_{x=2}^6 xf(x)\\
+                        =&2\times 0.01+3\times 0.25\\
+                        &+4\times 0.4+5\times0.3+6\times0.04\\
+                        =&\frac{411}{100}\\
+                        =&4.11\\
+                    var(x)=&\mathbb{E}[X^2]-\mathbb{E}[X]^2\\
+                        =&\sum_{x=-\infty}^\infty x^2f(x)-\sum_{x=-\infty}^\infty xf(x)\\
+                        =&\sum_{x=2}^6 x^2f(x)-\sum_{x=2}^6 xf(x)\\
+                        =&\frac{1763}{100}-(\frac{411}{100})^2\\
+                        =&\frac{7379}{10000}\\
+                        =&0.7379\\
+                \end{split}
+            \end{equation*}
+        \subsection{}
+            \begin{equation*}
+                \begin{split}
+                    \mathbb{E}[Z]=&\mathbb{E}[3X-2]\\
+                        =&3\mathbb{E}[X]-2\\
+                        =&\frac{1033}{100}\\
+                        =&10.33\\
+                    var(Z)=&var(3X-2)\\ 
+                        =&9var(X)\\
+                        =&6.6411\\
+                \end{split}
+            \end{equation*}
+    \section{}
+        \subsection{}
+            \begin{equation*}
+                \begin{split}
+                    \mathbb{E}[Y]=&\mathbb{E}[3X-2]\\
+                        =&\int_{-\infty}^\infty (3x-2)f(x)dx\\
+                        =&\int_0^\infty (3x-2)(\frac{1}{4}e^{-\frac{x}{4}})\\
+                        =&-e^{-\frac{x}{4}}(3x+10)|_0^\infty\\
+                        =&10\\
+                    var(Y)=&\mathbb{E}[Y^2]-\mathbb{E}[Y]^2\\
+                        =&\int_0^\infty (3x-2)^2(\frac{1}{4}e^{-\frac{x}{4}})-100\\
+                        =&-e^{-\frac{x}{4}}(9x^2+60x+244)_0^\infty-100\\
+                        =&244-100\\
+                        =&144
+                \end{split}
+            \end{equation*}
+        \subsection{}
+            % It is easy to know that $X$ is a random variable with Poisson disyribution. Thus
+            \begin{equation*}
+                \begin{split}
+                    \mathbb{E}[X]=&\int_{\infty}^\infty xf(x)dx\\
+                        =&\int_0^\infty \frac{x}{4}e^{-\frac{x}{4}}\\
+                        =&-e^{-\frac{x}{4}}(x+4)_0^\infty\\
+                        =&4\\
+                    var(X)=&\mathbb{E}[X^2]=\mathbb{E}[X]^2\\
+                        =&\int_0^\infty \frac{x^2}{4}e^{-\frac{x}{4}}-16\\
+                        =&-e^{-\frac{x}{4}}(x^2+8x+32)_0^{\infty}-16\\
+                        =&32-16\\
+                        =&16\\
+                    \mathbb{E}[Y]=&3\mathbb{E}[X]-2\\
+                    var(Y)=&3^2var(X)\\
+                \end{split}
+            \end{equation*}
 \end{document}
