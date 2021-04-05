@@ -22,4 +22,153 @@
 \author{ZHANG HUAKANG \\ DB92760 \\ \\ Computer Science, \\Faculty of Science and Technology}
 \begin{document}
     \maketitle
+    \section{}
+        \paragraph{
+            It easy to know that $x~Poission$ where $\lambda=3$.
+            $$P(X=x)=\frac{\lambda^x}{x!}e^{-\lambda}$$
+        }
+        \subsection{}
+            \paragraph{
+                \begin{equation*}
+                    \begin{split}
+                        P(X=5)=&\frac{3^5}{5!}e^{-3}\\
+                            \approx&0.1008\\
+                    \end{split}
+                \end{equation*}
+            }
+        \subsection{}
+            \paragraph{
+                \begin{equation*}
+                    \begin{split}
+                        P(X<3)=&\sum_{x=0}^2 P(X=x)\\
+                            =&\sum_{x=0}^2 \frac{\lambda^x}{x!}e^{-\lambda}\\
+                            \approx&0.4232
+                    \end{split}
+                \end{equation*}
+            }
+        \subsection{}
+            \paragraph{
+                \begin{equation*}
+                    \begin{split}
+                        P(X\geq 2)&=1-P(X\leq 1)\\
+                            =&1-\sum_{x=0}^1 \frac{3^x}{x!}e^{-3}\\
+                            \approx&0.8008\\
+                    \end{split}
+                \end{equation*}
+            }
+    \section{}
+        \paragraph{
+            It easy to know that $x~Poission$ where $\lambda=5$.
+            $$P(X=x)=\frac{\lambda^x}{x!}e^{-\lambda}$$
+        }
+        \subsection{}
+            \paragraph{
+                \begin{equation*}
+                    \begin{split}
+                        P(X>5)=&1-P(X\leq 5)\\
+                            =&1-\sum_{x=0}^5\frac{5^x}{x!}e^{-5}\\
+                            \approx&0.3840\\
+                    \end{split}
+                \end{equation*}
+            }
+        \subsection{}
+            \paragraph{
+                \begin{equation*}
+                    \begin{split}
+                        P(\text{3 of next 4 days})=&C_4^3 P(X>5)^3 P(X\leq 5)\\
+                            \approx&0.0349\\
+                    \end{split}
+                \end{equation*}
+            }
+        \subsection{}
+        \paragraph{
+            \begin{equation*}
+                \begin{split}
+                    P(\text{The first time in April on April 5th})=&P(X>5) P(X\leq 5)^4\\
+                        \approx&0.0553\\
+                \end{split}
+            \end{equation*}
+        }
+    \section{}
+        \subsection{}
+            \paragraph{
+                Using Binomial distribution:
+                \begin{equation*}
+                    \begin{split}
+                        P(X<5|\text{In 2000 people})=&\sum_{x=0}^4C_{2000}^x 0.002^x(1-0.002)^{2000-x}\\
+                            \approx&0.6288\\
+                    \end{split}
+                \end{equation*}
+                Using Poission Approximation:
+                \begin{equation*}
+                    \begin{split}
+                        \lambda=&np\\
+                            =&2000\times 0.002\\
+                            =&4\\
+                        P(X=x)=&\frac{4^x}{x!}e^{-4}\\
+                        P(X<5)=&\sum_{x=0}^4\frac{4^x}{x!}e^{-4}\\
+                            \approx&0.6288\\
+                    \end{split}
+                \end{equation*}
+            }
+        \subsection{}
+            \paragraph{
+                Using Binomial distribution:
+                \begin{equation*}
+                    \begin{split}
+                        P(X=x)=&C_{2000}^x 0.002^x(1-0.002)^{2000-x}\\
+                    \end{split}
+                \end{equation*}
+                Using Poission Approximation:
+                \begin{equation*}
+                    \begin{split}
+                        P(X=x)=&\frac{4^x}{x!}e^{-4}\\
+                    \end{split}
+                \end{equation*}
+            }
+            \subsubsection{}
+                \paragraph{
+                    Using Binomial distribution:
+                    \begin{equation*}
+                        \begin{split}
+                            \mu=&\sum_{x=0}^{2000}xP(X=x)\\
+                                =&\sum_{x=0}^{2000}xC_{2000}^x0.002^x(1-0.002)^{2000-x}\\
+                                =&3.99\dot{9}\\
+                                \approx&4.0000\\
+                        \end{split}
+                    \end{equation*}
+                    Using Poission Approximation:
+                    \begin{equation*}
+                        \begin{split}
+                            &\text{By definition:}\\
+                            &\mu=4.000\\
+                        \end{split}
+                    \end{equation*}
+                }
+            \subsubsection{}
+                \paragraph{
+                    Chebyshev's inequality:
+                    $$
+                    P(|X-\mu|\geq k\sigma)\leq \frac{1}{k^2}
+                    $$
+                    and
+                    $$
+                    P(|X-\mu|\leq k\sigma)\geq 1-\frac{1}{k^2}.
+                    $$
+                    \begin{equation}
+                        \begin{split}
+                            X\geq 1500\\
+                            |X-\mu|>1496\\
+                            \sigma^2=&\lambda\\
+                                =&4\\
+                            \sigma=&2\\
+                            1496=&k\sigma\\
+                            k=&748\\
+                            &\text{Thus}\\
+                            P(|X-\mu|\geq 748\sigma)\leq& \frac{1}{748^2}\\
+                                =&\frac{1}{559504}\\
+                                \approx&1.787\times 10^{-6}\\
+                        \end{split}
+                    \end{equation}
+                }
 \end{document}

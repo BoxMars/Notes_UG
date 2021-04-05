@@ -1,0 +1,271 @@
+#### Assignment_01
+#### Zhang Huakang | D-B92760-6 
+---
+#### 1.
+#### ( a )
+$$
+\left[
+\begin{matrix}
+2&-3&5&0\\
+4&2&-2&0\\
+3&5&3&0\\
+\end{matrix}
+\right]
+$$
+#### ( b )
+$$
+\left[
+\begin{matrix}
+5&1&0&-1&2&1\\
+0&3&2&-1&0&3\\
+0&0&0&0&3&2\\
+\end{matrix}
+\right]
+$$
+#### 2.
+#### ( a ) ( b ) are in reduced roe-echelon form .
+#### ( c ) ( d ) are not .
+#### 3.
+#### ( a )
+$
+\left[
+    \begin{matrix}
+    2&4&0&8&6&18&16\\
+    1&2&-2&0&3&0&0\\
+    0&0&5&10&0&15&5\\
+    -2&-4&5&2&-6&3&1\\
+    \end{matrix}
+\right]
+\Rightarrow
+$$
+\left[
+    \begin{matrix}  
+    1&2&-2&0&3&0&0\\
+    2&4&0&8&6&18&16\\
+    -2&-4&5&2&-6&3&1\\
+    0&0&5&10&0&15&5\\
+    \end{matrix}
+\right]
+\Rightarrow
+$$
+\left[
+    \begin{matrix}  
+    1&2&-2&0&3&0&0\\
+    0&0&4&8&0&18&16\\
+    0&0&1&2&0&3&1\\
+    0&0&1&2&0&3&1\\
+    \end{matrix}
+\right]
+\Rightarrow
+$$
+\left[
+    \begin{matrix}  
+    1&2&-2&0&3&0&0\\
+    0&0&2&4&0&9&8\\
+    0&0&1&2&0&3&1\\
+    0&0&1&2&0&3&1\\
+    \end{matrix}
+\right]
+\Rightarrow
+$$
+\left[
+    \begin{matrix}  
+    1&2&-2&0&3&0&0\\
+    0&0&2&4&0&9&8\\
+    0&0&1&2&0&3&1\\
+    \end{matrix}
+\right]
+\Rightarrow
+$$
+\left[
+    \begin{matrix}  
+    1&2&0&4&3&9&8\\
+    0&0&2&4&0&9&8\\
+    0&0&1&2&0&3&1\\
+    \end{matrix}
+\right]
+\Rightarrow
+$$
+\left[
+    \begin{matrix}  
+    1&2&0&4&3&9&8\\
+    0&0&0&0&0&1&2\\
+    0&0&1&2&0&3&1\\
+    \end{matrix}
+\right]
+\Rightarrow
+$$
+\left[
+    \begin{matrix}  
+    1&2&0&4&3&0&-10\\
+    0&0&1&2&0&0&-5\\
+    0&0&0&0&0&1&2\\
+    \end{matrix}
+\right]
+\Rightarrow
+$
+#### So, we can get $ x_1 = -10-2x_2 -4 x_4-3x_5,x_3=-5-2x_4$ and $x_6= 2$
+#### Let $ x_2=s, x_4=t,x_5=r $
+#### We can get this column vector :
+$
+\left[
+\begin{matrix}
+x_1\\
+x_3\\
+x_6\\
+\end{matrix}
+\right]=
+$$
+\left[
+\begin{matrix}
+-10\\
+-5\\
+-2\\
+\end{matrix}
+\right]+
+$$s
+\left[
+\begin{matrix}
+-2\\
+0\\
+0\\
+\end{matrix}
+\right]+
+$$t
+\left[
+\begin{matrix}
+-4\\
+-2\\
+0\\
+\end{matrix}
+\right]+
+$$r
+\left[
+\begin{matrix}
+-3\\
+0\\
+0\\
+\end{matrix}
+\right]
+$
+#### ( b )
+$
+\left[
+    \begin{matrix}
+        1&-1&1&-4&1\\
+        1&3&7&2&2\\
+        1&-12&-11&-16&5\\
+        4&-3&2&-2&7\\
+    \end{matrix}
+\right]
+\Rightarrow
+$$
+\left[
+    \begin{matrix}
+        1&-1&1&-4&1\\
+        1&3&7&2&2\\
+        1&-12&-11&-16&5\\
+        4&-3&2&-2&7\\
+    \end{matrix}
+\right]
+\Rightarrow
+$
+
+$
+\left[
+    \begin{matrix}
+        1&-1&1&-4&1\\
+        0&4&4&6&1\\
+        0&-15&-18&-18&3\\
+        0&1&-2&14&3\\
+    \end{matrix}
+\right]
+\Rightarrow
+$$
+\left[
+    \begin{matrix}
+        1&-1&1&-4&1\\
+        0&1&-2&14&3\\
+        0&1&0&0&-2\\
+        0&-5&-6&-6&1\\
+    \end{matrix}
+\right]
+\Rightarrow
+$
+
+$
+\left[
+    \begin{matrix}
+        1&-1&1&-4&1\\
+        0&1&0&0&-2\\
+        0&1&-2&14&3\\
+        0&-5&-6&-6&1\\
+    \end{matrix}
+\right]
+\Rightarrow
+$$
+\left[
+    \begin{matrix}
+        1&0&1&-4&-1\\
+        0&1&0&0&-2\\
+        0&0&-2&14&5\\
+        0&0&2&2&3\\
+    \end{matrix}
+\right]
+\Rightarrow
+$
+
+$
+\left[
+    \begin{matrix}
+        1&0&1&-4&-1\\
+        0&1&0&0&-2\\
+        0&0&1&1&\frac{3}{2}\\
+        0&0&-2&14&5\\
+    \end{matrix}
+\right]
+\Rightarrow
+$$
+\left[
+    \begin{matrix}
+        1&0&1&-4&-1\\
+        0&1&0&0&-2\\
+        0&0&1&1&\frac{3}{2}\\
+        0&0&0&1&\frac{1}{2}\\
+    \end{matrix}
+\right]
+\Rightarrow
+$
+
+$
+\left[
+    \begin{matrix}
+        1&0&0&0&0\\
+        0&1&0&0&-2\\
+        0&0&1&0&1\\
+        0&0&0&1&\frac{1}{2}\\
+    \end{matrix}
+\right]
+\Rightarrow
+$
+
+#### So,wo can get the column vector :
+$
+\left[
+\begin{matrix}
+x_1\\
+x_2\\
+x_3\\
+x_4\\
+\end{matrix}
+\right]=
+$$
+\left[
+\begin{matrix}
+0\\
+-2\\
+1\\
+\frac{1}{2}\\
+\end{matrix}
+\right]
+$
