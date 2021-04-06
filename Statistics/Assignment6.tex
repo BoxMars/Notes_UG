@@ -24,7 +24,7 @@
     \maketitle
     \section{}
         \paragraph{
-            It easy to know that $x~Poission$ where $\lambda=3$.
+            It easy to know that $X\sim Poission$ where $\lambda=3$.
             $$P(X=x)=\frac{\lambda^x}{x!}e^{-\lambda}$$
         }
         \subsection{}
@@ -155,7 +155,7 @@
                     $$
                     P(|X-\mu|\leq k\sigma)\geq 1-\frac{1}{k^2}.
                     $$
-                    \begin{equation}
+                    \begin{equation*}
                         \begin{split}
                             X\geq 1500\\
                             |X-\mu|>1496\\
@@ -169,6 +169,178 @@
                                 =&\frac{1}{559504}\\
                                 \approx&1.787\times 10^{-6}\\
                         \end{split}
-                    \end{equation}
+                    \end{equation*}
                 }
+    \section{}
+        \subsection{}
+            \paragraph{
+                \begin{equation*}
+                    \begin{split}
+                        P(X=4;\lambda=6)=&\frac{6^4}{4!}e^{-6}\\
+                            \approx&0.1339\\
+                    \end{split}
+                \end{equation*}
+            }
+        \subsection{}
+            \paragraph{
+                \begin{equation*}
+                    \begin{split}
+                        P(X\geq 4;\lambda=6)=&1-P(X<3;\lambda=6)\\
+                            =&1-\sum_{x=0}^3\frac{6^x}{x!}e^{-6}\\
+                            \approx&1-0.1512\\
+                            =&0.8488\\
+                    \end{split}
+                \end{equation*}
+            }
+        \subsection{}
+            \paragraph{
+                \begin{equation*}
+                    \begin{split}
+                        P(X\geq 75;\lambda=6\times12)=&1-P(X<75;\lambda=72)\\
+                            =&1-\sum_{x=0}^{75} \frac{72^x}{x!}e^{-72}\\
+                            \approx&1-0.6227\\
+                            =&0.3773\\
+                    \end{split}
+                \end{equation*}
+            }
+    \section{}
+        \subsection{}
+            \paragraph{
+                Let $X$ be the number of defective component.
+                \begin{equation*}
+                    \begin{split}
+                        P(X=15)=&C_{500}^{15}0.01^{15}\times(1-0.01)^{500-15}\\
+                            \approx&1.4\times 10^{-4}\\
+                            =&0.00014\\
+                    \end{split}
+                \end{equation*}
+                The probability is too small so that it is impossible that $15$ components are defective. Thus the defective rate is not $1\%$
+            }
+        \subsection{}
+            \paragraph{
+                \begin{equation*}
+                    \begin{split}
+                        P(X=3)=&C_{500}^3 0.01^3\times(1-0.01)^{500-3}\\
+                            \approx&0.1402
+                    \end{split}
+                \end{equation*}
+            }
+        \subsection{}
+            \paragraph{
+                If the defective rate is $1\%$. Let $X$ be the number of defective component. Then $$X\sim Poission$$ where $\lambda=np=5$
+                \begin{equation*}
+                    \begin{split}
+                        P(X=15)=&\frac{5^{15}}{15!}e^{-5}\\
+                            \approx&0.00016
+                    \end{split}
+                \end{equation*}
+                The probability is too small so that it is impossible that $15$ components are defective. Thus the defective rate is not $1\%$
+            }
+        \subsection{}
+            \paragraph{
+                \begin{equation*}
+                    \begin{split}
+                        P(X=3)=&\frac{5^{3}}{3!}e^{-5}\\
+                            \approx&0.1404
+                    \end{split}
+                \end{equation*}
+            }
+    \section{}
+        \paragraph{
+            Let $X$ be the numbere of yares that the electrial switch work. 
+            \begin{equation*}
+                \begin{split}
+                    P(X=x)=&\frac{1}{2}e^{-\frac{x}{2}}, (X\geq 0)
+                \end{split}
+            \end{equation*}
+        }
+        \subsection{}
+            \paragraph{
+                \begin{equation*}
+                    \begin{split}
+                        P(X\leq 1)=&\int_{-\infty}^1 P(X=x)dx\\
+                            =&0+\int_0^1 \frac{1}{2}e^{-\frac{x}{2}}dx\\
+                            =&1-e^{-\frac{1}{2}}\\
+                            \approx&0.3935
+                    \end{split}
+                \end{equation*}
+            }
+        \subsection{}
+            \paragraph{
+                \begin{equation*}
+                    \begin{split}
+                        P=&\sum_{x=0}^{30}C_{100}^xP(X\leq 1)^x (1-P(X\leq 1))^{100-x}\\
+                            \approx&0.0335
+                    \end{split}
+                \end{equation*}
+            }
+    \section{}
+        \subsection{}
+            \paragraph{
+                The response time $X$ is exponential distributions, where it mean is $\theta=3$.
+                $$P(X=x)=\frac{1}{3}e^{-\frac{x}{3}}, (X>0)$$
+                and $P(X=x)=0$ elsewhere
+                \begin{equation*}
+                    \begin{split}
+                        P(X>5)=&\int_{5}^{\infty}\frac{1}{3}e^{-\frac{x}{3}}dx\\
+                            =&e^{-\frac{5}{3}}\\
+                            \approx&0.1889\\
+                    \end{split}
+                \end{equation*}
+            }
+        \subsection{}
+            \paragraph{
+                \begin{equation*}
+                    \begin{split}
+                        P(X>10)=&\int_{10}^{\infty}\frac{1}{3}e^{-\frac{x}{3}}dx\\
+                            =&e^{-\frac{10}{3}}\\
+                            \approx&0.0357\\
+                    \end{split}
+                \end{equation*}
+            }
+    \section{}
+        \subsection{}
+            \paragraph{
+                Exponrntial Distributions
+                $$\mu={2}$$
+                $$var={4}$$
+            }
+        \subsection{}
+            \paragraph{
+                \begin{equation*}
+                    \begin{split}
+                        P(X\geq 20)=&\int_{20}^\infty P(X=x)dx\\
+                            =&\int_{20}^\infty \frac{1}{2}e^{-\frac{x}{2}}dx\\
+                            =&e^{-10}\\
+                            \approx&4.540\times 10^{-5}\\
+                    \end{split}
+                \end{equation*}
+            }
+        \subsection{}
+            \paragraph{
+                \begin{equation*}
+                    \begin{split}
+                        P(0<X<10)=&\int_{0}^{10}P(X=x)dx\\
+                            =&\int_0^{10}\frac{1}{2}e^{-\frac{x}{2}}dx\\
+                            =&1-e^{-5}\\
+                            \approx&0.9933\\
+                    \end{split}
+                \end{equation*}
+            }
+        \subsection{}
+            \paragraph{
+                \begin{equation*}
+                    \begin{split}
+                        P(X\geq 2 )=&\int_{2}^\infty P(X=x)dx\\
+                            =&\int_{2}^\infty \frac{1}{2}e^{-\frac{x}{2}}dx\\
+                            =&e^{-1}\\
+                            \approx&0.3679\\
+                    \end{split}
+                \end{equation*}
+            }
+        \subsection{}
+            \paragraph{
+                Let the number of messages per hour be $X$, then we can know that $X\sim Poission$ where $$\lambda=60\times \frac{1}{\beta}=30$$
+                Thus,its variance $$var=30$$
+            }
 \end{document}
