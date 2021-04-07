@@ -1,0 +1,10 @@
+clear
+a=0:1:10;
+x=-5+a;
+y=1./(1+x.^2);
+A=vander(x);
+c=A\y';
+axis=-5:0.01:5;
+y1=1./(1+axis.^2);
+y2=polyval(c,axis);
+plot(axis,y1,'b',axis,y2,'r')
