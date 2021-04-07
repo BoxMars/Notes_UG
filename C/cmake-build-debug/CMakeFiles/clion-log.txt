@@ -1,7 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2019.3.5\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" D:\Data_Science\C
--- Configuring done
-CMake Error at CMakeLists.txt:6 (add_executable):
-  No SOURCES given to target: main.c
-
-
-CMake Generate step failed.  Build files cannot be regenerated correctly.
