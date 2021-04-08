@@ -1,0 +1,64 @@
+\documentclass{article}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx} 
+\usepackage{float} 
+\usepackage{fancyhdr}                                
+\usepackage{lastpage}        
+\usepackage{siunitx} 
+\usepackage{textcomp}                               
+\usepackage{layout}   
+\usepackage{subfigure} 
+\pagestyle{fancy}  
+\lhead{ZHANG HUAKANG}
+\chead{Assignment 2} 
+\rhead{DB92760} 
+\renewcommand{\baselinestretch}{1.05}
+\title{Assignment 2 of CISC 3018}
+\author{ZHANG HUAKANG}
+\begin{document}
+    \maketitle
+    \section{}
+        \subsection{}
+            \paragraph{
+                \begin{equation*}
+                    \begin{split}
+                        N_{DAS}=&\frac{1Mb/s}{100kb/s}\\
+                            =&10.24\\
+                            =&10,N_{DAS}\in \mathbb{N}\\
+                    \end{split}
+                \end{equation*}
+            }
+        \subsection{}
+            \subsubsection{How will the  maximum number of the clients change }
+                \paragraph{
+                    Maximum number will increase.
+                }
+            \subsubsection{Reason}
+                \paragraph{
+                    Because clients use TCP/IP to communicate with server. Based on Internet protocol, the data will be separated into small 'packets', then send the packets to client or server. This is why server can keep the communication with many clients without the limitation of connection speed between client and server.
+                }
+            \subsubsection{ Can the practical NAS support an infinite number of clients?}
+                \paragraph{
+                    No, because the limitation of the machine's packet processing speed. Too many packets are received simultaneously will cause packet loss.
+                }
+    \section{}
+        \subsection{}
+            \begin{itemize}
+                \item DAS (Direct-Attached Storage)
+                \item SAN (Storage Area Networks)
+                \item NAS (Network-Attached Storage)
+            \end{itemize}
+        \subsection{}
+            \begin{itemize}
+                \item All user connect the server directly, and connect the storage via the server in DAS. But in NAS, users can connect storage part directly and server just connect the network.
+                \item DAS uses BLOCK I/O and SCSI protocols, while NAS uses TCP/IP and IP network.
+                \item DAS uses dedicated link which can not be shared. So DAS is difficulty to extend stroge device. NAS uses the IP network and direct communication between storage and clients and thus it is easy to extend stroge device.
+                \item DAS has the connection limitation but NAS does not.               
+            \end{itemize}
+    \section{}
+        \subsection{}
+            
+\end{document}
