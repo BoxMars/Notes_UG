@@ -1,0 +1,290 @@
+\documentclass{article}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{graphicx} 
+\usepackage{float} 
+\usepackage{fancyhdr}                                
+\usepackage{lastpage}        
+\usepackage{textcomp}                               
+\usepackage{layout}   
+\usepackage{subfigure} 
+\usepackage{geometry}
+\geometry{a4paper,scale=0.85}
+\pagestyle{fancy}  
+\lhead{ZHANG HUAKANG}
+\chead{Assignment 9} 
+\rhead{DB92760} 
+\renewcommand{\baselinestretch}{1.05}
+\title{Assignment 9 of CISC 1006}
+\author{ZHANG HUAKANG \\ DB92760 \\Computer Science \\Faculty of Science and Technology}
+\begin{document}
+    \maketitle
+    \section{} 
+        \subsection{}
+            $$\sigma_{\overline{X}}^2=\frac{\sigma^2}{n}$$
+            \subsubsection{}
+                \paragraph{}
+                When $n=64$
+                $$\sigma_{\overline{X}1}^2=\frac{\sigma^2}{64}$$
+                \paragraph{}
+                When $n=196$
+                $$\sigma_{\overline{X}2}^2=\frac{\sigma^2}{169}$$
+                \paragraph{}
+                \begin{equation*}
+                    \begin{split}
+                        \frac{\sigma_{\overline{X}2}}{\sigma_{\overline{X}1}}=&\frac{\frac{\sigma^2}{169}}{\frac{\sigma^2}{64}}\\
+                            =&\frac{64}{169}<1\\
+                        \sigma_{\overline{X}2}-\sigma_{\overline{X}1}=&\frac{\sigma^2}{169}-\frac{\sigma^2}{64}\\
+                            =&-\frac{105\sigma^2}{10816}\\
+                            =&-\frac{1029}{3380}<0
+                    \end{split}
+                \end{equation*}
+                \paragraph{}
+                The value becomes smaller.
+            \subsubsection{}
+                \paragraph{}
+                When $n=64$
+                $$\sigma_{\overline{X}3}^2=\frac{\sigma^2}{784}$$
+                \paragraph{}
+                When $n=196$
+                $$\sigma_{\overline{X}4}^2=\frac{\sigma^2}{49}$$
+                \begin{equation*}
+                    \begin{split}
+                        \frac{\sigma_{\overline{X}4}}{\sigma_{\overline{X}3}}=&\frac{\frac{\sigma^2}{49}}{\frac{\sigma^2}{784}}\\
+                            =&\frac{784}{49}>1\\
+                        \sigma_{\overline{X}4}-\sigma_{\overline{X}3}=&\frac{\sigma^2}{49}-\frac{\sigma^2}{784}\\
+                            =&-\frac{15\sigma^2}{784}\\
+                            =&\frac{3}{5}>0
+                    \end{split}
+                \end{equation*}
+                \paragraph{}
+                The value becomes greater.
+        \subsection{}
+            \subsubsection{}
+                \paragraph{}
+                \begin{equation*}
+                    \begin{split}
+                        \sigma_{\overline{X}}^2=&\frac{\sigma^2}{n}\\
+                        2^2=&\frac{\sigma^2}{36}\\
+                        \sigma=&12\\
+                    \end{split}
+                \end{equation*}
+            \subsubsection{}
+                \paragraph{}
+                \begin{equation*}
+                    \begin{split}
+                        \sigma_{\overline{X}}^2=&\frac{\sigma^2}{n}\\
+                        1.2^2=&\frac{12^2}{n}\\
+                        n=&100\\
+                    \end{split}
+                \end{equation*}
+    \section{}
+        \subsection{}
+            \paragraph{}
+            Assume $X\sim Normal(250,5)$
+            \paragraph{}
+            Calculate by \textit{Excel}\\
+            \textbf{=NORM.DIST(245,250,5/6,TRUE)}
+            \begin{equation*}
+                \begin{split}
+                    P(\overline{X}<250)\approx&0.1587\\
+                \end{split}
+            \end{equation*}
+        \subsection{}
+            \paragraph{}
+            \begin{equation*}
+                \begin{split}
+                    n=&36\\
+                    \mu_{\overline{X}}=&\mu\\
+                        =&250\\
+                    \sigma_{\overline{X}}=&\frac{\sigma}{\sqrt{n}}\\
+                        =&\frac{5}{6}
+                \end{split}
+            \end{equation*}
+        \subsection{}
+            \paragraph{}
+            $\overline{X}\sim Normal(250,\frac{5}{6})$
+            \paragraph{}
+            Calculate by \textit{Excel}\\
+            \textbf{=NORM.DIST(245,250,5/6,TRUE)}
+            \begin{equation*}
+                \begin{split}
+                    P(\overline{X}<250)\approx&9.8659\times10^{-10}\\
+                \end{split}
+            \end{equation*}
+        \subsection{}
+            \paragraph{}
+            All of them are very close to $250$
+    \section{}
+        \paragraph{}
+        Calculate by \textit{Excel}\\
+        \textbf{=1-NORM.DIST(0.23,0.2,1/5000,TRUE)}
+        \paragraph{}
+        Assume that $\mu=0.2$, base on the \textbf{\textit{Central Limit Theorem}}, the probability that the mean $\mu_{\overline{X}}$ of $n=50$ samples is equal to 0.23 or greater than 0.23 is
+        \begin{equation*}
+            \begin{split}
+                \overline{X}\sim& Normal(\mu_{\overline{X}},\sigma_{\overline{X}})\\
+                \mu_{\overline{X}}=&\mu\\
+                    =&0.2\\
+                \sigma_{\overline{X}}^2=&\frac{\sigma^2}{n}\\
+                    =&\frac{1}{5000}\\
+                P(X\geq 0.23)\approx&0.0000\\
+                2P(X\geq 0.23)\approx&0.0000\\
+            \end{split}
+        \end{equation*}
+        It is impossible. Thus, $\mu\neq 0.2$
+    \section{}
+        \subsection{}
+            \paragraph{}
+            $$\overline{X}_A-\overline{X}_B\sim Normal(\mu_{\overline{X}_A-\overline{X}},\sigma_{\overline{X}_A-\overline{X}})$$
+            where 
+            \begin{equation*}
+                \begin{split}
+                    \mu_{\overline{X}_A-\overline{X}}=&\mu-\mu\\
+                        =0\\
+                    \sigma^2_{\overline{X}_A-\overline{X}_B}=&\frac{\sigma^2}{n}+\frac{\sigma^2}{n}\\
+                        =&\frac{1}{18}\\
+                \end{split}
+            \end{equation*}
+            \paragraph{}
+            Calculate by \textit{Excel}\\
+            \textbf{=NORM.DIST(-0.2,0,1/18,TRUE)*2}
+            \begin{equation*}
+                \begin{split}
+                    P(|\overline{X}_A-\overline{X}_B|\geq 0.2)=&2P(\overline{X}_A-\overline{X}_B\leq -0.2)\\
+                        \approx&0.0003\\
+                \end{split}
+            \end{equation*}
+        \subsection{}
+            \paragraph{}
+            Yes, if the two machines are same, $|\overline{X}_A-\overline{X}_B|\geq 0.2$ is impossible, beacuse of $P(|\overline{X}_A-\overline{X}_B|\geq 0.2)$ is only $0.0003$
+    \section{}
+        \paragraph{}
+        \begin{equation*}
+            \begin{split}
+                MOE=&z_\gamma\sqrt{\frac{\sigma^2}{n}}\\
+                n=&\frac{\sigma^2z_\gamma^2}{MOE^2}
+            \end{split}
+        \end{equation*}
+        With $95\%$ confidence, $z_\gamma=1.96$.
+        $$n\approx 177.6356$$
+        Since $n\in \mathbb{N}^+$
+        $$n=178$$
+        With $99\%$ confidence, $z_\gamma=2.58$.
+        $$n\approx 307.7919$$
+        Since $n\in \mathbb{N}^+$
+        $$n=308$$
+    \section{}
+        \paragraph{}
+        \begin{equation*}
+            \begin{split}
+                MOE=&z_\gamma\sqrt{\frac{\sigma^2}{n}}\\
+                n=&\frac{\sigma^2z_\gamma^2}{MOE^2}
+            \end{split}
+        \end{equation*}
+        With $95\%$ confidence, $z_\gamma=1.96$.
+        $$n\approx 164.8142$$
+        Since $n\in \mathbb{N}^+$
+        $$n=165$$
+        With $99\%$ confidence, $z_\gamma=2.58$.
+        $$n\approx 285.5762$$
+        Since $n\in \mathbb{N}^+$
+        $$n=286$$
+    \section{}
+        \paragraph{}
+        Calculate by \textit{Excel}\\
+        \textbf{=AVEDEV(15, 7, 8, 95, 19, 12, 8, 22,14)} \\$=16.1728$\\
+        \textbf{=MEDIAN(15, 7, 8, 95, 19, 12, 8, 22,14)}\\ $=14$\\
+        \textbf{=MODE.SNGL(15, 7, 8, 95, 19, 12, 8, 22,14)}\\ $=8$\\
+        \\
+        \textbf{=STDEV.P(15, 7, 8, 95, 19, 12, 8, 22,14)}\\$=26.1780$
+        Since variance is big, average is not good, and since the number of data is only $9$, too few, mode is not good too.
+        \\
+        Thus, median is the best in the three of them.
+    \section{}
+        \subsection{}
+            \subsubsection{}
+                \paragraph{Theorem}
+                Let $\mathbb{E}[X]=\mu$ and $c$ be a constant. Then
+                $$\mathbb{E}[X+c]=\mathbb{E}[X]+c$$
+                \begin{proof}
+                    \begin{align*}
+                        \mathbb{E}[X+c]=&\frac{1}{n}\sum_{x}(x+c)\\
+                            =&\frac{1}{n}(\sum_x x+nc)\\
+                            =&\frac{1}{n}\sum_x x+c\\
+                            =&\mathbb{E}[X]+c
+                    \end{align*}
+                \end{proof}
+                \begin{proof}
+                    Let $var(X)=\sigma$ and $\mathbb{E}[X]=\mu$. Let $c$ be a constant.
+                    \begin{align*}
+                        var(X+c)=&\mathbb{E}[(X+c)^2]-\mathbb{E}[X+c]^2\\
+                            =&\mathbb{E}[X^2+2Xc+c^2]-(\mathbb{E}[X]+c)^2\\
+                            =&\mathbb{E}[X^2]+2c\mathbb{E}[X]+c^2-(\mathbb{E}[X]^2+2c\mathbb{E}[X]+c^2)\\
+                            =&\mathbb{E}[X^2]-\mathbb{E}[X]^2\\
+                            =&var(X)
+                    \end{align*}
+                    If $c=-d$, then
+                    $$var(X-d)=var(X)$$
+                \end{proof}
+            \subsubsection{}
+            \paragraph{Theorem}
+                Let $\mathbb{E}[X]=\mu$ and $c$ be a constant. Then
+                $$\mathbb{E}[cX]=c\mathbb{E}[X]$$
+                \begin{proof}
+                    \begin{align*}
+                        \mathbb{E}[cX]=&\frac{1}{n}\sum_{x}(cx)\\
+                            =&c\frac{1}{n}(\sum_x x)\\
+                            =&c\mathbb{E}[X]
+                    \end{align*}
+                \end{proof}
+                \begin{proof}
+                    Let $var(X)=\sigma$ and $\mathbb{E}[X]=\mu$. Let $c$ be a constant.
+                    \begin{align*}
+                        var(cX)=&\mathbb{E}[(cX)^2]-\mathbb{E}[cX]^2\\
+                            =&\mathbb{E}[c^2X^2]-(c\mathbb{E}[X])^2\\
+                            =&c^2\mathbb{E}[X^2]-c^2\mathbb{E}[X]^2\\
+                            =&c^2(\mathbb{E}[X^2]-\mathbb{E}[X]^2)\\
+                            =&c^2var(X)
+                    \end{align*}
+                \end{proof}
+        \subsection{}
+            \subsubsection{}
+                \paragraph{}
+                $var(X)$\\
+                Calculate by \textit{Excel}\\
+                \textbf{=VAR.S(4, 9, 3, 6, 4,7)} \\$=5.1$\\
+            \subsubsection{}
+            \paragraph{}
+            $var(3X)$\\
+            Calculate by \textit{Excel}\\
+            \textbf{=VAR.S(12, 27, 9, 18, 12, 21)} \\$=45.9=5.1\times 3^2$\\
+            \subsubsection{}
+            \paragraph{}
+            $var(X+5)$\\
+            Calculate by \textit{Excel}\\
+            \textbf{=VAR.S(9, 14, 8, 11, 9, 12)} \\$=5.1=5.1$\\
+    \section{}
+        \paragraph{}
+        $$\frac{(n-1)S^2}{\sigma^2}\sim \chi(n-1)$$
+        where $n=25$
+        \subsection{}
+            \paragraph{}
+            \begin{equation*}
+                \begin{split}
+                    P(S^2>9.1)=&P(\frac{24\times S^2}{6}>\frac{182}{5})\\
+                        \approx&0.0502\\
+                \end{split}
+            \end{equation*}
+        \subsection{}
+            \paragraph{}
+            \begin{equation*}
+                \begin{split}
+                    P(3.462\leq S^2\leq 10.745)=&P(\frac{1731}{125}\leq S^2\leq\frac{2149}{50})\\
+                        =&0.0400\\
+                \end{split}
+            \end{equation*}
+\end{document}
