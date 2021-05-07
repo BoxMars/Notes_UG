@@ -1,0 +1,90 @@
+\documentclass{article}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx} 
+\usepackage{float} 
+\usepackage{fancyhdr}                                
+\usepackage{lastpage}        
+\usepackage{siunitx} 
+\usepackage{textcomp}                               
+\usepackage{layout}   
+\usepackage{subfigure} 
+\pagestyle{fancy}  
+\lhead{ZHANG HUAKANG}
+\chead{Assignment 3} 
+\rhead{DB92760} 
+\title{Assignment 3 of CISC 3018}
+\author{ZHANG HUAKANG}
+\begin{document}
+    \maketitle
+    \section{}
+        \paragraph{}
+        \begin{itemize}
+            \item File-based Virtual Storage provides the clients the data through directory trees, folders and indivual files which is easy to lead the signle-path issue.
+            \item Block-based Virtual Storage will break up data into blocks and stroing the blocks into separate pieces, each with a unique identifier. When a client or application requests data from a block storage system, the underlying storage system reassembles the data blocks and presents the data to the client or application.
+            \item Object-based Virtual Storage will break data file into pieces called objects, and the storing those objects in a single repository. Each object has an unique ID, and comparing with Block-based Virtual Storage it stors metadata about the file.
+        \end{itemize}
+    \section{}
+        \paragraph{}
+        \begin{itemize}
+            \item Volume: The amount of data to be stored, processed or analyzed.
+            \item Velocity: The data throughput to be stored.
+            \item Variety: Different data types and formats to be stored, processed or analyzed.
+        \end{itemize}
+    \section{}
+        \subsection{}
+            \begin{itemize}
+                \item Replication mechanism:  Break up data into blocks and stor one block on different machines simultaneously.
+                \item Erasure Coding: Break up data into blocks and use XOR operation to generate the parity check block. And stor this three blocks in different machines.
+            \end{itemize}
+        \subsection{}
+
+                \begin{tabular}{llr}
+                    &A1=&\  01101110\\
+                    XOR\ &A2= &\  10111001\\
+                    \hline
+                    &Ap= &\  11010111
+                \end{tabular}
+        \subsection{}
+
+                \begin{tabular}{llr}
+                    &Ap=&\  11010111\\
+                    XOR\ &A2=&\  10111001\\
+                    \hline
+                    &A1= &\  01101110
+                \end{tabular}
+        \subsection{}
+            \paragraph{}
+            Assume the size of each bolck is $M$
+            With the replication mechanism, we will store two pieces of A1 and A2, the total we use is $4M$. With the Erasure Coding, we will store one piece of A1 A2 and Ap, the total we use is $3M$. Only used $75\%$ of the space we use with replication mechanism.
+    \section{}
+        \subsection{}
+            \paragraph{}
+            \begin{itemize}
+                \item NameNode: Control the clients' access file, manage the Meta-data of blocks of the clients' file, and manage the file system operations.
+                \item DataNode: Executing the clients' detailed tasks and performing block operations according to the instructions from the NameNode.
+            \end{itemize}
+        \subsection{}
+            \paragraph{}
+            \begin{itemize}
+                \item HMaster manages all RegionServers, and stores the Metadata to RegionServers.
+                \item RegionServer: Large logical tables are separated into multiple blocks and stores them in different regionserver.
+            \end{itemize}
+        \subsection{}
+            \paragraph{}
+            They both use Master/Slave architecture. 
+    \section{}
+        \subsection{}
+            \paragraph{}
+            HMaster is easy to be attack. If the HMaster have some problems, the whole system will not work.
+        \subsection{}
+            \paragraph{Similarity}
+            They both use NoSQL database to store data.
+            \paragraph{Difference}
+            \begin{itemize}
+                \item HBase uses Master/Salve architecture
+                \item Cassandra uses Masterlees architecture.
+            \end{itemize}
+\end{document}
