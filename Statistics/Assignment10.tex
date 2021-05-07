@@ -15,12 +15,65 @@
 \geometry{a4paper,scale=0.85}
 \pagestyle{fancy}  
 \lhead{ZHANG HUAKANG}
-\chead{Assignment 9} 
+\chead{Assignment 10} 
 \rhead{DB92760} 
 \renewcommand{\baselinestretch}{1.05}
-\title{Assignment 9 of CISC 1006}
+\title{Assignment 10 of CISC 1006}
 \author{ZHANG HUAKANG \\ DB92760 \\Computer Science \\Faculty of Science and Technology}
 \begin{document}
     \maketitle
     \section{} 
+        \paragraph{}
+        \begin{equation*}
+            \begin{split}
+                \mu=&800\\
+                \sigma=&40\\
+                H_0: \mu=&800\\
+                H_1: \mu\neq& 800\\
+                n=&30\\
+                \overline{X}=&788\\
+            \end{split}
+        \end{equation*}
+        Let $Z=$
+        $$\frac{\overline{X}-\mu}{\frac{\sigma}{\sqrt{n}}}=-\frac{3\sqrt{30}}{10}\approx -1.64$$
+        Thus, 
+        \begin{equation*}
+            \begin{split}
+                p=&P(Z\leq -1.64)+P(Z\geq 1.64)\\
+                    \approx&0.050502583+0.050502583\\
+                    =&0.1010\geq 0.05=\alpha
+            \end{split}
+        \end{equation*}
+        Thus, wo can not have sufficient envidence to reject $H_0$. Therefore, we can conclude the average light time ofeach electrical bulbs is $800$ hours against with bigger of lower than $800$ hours under the signficant level $\alpha=0.05$
+    \section{}
+        \paragraph{}
+        \begin{equation*}
+            \begin{split}
+                H_0: \mu\geq& 40\\
+                H_1: \mu < &40\\
+                x\sim& Normal
+            \end{split}
+        \end{equation*}
+        where $\sigma$ is unknown, $n=64>30$.
+        Thus $$T=\frac{\overline{X}-\mu}{\frac{s}{\sqrt{n}}}\sim t_\alpha(n-1)\approx Normal(0,1)$$
+        $$P(T)=P(\frac{38-40}{\frac{5.8}{8}})=P(-\frac{16}{5.8})\approx 0.0029\leq \aleph=0.05$$
+        That means that we have enough evidence to reject $H_0$.
+        We can conclude the mean life $\mu<40$ is valid under the signficant level $\alpha=0.05$
+    \section{}
+        \paragraph{}
+        \begin{equation*}
+            \begin{split}
+                H_0: \mu\leq& 8\\
+                H_1: \mu>&8\\
+                T=&\frac{\overline{X}-\mu}{\frac{s}{\sqrt{n}}}\\
+                    \sim& t_\alpha(n-1)\approx Normal(0,1)\\
+                P(T|_\mu)\leq &P(T|_{\mu=8})\\
+                    =&1-P(\frac{8.5-8}{\frac{2.25}{\sqrt{225}}})\\
+                    \approx&0.000434<\alpha=0.05\\
+            \end{split}
+        \end{equation*}
+        That means we should reject our null hypothesis. And we conclude that the average value of a man who use TM is more than 8 hourse per week under signficant level $\alpha=0.05$.
+    \section{}
+        \paragraph{}
+        
 \end{document}
