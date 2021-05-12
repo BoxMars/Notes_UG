@@ -1,6 +1,0 @@
-clear
-clc
-g=@(x) besselj(0,x);
-x=0:0.01:20;
-y=g(x);
-plot(x,y)

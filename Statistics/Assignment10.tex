@@ -75,5 +75,32 @@
         That means we should reject our null hypothesis. And we conclude that the average value of a man who use TM is more than 8 hourse per week under signficant level $\alpha=0.05$.
     \section{}
         \paragraph{}
-        
+        \begin{equation*}
+            \begin{split}
+                H_0: \mu\leq& 220\\
+                H_1: \mu>&220\\
+                X\sim Normal\rightarrow&\overline{X}\sim Normal\\
+                T=&\frac{\overline{X}-\mu}{\frac{s}{\sqrt{n}}}\sim t_\alpha(n-1)\\
+                P(T|_\mu)\leq&P(T|_{\mu=220})\\
+                    =&1-P(\frac{244-220}{\frac{24.5}{\sqrt{20}}}\\
+                    \approx&0.00000593<0.05\\
+            \end{split}
+        \end{equation*}
+        Thus we can reject $H_0$. aWe could conclude that the average is greater than 220 in a signficant level $\alpha=0.05$
+    \section{}
+        \paragraph{}
+        \begin{equation*}
+            \begin{split}
+                H_0: \mu_1-\mu_2<&12\\
+                H_1: \mu_1-\mu_2\geq&12\\
+                \overline{X}_A\sim&Normal(\mu_A,\frac{\sigma_A^2}{n_A})\\
+                \overline{X}_B\sim&Normal(\mu_B,\frac{\sigma_B^2}{n_B})\\
+                \overline{X}_A-\overline{X}_B\sim&Normal(\mu_A-\mu_B,\frac{\sigma_A^2}{n_A}+\frac{\sigma_B^2}{n_B})\\
+                Z=&\frac{\overline{X}_A-\overline{X}_B-(\mu_A-\mu_B)}{\frac{\sigma_A^2}{n_A}+\frac{\sigma_B^2}{n_B}}\\
+                    &\sim Normal(0,1)\\
+                P(Z|_{\mu_A-\mu_B=12})=&1-P(-2.603)\\
+                    =&0.995\\
+            \end{split}
+        \end{equation*}
+        Thus, we can not reject $H_0$ under signficant level $\alpha=0.05$. We fail to test the claims that the average of A is greater that the average of B by 12 under $\alpha=0.05$
 \end{document}
