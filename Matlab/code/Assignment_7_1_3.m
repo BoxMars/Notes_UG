@@ -1,0 +1,33 @@
+clear
+delta=0.1
+n=0;
+x0=1;
+x1=0;
+while (n*delta<=1)
+    error=x0-Assignment_7_1_x(n*delta);
+    k1=delta*Assignment_7_1_f(x0);
+    k2=delta*Assignment_7_1_f(x0+k1/2);
+    k3=delta*Assignment_7_1_f(x0+k2/2);
+    k4=delta*Assignment_7_1_f(x0+k3);
+    x1=x0+(k1+2*k2+2*k3+k4)/6;
+    x0=x1;
+    n=n+1;
+    fprintf('%10.5f,%10.5f\n',x1,error)
+end
+disp("----------------------")
+clear
+delta=0.01
+n=0;
+x0=1;
+x1=0;
+while (n*delta<=1)
+    error=x0-Assignment_7_1_x(n*delta);
+    k1=delta*Assignment_7_1_f(x0);
+    k2=delta*Assignment_7_1_f(x0+k1/2);
+    k3=delta*Assignment_7_1_f(x0+k2/2);
+    k4=delta*Assignment_7_1_f(x0+k3);
+    x1=x0+(k1+2*k2+2*k3+k4)/6;
+    x0=x1;
+    n=n+1;
+    fprintf('%10.5f,%10.5f\n',x1,error)
+end

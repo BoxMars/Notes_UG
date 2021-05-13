@@ -36,10 +36,10 @@
 }
 \pagestyle{fancy}  
 \lhead{ZHANG HUAKANG}
-\chead{Assignment 6} 
+\chead{Assignment 7} 
 \rhead{DB92760} 
 \renewcommand{\baselinestretch}{1.05}
-\title{Assignment 6 of CISC 2002}
+\title{Assignment 7 of CISC 2002}
 \author{ZHANG Huakang/DB92760}
 
 \begin{document}
@@ -56,5 +56,50 @@
             \lstinputlisting[language=Matlab,style=mystyle,caption=Code ]{code/Assignment_7_1_2.m}
             \lstinputlisting[language=Matlab,style=mystyle,caption=Code ]{code/Assignment_7_1_2output}
         \subsection{}
-            
+            \paragraph{}
+            \lstinputlisting[language=Matlab,style=mystyle,caption=Code ]{code/Assignment_7_1_3.m}
+            \lstinputlisting[language=Matlab,style=mystyle,caption=Code ]{code/Assignment_7_1_3output}
+        \subsection{}
+        \paragraph{}
+            \lstinputlisting[language=Matlab,style=mystyle,caption=Code ]{code/Assignment_7_1_4.m}
+            \lstinputlisting[language=Matlab,style=mystyle,caption=Code ]{code/Assignment_7_1_4output}
+            \begin{figure}[H] 
+                \centering 
+                \includegraphics[width=0.9\textwidth]{img/Assignement_7_1.jpg}
+                \caption{Figure} 
+            \end{figure}
+    \section{}
+        \subsection{}
+            \paragraph{}
+            Let $\frac{dx}{dt}=x_1$
+            \begin{equation*}
+                \begin{split}
+                    x(0)=&0\\
+                    \frac{dx}{dt}(0)=&-1\\
+                    x_1(t)=&\frac{dx}{dt}\\
+                    \frac{dx_1}{dt}(t)=&-x
+                \end{split}
+            \end{equation*}
+        \subsection{}
+            \begin{equation*}
+                \begin{split}
+                    x_{n+1}=&x_{n}+\Delta t x_1(t_n,y_{1n},y_{2n})\\
+                        =&x_{n}+\Delta t x_1(t_n)\\
+                    x_{1n+1}=&x_{1n}+\Delta t (-x_n)\\
+                \end{split}
+            \end{equation*}
+            $$\Delta t=\frac{\pi}{10}$$
+            \begin{equation*}
+                \begin{split}
+                    x_{11}=&x_{10}+\Delta t (-x_0)\\
+                        =&-1+\frac{\pi}{10}(-0)\\
+                        =&-1\\
+                    x_1=&x_0+\Delta t x_{11}\\
+                        =&-\frac{\pi}{10}\\
+                    x_{12}=&x_{11}+\Delta t (-x_1)\\
+                        =&-1+\frac{\pi^2}{100}\\
+                    x_2=&x_1+\Delta t x_{12}\\
+                        =&-\frac{\pi}{5}+\frac{\pi^3}{1000}\\
+                \end{split}
+            \end{equation*}
 \end{document}
