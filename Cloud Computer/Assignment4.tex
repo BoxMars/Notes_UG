@@ -1,0 +1,78 @@
+\documentclass{article}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx} 
+\usepackage{float} 
+\usepackage{fancyhdr}                                
+\usepackage{lastpage}        
+\usepackage{siunitx} 
+\usepackage{textcomp}                               
+\usepackage{layout}   
+\usepackage{subfigure} 
+\pagestyle{fancy}  
+\lhead{ZHANG HUAKANG}
+\chead{Assignment 4} 
+\rhead{DB92760} 
+\title{Assignment 4 of CISC 3018}
+\author{ZHANG HUAKANG}
+\begin{document}
+    \maketitle
+    \section{}
+        \subsection{}
+            \paragraph{Advantage}
+            \begin{itemize}
+                \item Efficient: It decompose the huge task into smale pieces which can be processed in parallel.
+                \item Scalable:  Flexibly scale up/down by controlling the number of machines used by MapReduce.
+                \item Fault-tolerant: Robust when some of the machines fail
+            \end{itemize}
+            \paragraph{Disadvantage}
+            Since the MacReduce will store the intermediate files and the outputs in the disk(HDFS in fact), when we run the MapReduce in sequence, it will read and write the data in local disk which will cost many time and lead to a low-efficiency.
+        \subsection{}
+            \paragraph{Similarity}
+            They both have similar architecture: the master node distributes tasks and the worker node processes the task in parallel. 
+            \paragraph{Difference}
+            The MapReduce will store the intermediate files and the outputs in the disk(HDFS in fact) while the Spark stores those data in memory which lead a faster reading and writing speed in the repeating process.
+    \section{}
+        For narrow RDD, each parent RDD will only generate a child RDD. For wide RDD, the parent RDD will generate multiple child RDDs. Thus, narrow RDD has less redundance which wide RDD has more reliability. 
+    
+    \section{}
+        \subsection{}
+            \begin{itemize}
+                \item Batch processing: process a significant amount of data in a parallel and distributed manner. No strict latency limit to complete jobs.
+                \item Streaming: Data is generated in real-time fashion as the time passes, which needs to be processed when they arrive in sequence as a 'stream'. Processing data/tasks as 'data flows'
+                \item Interactive processing: Provide feedback results instantly when a query is posed
+            \end{itemize}
+        \subsection{}
+            \begin{itemize}
+                \item Batch processing: MapReduce.
+                \item Streaming: Apache Storm, and Twitter Huron.
+            \end{itemize}
+    \section{}
+        \subsection{}
+            \begin{itemize}
+                \item Decision Tree based Methods
+                \item Support Vector Machines
+                \item Neural Networks
+            \end{itemize}
+        \subsection{}
+            \begin{itemize}
+                \item Decision Tree based Method: Use the generated decision tree for deterring the 'label' of a new data
+                \item SVM based Method: find a hyperplane to separate two groups of nodes in space.
+            \end{itemize}
+    \section{}
+        \subsection{}
+            \paragraph{}
+            The train is the process to find the parameters of each node in network, optimize those parameters in order to get a more accurate results.
+        \subsection{}
+            \paragraph{}
+            For one node $N_a$ in hidden layer, the output
+            $$y_a=f(\sum_{i=1}^n w_ix_i+b_a)$$
+            where $x_i, i\in[1,n]\cap \mathbb{N}^{*}$ is outputs, $w_i$ and $b_a$ is the parameters of node $N_a$ and $f$ is activation function. $y_a$ will be a output of all nodes in next layer.
+        \subsection{}
+            \begin{itemize}
+                \item Classification: Before the model training, we have already known about the number and type of labels.
+                \item Cluster: Only when we finish the process, we will know how it groups the data.
+            \end{itemize}
+\end{document}

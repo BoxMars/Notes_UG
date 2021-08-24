@@ -1,20 +1,7 @@
 - CISC1004-Introduction to Computer Science(3)
 - CISC2001-Computer Organization(3)
 - CISC2003-Object Oriented Programming and Data Structures(3)
-- CISC3000-Introduction to Database Systems(3)
-- CISC3001-Computer Networks(3)
--
-- GESB1013-EVERYDAY STATISTICS(3)
-  
----
-- CISC1004-Introduction to Computer Science(3)
-- CISC2001-Computer Organization(3)
-- CISC2003-Object Oriented Programming and Data Structures(3)
-- CISC3001-Computer Networks(3)
--
 - CISC3007-Formal Languages and Automata(3)
 - CISC3023-Machine Learning(3)
-- CISC3024-Pattern Recognition(3)
-- GESB1013-EVERYDAY STATISTICS(3)
-- 
-- CISC3019-Competition Programming and Problem Solving(3)
+- CISC2007-Human-Computer Interaction(3)
+- GESB1005-MACAO LAW AND ITS REAL-LIFE APPLICATIONS(3)
