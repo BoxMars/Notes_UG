@@ -24,6 +24,26 @@
                 \item Exponentiation: $\alpha=abd, \alpha^3=abdabdabd, \alpha^0=\epsilon$
                 \item Reversal: $\alpha=abd, \alpha^{Rev}=dba$
                 \item Power of an alphabet: $\Sigma^k$ is the set of all $k$-length strings formed by the alphabet in $\Sigma$. e.g., $\Sigma=\{a,b\}$, $\Sigma^2=\{ab,aa,bb,ba\}$, $\Sigma^0=\{\epsilon\}$
+                \item Kleen Closure: $\Sigma^*=\Sigma^0\cup \Sigma^1...=\cup_{k\geq 0}\Sigma^k$
+                \item Kleen Plus: $\Sigma^+=\Sigma^1\cup \Sigma^2...=\cup_{k> 0}\Sigma^k$
             \end{itemize}
+        \subsection*{Languages}
+            \paragraph{Definition}
+            A language is a set of strin gs over an alphabet.
+    \section{Finite Automata}
+        \subsection*{Deterministic Finite Automata}
+            A DFA is a quintuple $(Q,\Sigma,\delta,q_0,F)$ where
+            \begin{itemize}
+                \item $Q$ is a finite set of states
+                \item $\Sigma$ is a finite input alphabet
+                \item $\delta$ is the transition function mapping $Q\times \Sigma$ to $Q$
+                \item $q_0$ in $Q$ is the initial state (only one)
+                \item $F\subset Q$ is the set of final state(s) (zero or more)
+            \end{itemize}
+            \paragraph{Language of a DFA}
+            Giuven a DFA $M$, the language accepted (or recognized) by $M$ is the set of all strings that start from the initial state, and reache one of the finnal states.
+        \subsubsection*{Non-deterministic Finite Automata}
+            For each state, zero, one or more transitions are allowed on the same input symbol.
+
 
 \end{document}   
