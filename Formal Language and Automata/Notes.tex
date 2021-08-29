@@ -44,6 +44,34 @@
             Giuven a DFA $M$, the language accepted (or recognized) by $M$ is the set of all strings that start from the initial state, and reache one of the finnal states.
         \subsubsection*{Non-deterministic Finite Automata}
             For each state, zero, one or more transitions are allowed on the same input symbol.
+            A NFA is a quintuple $(Q,\Sigma,\delta,q_0,F)$ where
+            \begin{itemize}
+                \item $Q$ is a finite set of states
+                \item $\Sigma$ is a finite input alphabet
+                \item $\delta$ is the transition function mapping $Q\times \Sigma$ to a subset of $Q$
+                \item $q_0$ in $Q$ is the initial state (only one)
+                \item $F\subset Q$ is the set of final state(s) (zero or more)
+            \end{itemize}
+            Noticed that the only difference between an NFA and a DFA is in the type of valu that $\delta$ returns: a set of states in the case of an NFA and a single state in the case of DFA.
+            \paragraph{Language of a NFA}
+            Given a NFA $M$, the language recognized by $M$ is the set of all strings that start from the initial state, and has at least on path reaching a final state.
+            \paragraph{DFA and NFA}
+            NFA is equivalent to DFA
+        \subsubsection*{Constructing a DFA from a NFA}
+        Given ang NFA $M=(Q,\Sigma,\delta,q_0,F)$ recognizing a language $L$ over $\Sigma$, we can construct a DFA $N=(Q',\Sigma,\delta',q_0,F')$ which also recognizes $L$:
+        \begin{itemize}
+            \item $Q'$ is the set of all subset of $Q$
+            \item $q_0=\{q_0\}$
+            \item $F'$ is the set of all states in $Q'$ containing a finnal state of $M$
+            \item $\delta'(\{q_1.q_2,..\},a)=\delta(q_1,a)\cup\delta(q_2,a)...$
+        \end{itemize}
+        \subsubsection*{NFA with $\epsilon$-Transition}
+        \paragraph{$\epsilon$-Closures}
+        In an $\epsilon$-NFA, the $\epsilon$CLOSE$(q)$ of a state $q$ is the set of states (including $q$) that can be reached from $q$ by following a path whose edges are all labeled by $\epsilon$
+        \subsubsection*{$\epsilon$-NFA $\rightarrow$ NFA}
+        
+
+
 
 
 \end{document}   
