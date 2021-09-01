@@ -69,7 +69,11 @@
         \paragraph{$\epsilon$-Closures}
         In an $\epsilon$-NFA, the $\epsilon$CLOSE$(q)$ of a state $q$ is the set of states (including $q$) that can be reached from $q$ by following a path whose edges are all labeled by $\epsilon$
         \subsubsection*{$\epsilon$-NFA $\rightarrow$ NFA}
-        Given any $\epsilon$-NFA $M=(Q,\Sigma,\delta,q_0,F)$ recognizing a language $L$ over $\Sigma$, we can construce its NFA $N=(Q,\Sigma,\delta',q_0,F')$
+        Given any $\epsilon$-NFA $M=(Q,\Sigma,\delta,q_0,F)$ recognizing a language $L$ over $\Sigma$, we can construce its NFA $N=(Q,\Sigma,\delta',q_0,F')$ that also recognizes $L$:
+        \begin{itemize}
+            \item $\delta'(q_i,a)=q_j$ iff there is a path from $q_i$ to $q_j$ using exactly one arc labeled $a$ and sero or more arcs labeled $\epsilon$ in $M$.
+            \item $F'=F\cup\{q_0\}$ if a final state is reachable from $q_0$ using some $\epsilon$-transitions in $M$. Otherwise, $F'=F$.
+        \end{itemize}
 
 
 
