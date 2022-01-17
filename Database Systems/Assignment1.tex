@@ -18,7 +18,7 @@
     \section*{1.8}
     \paragraph{Physical Data Independence}is the ability to make changes in the structure of the lowest level of the Database Management System without affecting the higher-level schemas. With Physical independence, we can easily change the physical stroge structures or deviecs with an effect on the conceptual schema. Any change done would be absorbed by the mapping between the conceptual and internal levels.
     \section*{2.14}
-    \subsection*{a} $$\Pi_{ID}(\sigma_{company\_name="BigBank"}(works))$$
+    \subsection*{a} $$\Pi_{ID,\ person\_name}(\sigma_{company\_name="BigBank"}(works))$$
     \subsection*{b} $$\Pi_{works.ID,\  person\_name, \ city}(\sigma_{works.ID=employee.ID}(works \times employee))$$
     \subsection*{c} 
     \begin{equation*}
