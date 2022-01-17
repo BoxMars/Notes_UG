@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}                                        
+\usepackage{textcomp}                               
+\title{Assignment 1 of CISC 3000}
+\author{ZHANG HUAKANG}
+\begin{document}
+    \maketitle
+    \section*{1.7}
+    \paragraph{}
+    \begin{itemize}
+        \item File-processing system has more data redundancy and inconsistency while the databese management system has less or no data redundancy and inconsistency.
+        \item Database management system is more easy to access data compared with file-processing system.
+        \item Data in file-processing system is isolated while in databese management system data is not.
+        \item File-processing system has kess secure comapred with databese management system.
+    \end{itemize}
+    \section*{1.8}
+    \paragraph{Physical Data Independence}is the ability to make changes in the structure of the lowest level of the Database Management System without affecting the higher-level schemas. With Physical independence, we can easily change the physical stroge structures or deviecs with an effect on the conceptual schema. Any change done would be absorbed by the mapping between the conceptual and internal levels.
+    \section*{2.14}
+    \subsection*{a} $$\Pi_{ID}(\sigma_{company\_name="BigBank"}(works))$$
+    \subsection*{b} $$\Pi_{works.ID,\  person\_name, \ city}(\sigma_{works.ID=employee.ID}(works \times employee))$$
+    \subsection*{c} 
+    \begin{equation*}
+        \begin{split}
+            Employee\leftarrow &\sigma_{works.ID=employee.ID\wedge salary>10000 }(works \times employee)\\
+            Result\leftarrow & \Pi_{works.ID,\ name,\ street,\ city}(Employee)
+        \end{split}
+    \end{equation*}
+    \subsection*{d}
+    \begin{equation*}
+        \begin{split}
+            e_1\leftarrow & \sigma_{works.ID=employee.ID}(works\times employee)\\
+            e_2\leftarrow & \sigma_{e_1.company\_name=company.company\_name}(e_1\times company)\\
+            e_3\leftarrow & \sigma_{employee.city=company.city}(e_2)\\
+            reslut\leftarrow & \Pi_{works.ID,\ person\_name}(e_3)
+        \end{split}
+    \end{equation*}
+    \section*{2.15}
+    \subsection*{a} $$\Pi_{loan\_number}(\sigma_{amount>10000}(loan ))$$
+    \subsection*{b} 
+    \begin{equation*}
+        \begin{split}
+            a_1\leftarrow & \sigma_{balance>6000}(account)\\
+            d\leftarrow & \sigma_{depositor.account\_number=account.account\_number}(depositor\times a_1)\\
+            reslut\leftarrow & \Pi_{ID}(d)
+        \end{split}
+    \end{equation*}
+    \subsection*{c}
+    \begin{equation*}
+        \begin{split}
+            a_1\leftarrow & \sigma_{balance>6000}(account)\\
+            a_2\leftarrow & \sigma_{branch_name="Uptown"}(a_1)\\
+            d\leftarrow & \sigma_{depositor.account\_number=account.account\_number}(depositor\times a_2)\\
+            reslut\leftarrow & \Pi_{ID}(d)
+        \end{split}
+    \end{equation*}
+\end{document}
