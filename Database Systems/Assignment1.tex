@@ -26,13 +26,20 @@
             reslut\leftarrow&\Pi_{w.ID,\ person\_ name}(e)
         \end{split}
     \end{equation*}
-    
-    \subsection*{b} $$\Pi_{works.ID,\  person\_name, \ city}(\sigma_{works.ID=employee.ID}(works \times employee))$$
+    \subsection*{b}
+    \begin{equation*}
+        \begin{split}
+            w\leftarrow&\sigma_{company\_name="BigBank"}(works)\\
+            e\leftarrow&\sigma_{w.ID=employee.ID}(w\times employee)\\
+            reslut\leftarrow&\Pi_{w.ID,\ person\_ name, \ city}(e)
+        \end{split}
+    \end{equation*}
+
     \subsection*{c} 
     \begin{equation*}
         \begin{split}
-            Employee\leftarrow &\sigma_{works.ID=employee.ID\wedge salary>10000 }(works \times employee)\\
-            Result\leftarrow & \Pi_{works.ID,\ name,\ street,\ city}(Employee)
+            e\leftarrow &\sigma_{works.ID=employee.ID\wedge salary>10000 }(works \times employee)\\
+            reslut\leftarrow & \Pi_{works.ID,\ name,\ street,\ city}(e)
         \end{split}
     \end{equation*}
     \subsection*{d}
