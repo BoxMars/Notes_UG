@@ -1,0 +1,134 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}                                        
+\usepackage{textcomp}     
+\usepackage{xcolor}
+\usepackage{listings}   
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}                        
+\title{Assignment 1 of CISC 3000}
+\author{ZHANG HUAKANG}
+\begin{document}
+    \maketitle
+    \section{}
+    \begin{itemize}
+        \item $T(n)=3n^2+5n\log_2n=O(n)$. False
+        \item $T(n)=4^{\log_2n}+\sqrt{n}=\Omega(n^2)$. True
+        \item $T(n)=3n^2+9n=O(n^3)$. True
+        \item $T(n)=4(\log_2n)^5+5\sqrt{n}+10=\Theta(\sqrt{n})$. False
+        \item $T(n)=(\log_2n)^{\log_2n}+n^4=\Theta(n^4)$. True
+    \end{itemize}
+    \section{}
+    \begin{algorithm}[H]
+        \caption{Sum of three(A, K)}
+        let $n \leftarrow |A|$ and assume $A = \{a_1, a_2, . . . , a_n\}$.
+
+        \For(){$i==1,2,...,n-2$}{
+            $j\leftarrow i+1$ and $k=n$.
+
+            \While(){$k>j$}{
+                \uIf{$a_i+a_j+a_k=K$}{
+                    Output: $(i,j,k)$
+                }
+                \uElseIf{$a_i+a_j+a_k<K$}{
+                    $j\leftarrow j+1$
+                }
+                \uElseIf{$a_i+a_j+a_k>K$}{
+                    $k\leftarrow k-1$
+                }
+            }
+        }
+        Output: do not exist
+    \end{algorithm}
+    \newpage
+    \section{}
+    \subsection{}
+    \begin{lstlisting}
+             ______2___
+            /          \
+        ____3___        _9
+       /        \      /  \
+     _15        _13   36   10
+    /   \      /
+   44    29   22
+    \end{lstlisting}
+    \subsection{}
+    \begin{lstlisting}
+         ____13___
+        /         \
+      _15         _29
+     /   \       /
+    44    22    36
+    \end{lstlisting}
+    \newpage
+    \section{}
+    \subsection{}
+    \begin{lstlisting}
+          ______22__
+         /          \
+    ____15__         36
+   /        \       /  \
+ _44         10    3    9
+/   \       /
+13    29    2
+
+          ______22__
+         /          \
+    ____15___        36
+   /         \      /  \
+ _13         _2    3    9
+/   \       /
+44    29    10
+
+          ______22___
+         /           \
+    ____2___         _3
+   /        \       /  \
+ _13        _10    36   9
+/   \      /
+44    29   15
+
+          _______2___
+         /           \
+    ____10___        _3
+   /         \      /  \
+ _13         _15   36   9
+/   \       /
+44    29    22
+    \end{lstlisting}
+    \newpage
+    \subsection{}
+    \begin{lstlisting}           
+          _______2___
+         /           \
+    ____10___        _3
+   /         \      /  \
+ _13         _15   36   9
+/   \       /
+44    29    22
+
+          ____3___
+         /        \
+    ____13        _9
+   /      \      /  \
+ _15       22   36   10
+/   \
+44    29
+
+       ____9___
+      /        \
+    _13        _10
+   /   \      /   \
+ _15    22   36    29
+/
+44
+
+    ____10___
+   /         \
+ _13         _29
+/   \       /   \
+15    22    36    44
+    \end{lstlisting}
+    
+
+\end{document}

@@ -65,7 +65,7 @@
     \begin{equation*}
         \begin{split}
             a_1\leftarrow & \sigma_{balance>6000}(account)\\
-            a_2\leftarrow & \sigma_{branch_name="Uptown"}(a_1)\\
+            a_2\leftarrow & \sigma_{branch\_name="Uptown"}(a_1)\\
             d\leftarrow & \sigma_{depositor.account\_number=account.account\_number}(depositor\times a_2)\\
             reslut\leftarrow & \Pi_{ID}(d)
         \end{split}
