@@ -5,7 +5,7 @@
 \usepackage{textcomp}     
 \usepackage{xcolor}
 \usepackage{listings}   
-\usepackage[linesnumbered,ruled,vlined]{algorithm2e}                        
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}                   
 \title{Assignment 1 of CISC 3000}
 \author{ZHANG HUAKANG}
 \begin{document}
@@ -131,4 +131,128 @@
     \end{lstlisting}
     
 
+\section{}
+\subsection{}
+\begin{lstlisting}
+         __________62
+        /            \
+   ____50___          78
+  /         \           \
+ _44         _55          88
+/   \       /   \
+17    48    54    60
+\end{lstlisting}
+\subsection{}
+\begin{lstlisting}
+     ____50______
+    /            \
+  _44            _60
+ /   \          /   \
+17    48      _55    88
+             /
+            54
+\end{lstlisting}
+\section{}
+\begin{lstlisting}[language=Python]
+def findAll(l1:int,k2:int):
+    return _findAll(k1,k2,tree.root)
+def _findAll(k1:int,k2:int,node:Node):
+    if node is None:
+        return None
+    if node.val<k1:
+        if node.right is None:
+            return None
+        else:
+            return _findAll(k1,k2,node.right)
+    elif node.val>k2:
+        if node.left in None:
+            return None
+        else:
+            return _findAll(k1,k2,node.left)
+    else:
+      return {
+          _findAll(k1,k2,node.left),
+          node.key,
+          _findAll(k1,k2,node.right)  
+      }
+\end{lstlisting}
+Suppose we have a BST:
+\begin{lstlisting}
+         ____25______
+        /            \
+   ____20            _36___
+  /      \          /      \
+ 10       22      _30      _40
+/  \             /        /   \
+5    12          28       38    48
+\end{lstlisting}
+Let $k_1=11$ and $k_2=37$
+\begin{lstlisting}
+    |     ____25______    |
+    |    /            \   |
+   _|___20            _36_|__
+  / |     \          /    |  \
+ 10 |      22      _30    |  _40
+/  \|             /       | /   \
+5   |12          28       |38    48
+    |                     |
+    11                    37
+\end{lstlisting}
+We will check node $25$, $20$, $10$ and $12$ at first. And add $12$ to the result.
+\begin{lstlisting}
+    |     ____|25|____    |
+    |    /            \   |
+   _|___|20|          _36_|__
+  / |     \          /    |  \
+|10||      22      _30    |  _40
+/  \|             /       | /   \
+5   ||12|        28       |38    48
+    |                     |
+    11                    37
+\end{lstlisting}
+Check node $22$ and add $20$, $22$ and $25$ to the result.
+\begin{lstlisting}
+    |     ____|25|____    |
+    |    /            \   |
+   _|___|20|          _36_|__
+  / |     \          /    |  \
+ 10 |      |22|    _30    |  _40
+/  \|             /       | /   \
+5   |12          28       |38    48
+    |                     |
+    11                    37
+\end{lstlisting}
+Check node $36$ $30$ and $28$ and add $28$ $30$ and $36$ to the result.
+\begin{lstlisting}
+    |     ____25______    |
+    |    /            \   |
+   _|___20            _|36|__
+  / |     \          /    |  \
+ 10 |      22      _|30|  |  _40
+/  \|             /       | /   \
+5   |12          |28|     |38    48
+    |                     |
+    11                    37
+\end{lstlisting}
+\newpage
+Check node $40$ and $38$ and end the process.
+\begin{lstlisting}
+    |     ____25______    |
+    |    /            \   |
+   _|___20            _36_|__
+  / |     \          /    |  \
+ 10 |      22      _30    |  _|40|
+/  \|             /       | /   \
+5   |12          28       |38|    48
+    |                     |
+    11                    37
+\end{lstlisting}
+\begin{proof}
+    The first thing we need to do is find the leftmost node and rightmost in BST that they are in the range $[k_1,k_2]$. The worst case is that all node in BST is in the range. So find each node we need $O(\log n)$ and two nodes is $2O(\log n)$.
+
+    The second step us add all node between leftmost node and rightmost node into result. If we have $s$ node, we will need $O(s)$ to do this.
+    
+    Thus, the total complexity of this algorithm is $$2O(\log n)+s=O(\log n+s)$$
+
+\end{proof}
 \end{document}
