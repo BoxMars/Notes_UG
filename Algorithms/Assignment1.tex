@@ -154,7 +154,7 @@
 \end{lstlisting}
 \section{}
 \begin{lstlisting}[language=Python]
-def findAll(l1:int,k2:int):
+def findAll(k1:int,k2:int):
     return _findAll(k1,k2,tree.root)
 def _findAll(k1:int,k2:int,node:Node):
     if node is None:
@@ -251,7 +251,7 @@ Check node $40$ and $38$ and end the process.
     The first thing we need to do is find the leftmost node and rightmost in BST that they are in the range $[k_1,k_2]$. The worst case is that all node in BST is in the range. So find each node we need $O(\log n)$ and two nodes is $2O(\log n)$.
 
     The second step us add all node between leftmost node and rightmost node into result. If we have $s$ node, we will need $O(s)$ to do this.
-    
+
     Thus, the total complexity of this algorithm is $$2O(\log n)+s=O(\log n+s)$$
 
 \end{proof}

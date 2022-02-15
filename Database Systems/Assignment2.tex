@@ -1,0 +1,207 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}                                        
+\usepackage{textcomp}  
+\usepackage{xcolor,listings}
+\lstset{upquote=true}                             
+\title{Assignment 2 of CISC 3000}
+\author{ZHANG HUAKANG}
+\begin{document}
+    \maketitle
+    \section*{3.1}
+    \subsection*{a}
+    \begin{verbatim}
+select  title 
+from    course 
+where   credits     =3          and 
+        dept_name   ='Comp.Sci'
+    \end{verbatim}
+    \subsection*{b}
+    \begin{verbatim}
+select  distinct takes.ID 
+from    takes, instructor, teaches
+where   takes.course_id =teaches.course_id      and
+        takes.sec_id    =teaches.sec_id         and
+        takes.semester  =teaches.semester       and
+        takes.year      =teaches.year           and
+        teaches.ID      =instructor.id          and
+        instructor.name ='Einstein'
+    \end{verbatim}
+    \subsection*{c}
+    \begin{verbatim}
+select  max(salary) 
+from    instructor
+    \end{verbatim}
+    \subsection*{d}
+    \begin{verbatim}
+select  ID, name 
+from    instructor 
+where   salary      =(
+            select  max(salary) 
+            from    instructor)
+    \end{verbatim}
+    \subsection*{e}
+    \begin{verbatim}
+select  course_id, sec_id, 
+        (select count(ID)
+        form    takes
+        where   takes.year      =section.year       and
+                takes.semester  =section.semester   and
+                takes.course_id =section.course_id  and
+                takes.sec_id    =section.sec_id     and
+        )
+        as enrollment 
+from    section
+where   semester    ='Fall' and
+        year        =2017
+    \end{verbatim}
+    \subsection*{f}
+    \begin{verbatim}
+select  max(enrollment)
+from    (select     count(ID) as enrollment
+        from        section, takes
+        where       takes.year      =section.year       and
+                    takes.semester  =section.semester   and
+                    takes.course_id =section.course_id  and
+                    takes.sec_id    =section.sec_id     and
+                    takes.semester  ='Fall'             and
+                    takes.year      =2017
+        group by    takes.course_id, takes.sec_id
+        )
+    \end{verbatim}
+    \newpage
+    \subsection*{g}
+    \begin{verbatim}
+with    num_enrollment  as(
+        select          takes.course_id,takes.sec_id, 
+                        count(ID) as enrollment
+        from            section, takes
+        where           takes.year      =section.year       and
+                        takes.semester  =section.semester   and
+                        takes.course_id =section.course_id  and
+                        takes.sec_id    =section.sec_id     and
+                        takes.semester  ='Fall'             and
+                        takes.year      =2017
+        group by        takes.course_id, takes.sec_id
+        )
+select course_id, sec_id
+from    num_enrollment
+where   enrollment  =(
+            select  max(enrollment)
+            from num_enrollment
+        )
+    \end{verbatim}
+    \section*{3.3}
+    \subsection*{a}
+    \begin{verbatim}
+update  instructor
+set     salary      =salary*1.10
+where   dept_name   ='Comp.Sci'
+    \end{verbatim}
+    \subsection*{b}
+    \begin{verbatim}
+delete  from course
+where   course_id not in(
+        select course_id from section
+)
+    \end{verbatim}
+    \subsection*{c}
+    \begin{verbatim}
+insert into instructor
+select      ID, name, dept_name, 10000
+from        student
+where       tot_cred>100
+    \end{verbatim}
+    \section*{3.8}
+    \subsection*{a}
+    \begin{verbatim}
+select  ID
+from    depositor
+except(
+        select  ID
+        from    borrower
+)
+    \end{verbatim}
+    \subsection*{b}
+    \begin{verbatim}
+select  A.ID
+from    customer as A, customer as B
+where   A.customer_street   =B.customer_street  and
+        A.customer_city     =B.customer_city    and
+        B.ID                ='12345'
+    \end{verbatim}
+    \subsection*{c}
+    \begin{verbatim}
+select  distinct branch_name
+from    account, depositor, customer 
+where   customer_city   ='Harrison'     and
+        customer.ID     =depositor.ID   and
+        account.account_number  
+                        =depositor.account_number
+                                        and
+        
+    \end{verbatim}
+    \section*{3.9}
+    \subsection*{a}
+    \begin{verbatim}
+select  employee.ID, person_name, city
+from    employee, works
+where   employee.ID         =works.ID   and
+        works.company_name  ='First Bank Corporation'
+    \end{verbatim}
+    \newpage
+    \subsection*{b}
+    \begin{verbatim}
+select  employee.ID, person_name, city
+from    employee, works
+where   employee.ID         =works.ID   and
+        works.salary        >10000      and
+        works.company_name  ='First Bank Corporation'
+    \end{verbatim}
+    \subsection*{c}
+    \begin{verbatim}
+select  ID
+from    works
+where   works.company_name  <>'First Bank Corporation'
+    \end{verbatim}
+    \subsection*{d}
+    \begin{verbatim}
+select  ID
+from    works
+where   salary > all(
+    select  salary
+    from    works
+    where   company_name    ='Small Bank Corporation'
+)
+    \end{verbatim}
+    \subsection*{e}
+    \begin{verbatim}
+select  A.company_name
+from    company as A, company as B
+where   A.city          =B.city and
+        B.company_name  ='Small Bank Corporation'
+    \end{verbatim}
+    \subsection*{f}
+    \begin{verbatim}
+select  company_name
+from    works
+group by    company_name
+having  count(distinct ID) >=all(
+    select  count(distinct ID)
+    from    works
+    group by    company_name
+)
+    \end{verbatim}
+    \subsection*{g}
+    \begin{verbatim}
+select  company_name
+from    works
+group by company_name
+having avg(salary) >= (
+    select  avg(salary)
+    from    works
+    where   company_name    ='First Bank Corporation'
+)
+    \end{verbatim}
+\end{document}
