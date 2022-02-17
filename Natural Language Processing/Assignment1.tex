@@ -11,7 +11,98 @@
     \maketitle
     \section{}
     \subsection*{a}
-    $$[a-z]^*b$$
-    \subsection*{}
-    $$[\^a-zA-Z]grottos|raven[\^a-zA-Z]$$
+    \begin{verbatim}
+[a-z]*b
+    \end{verbatim}
+    \subsection*{b}
+    \begin{verbatim}
+\bgrottos\b.*\braven\b|\braven\b.*\bgrottos\b
+    \end{verbatim}
+    \subsection*{c}
+    \begin{verbatim}
+([a-zA-Z]+)\s+\1
+    \end{verbatim}
+    \section{}
+    \subsection*{a}
+    Do not contain any alphabet.
+    \begin{verbatim}
+12345, OK
+123As, No
+    \end{verbatim}
+    \subsection*{b}
+    Two digts/Two digts/Four digts.
+    Date
+    \begin{verbatim}
+10/11/2021
+    \end{verbatim}
+    \subsection*{c}
+    \begin{verbatim}
+
+    \end{verbatim}
+    \section{}
+    \begin{verbatim}
+e, 5, 6, 5, 4, 3, 4 
+f, 4, 5, 4, 3, 4, 5
+i, 3, 4, 3, 2, 3, 4
+r, 2, 3, 2, 3, 4, 5
+b, 1, 2, 3, 4, 5, 6   
+0, 0, 1, 2, 3, 4, 5
+   0, d, r, i, v, e  
+    \end{verbatim}
+    \begin{verbatim}
+s, 6, 5, 4, 3, 2, 1
+e, 5, 4, 3, 2, 1, 0
+v, 4, 3, 2, 1, 0, 1
+i, 3, 2, 1, 0, 1, 2
+r, 2, 1, 0, 1, 2, 3
+d, 1, 0, 1, 2, 3, 4
+0, 0, 1, 2, 3, 4, 5
+   0, d, r, i, v, e
+    \end{verbatim}
+    $drive$ is closer to $driver$ than $brife$. 
+\section{}
+    \begin{tabular}{ccccccc}
+s& 6& $\downarrow$5& $\downarrow$4& $\downarrow$3& $\downarrow$2& \emph{\textbf{$\downarrow$1}}\\
+e& 5& $\downarrow$4& $\downarrow$3& $\downarrow$2& $\downarrow$1& \emph{\textbf{$\swarrow$0}}\\
+v& 4& $\downarrow$3& $\downarrow$2& $\downarrow$1& \emph{\textbf{$\swarrow$0}}&$\leftarrow$ 1\\
+i& 3& $\downarrow$2& $\downarrow$1& \emph{\textbf{$\swarrow$0}}& $\leftarrow$1& $\leftarrow$2\\
+r& 2& $\downarrow$1& \emph{\textbf{$\swarrow$0}}& $\leftarrow$1& $\leftarrow$2& $\leftarrow$3\\
+d& 1& \emph{\textbf{$\swarrow$0}}& $\leftarrow$1& $\leftarrow$2& $\leftarrow$3& $\leftarrow$4\\
+0& \emph{\textbf{0}}& 1& 2& 3& 4& 5\\
+ & 0& d& r& i& v& e\\
+    \end{tabular}
+    \section{}
+    \subsection*{a}
+    \begin{equation*}
+        \begin{split}
+            |V|=&6\\
+            P(do|<s>)=&\frac{2}{11}\\
+            P(do|Same)=&\frac{1}{11}\\
+            P(Sam|<s>)=&\frac{4}{11}\\
+            P(Sam|do)=&\frac{1}{8}\\
+            P(I|Sam)=&\frac{4}{11}\\
+            P(I|do)=&\frac{2}{8}\\
+                    =&\frac{1}{4}\\
+            P(like|I)=&\frac{3}{11}\\
+        \end{split}
+    \end{equation*}
+    \subsection*{b}
+    \begin{equation*}
+        \begin{split}
+            P(do \ Sam \ I \ like)=&P(do|<s>)\times P(Sam|do)\\
+                            &\times P(I|do\ Sam)\times P(like|do\ Sam\ I)\\
+                            \approx&P(do|<s>)\times P(Sam|do)\\
+                            &\times P(I|Sam)\times P(like|I)\\
+                            =&\frac{2}{11}\times\frac{1}{8}\times\frac{4}{11}\times\frac{3}{11}\\
+                            =&\frac{3}{1331}
+        \end{split}
+    \end{equation*}
+    \begin{equation*}
+        \begin{split}
+            P(Sam \ do\  I \ like)=&P(Sam|<s>)\times P(do|Sam)\\
+                                =&P(I|do)\times P(like|I)\\
+                                =&\frac{4}{11}\times\frac{1}{11}\times\frac{2}{8}\times\frac{3}{11}\\
+                                =&\frac{3}{1331}
+        \end{split}
+    \end{equation*}
 \end{document}
