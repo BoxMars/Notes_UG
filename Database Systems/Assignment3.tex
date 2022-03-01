@@ -1,0 +1,75 @@
+\documentclass{article}        
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}                                        
+\usepackage{textcomp}  
+\usepackage{xcolor,listings}                       
+\title{Assignment 3 of CISC 3000}
+\author{ZHANG HUAKANG}
+\begin{document}
+    \maketitle
+    \section*{4.2}
+    \subsection*{a}
+    \begin{verbatim}
+select      ID,count(sec_id) as number_of_sections
+from        instructor natural left outer join teaches
+group by    ID
+    \end{verbatim}
+    \subsection*{b}
+    \begin{verbatim}
+select  ID, (
+        select count(*) as number_of_sections
+        from teaches T where T.ID=I.ID
+    )
+from instructor I
+    \end{verbatim}
+    \subsection*{c}
+    \begin{verbatim}
+select  course_id, sec_id, ID,
+        decode  (name,null,'-',name) as name
+from    (section natural left outer join teaches)
+        natural left outer join instructor
+where   semester='Spring' and year=2018
+    \end{verbatim}
+    \subsection*{d}
+    \begin{verbatim}
+select      dept_name, count(ID)
+from        department natural left outer join instructor
+group by    dept_name
+    \end{verbatim}
+    \section*{4.3}
+    \subsection*{a}
+    \begin{verbatim}
+select  *
+from    student natural join takes
+union   select  ID, name, dept_name, tot_cred, 
+                null, null, null, null, null
+        from    student S
+        where   not exists(
+                    select  ID
+                    from    take T
+                    where   T.ID=S.ID
+                )
+    \end{verbatim}
+    \subsection*{b}
+    \begin{verbatim}
+select  *
+from    student natural join takes
+union   select  ID, name, dept_name, tot_cred, 
+                null, null, null, null, null
+        from    student S
+        where   not exists(
+                    select  ID
+                    from    take T
+                    where   T.ID=S.ID
+                )
+union   select  ID, null, null, null, course_id,
+                sec_id, semester, year, grade
+        from    takes T
+        where   not exists(
+                    select  ID 
+                    from    student S
+                    where   T.ID=S.ID    
+                )
+    \end{verbatim}
+\end{document}
