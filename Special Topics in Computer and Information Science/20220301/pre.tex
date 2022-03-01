@@ -18,7 +18,6 @@ Color Image Classification and Forensics}
     \begin{figure}[H]
         \centering
         \includegraphics[width=\textwidth]{img/1.jpg}
-        \caption{Real-valued CNN}
     \end{figure}
 \end{frame}
 \begin{frame}
@@ -55,7 +54,7 @@ The essence of attention mechanism is to reuse feature maps, give new weight to 
     \frametitle{Quatrnion Algebra}
 A quaternion can be defined as:
 $$q=a+bi+cj+dk$$
-where $a,b,c\in \mathbb{R}$, and the imaginary units $i,j,k$ obey the quaternion rules that $i^2=j^2=k^2=ijk=-1$.If $a = 0$, we can call $q$ is a pure quaternion.
+where $a,b,c,d\in \mathbb{R}$, and the imaginary units $i,j,k$ obey the quaternion rules that $i^2=j^2=k^2=ijk=-1$.If $a = 0$, we can call $q$ is a pure quaternion.
 \end{frame}
 
 \begin{frame}
@@ -193,8 +192,7 @@ to reduce the amount of computation.
 
 \begin{frame}{Components of Quaternion CNN}{Quaternion Attention Module}
 Finally, channel mask $\widetilde{z}$
-    is combined with $T$ by operation $F_{mask}(.)$ to highlight benefi
-    cial features and inhibit unbeneficial ones. 
+    is combined with $T$ by operation $F_{mask}(.)$ to highlight beneficial features and inhibit unbeneficial ones. 
     \begin{equation}
         T^*=F_{mask}(\widetilde{z},T)=\widetilde{z}T
     \end{equation}
