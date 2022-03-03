@@ -95,21 +95,24 @@ Since its convenience in representing rotations of three-dimensional vectors, in
 
 \section{Motivation}
 \begin{frame}{Motivation}
-In recent years, real-valued CNN has been widely used in the field of computer vision. CNN has a good performance in all kinds of tasks. But its natural judgment of color images is defective.
-
-In the specific case of image recognition, a good model has to efficiently encode local relations within the input features,such as between the Red, Green, and Blue channels of a single pixel
-In particular, traditional CNN treats pixels as three separate values.
-In other words, in the training process of CNN, both internal implicit relation and global implicit relation are considered at the same level.Therefore, real-valued CNN may lose some information that depends on the internal relationship of the image.
+In recent years, real-valued CNN has been widely used in the field of computer vision. CNN has a good performance in all kinds of tasks, the image classification and retrieval, target location detection, object segmentation and face recognition. In face recognition, each person's facial features vary greatly, and for the same person, due to the size, position, posture and so on, the change will be different. This is more difficult under different conditions, such as lighting, viewing Angle, occlusion, etc\cite{9065279}. Convolutional neural network with deep structure can solve these problems well.
 \end{frame}
 \begin{frame}{Motivation}
-To solve this problem, we propose to replace real-valued CNN with Quaternion CNN(QCNN).
+But CNN also has some drawbacks. Its natural judgment of color images is defective\cite{parcollet:hal-02107644}.
+In the specific case of image recognition, a good model has to efficiently encode local relations within the input features,such as between the Red, Green, and Blue channels of a single pixel.
 
-QCNN treats a pixel as a multidimensional entity.
-In particular, each color pixel in a color image is representedas a quaternion, and accordingly, the image is represented as a quaternion matrix rather than three independent real-valued matrices.
 
-QCNN enhances the ability of the model to learn the internal relations of pixels, and external relations. And it significantly reduces the number of neural parameters.
+In particular, traditional real value CNN treats pixels as three separate values. In other words, in the training process of CNN, both internal implicit relation and global implicit relation are considered at the same level.
+
+Therefore, CNN may lose some information that depends on the internal relationship of the image.
 \end{frame}
-
+\begin{frame}{Motivation}
+To solve this problem, we propose to replace CNN with QCNN, which treats a pixel as a multidimensional entity.
+In particular, each color pixel in a color image is representedas a quaternion, and accordingly, the image is represented as a quaternion ma-trix rather than three independent real-valued matrices.
+QCNN enhances the ability of the model to learn the internal relations of pixels and external relations.
+% And It significantly reduces the number of neural parameters.
+% In the experimental comparison between CNN and QCNN, the number of neural parameters in QCNN was reduced by 4 times\cite{parcollet:hal-02107644}.
+\end{frame}
 \section{Proposed method}
 \subsection{Basic Architecture}
 \begin{frame}{Proposed method}{Basic Architecture}
@@ -119,12 +122,48 @@ QCNN enhances the ability of the model to learn the internal relations of pixels
         \caption{Architecture}
     \end{figure}
 \end{frame}
+\begin{frame}{Proposed method}{Pure Quaternion Matrix}
+    Focusing on color image representation, our quaternion CNN treats a color image as a 2D pure quaternion matrix, denoted as $\hat{A}=[\hat{a}_{nn'}]\in \mathbb{H}^{N\times N}$ where $N$ represents the size of the image. In particular, the quaternion matrix $\hat{A}$ is 
+    \begin{equation}
+        \hat{A}=\mathbf{0}+\textbf{R}i+\textbf{G}j+\textbf{B}k,
+    \end{equation}
+    where $\textbf{R},\textbf{G},\textbf{B}\in \mathbb{R}^{N\times N}$ represent red, green and blue channels, respectively.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{img/2.jpg}
+        \caption{Architecture}
+    \end{figure}
+\end{frame}
 \subsection{Quaternion Convolution, Pooling \& Fully Connected Layer}
 \begin{frame}{Proposed method}{Quaternion Convolution, Pooling \& Fully Connected Layer}
     \begin{itemize}
-        \item \textbf{Quaternion Convolution Layer}: We are going to come up with a new quaternion convolution kernel and an operation between the input and kernel based on the quaternion rotation.
+        \item \textbf{Quaternion Convolution Layer}: We are going to come up with a new quaternion convolution kernel and an operation between the input and kernel based on the quaternion rotation.\begin{itemize}
+            \item Which axis the rotation should follow.
+            \item How to determine the angle of rotation.
+        \end{itemize}
         \item \textbf{Pooling Layer \& Fully Connected Layer }: We are going to come up with a new pooling layer and fully connected layer based on the quaternion algebra, \emph{e.g.}, addition, scalar multiplication and conjugation.
+            \begin{itemize}
+                \item Which pooling function in the real number domain can be extended to quaternion.
+                \item How does the pooling operation work.
+                \item How to define the fully connected layer.
+            \end{itemize}
+        \item \textbf{Backpropagation} is the key of training a network, which applies the chain rule to compute gradients of the parameters and updates them.
     \end{itemize}
+\end{frame}
+\subsection{Learning Quaternion CNNs}
+\begin{frame}{Proposed method}{Learning Quaternion CNNs}
+    \begin{itemize}
+        \item \textbf{Backpropagation} is the key of training a network, which applies the chain rule to compute gradients of the parameters and updates them.
+        \begin{itemize}
+            \item How to define the loss function.
+            \item How to get the backpropagation algorithm in QCNN?
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\subsection{Implement}
+\begin{frame}{Proposed method}{Implement}
+Similar to real-valued CNN, QCNN can be accelerated using parallel computing, which means training on GPU with thousands of cores will be faster than training on CPU with dozens of cores. Thus, we are going to develop our QCNN framework based on \emph{CUDA API} or a machine learning framework that supports GPU computing, \emph{e.g.} \emph{PyTorch}, \emph{Tensorflow}.
 \end{frame}
 \begin{frame}
     $$Thanks$$
