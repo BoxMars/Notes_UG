@@ -1,0 +1,39 @@
+\documentclass{article}        
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}                                        
+\usepackage{textcomp}  
+\usepackage{xcolor,listings}                       
+\title{Assignment 4 of CISC 3000}
+\author{ZHANG HUAKANG}
+\begin{document}
+    \maketitle
+    \section*{4.13}
+    \subsection*{1}
+    \paragraph{}
+    No, the authorization on $v$ is only allows a user to be granted access to only part of relation $r$
+    \subsection{2}
+    \paragraph{}
+    Yes, if we want update data in view $v$, the data stored in the database will be update.
+    \begin{verbatim}
+creat   trigger     update_branch_cust_after_insert_account
+after   insert on   account
+for each row
+    begin   
+        insert  into    branch_cust    select
+                        new.branch_name,    depositor.customer
+                from    depositor
+                where   new.account_number=depositor.account_number
+    end
+
+creat   trigger     update_branch_cust_after_insert_depositor
+after   insert on   depositor
+for each row
+    begin
+        insert  into    branch_cust     select
+                        new.customer_name, account.branch_name
+                from    account
+                where   new.account_number=account.account.number
+    end        
+    \end{verbatim}
+\end{document}

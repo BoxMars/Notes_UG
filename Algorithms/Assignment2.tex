@@ -1,0 +1,182 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}                                        
+\usepackage{textcomp}     
+\usepackage{xcolor}
+\usepackage{listings}   
+\usepackage[norelsize, linesnumbered, ruled, lined, boxed, commentsnumbered]{algorithm2e}                   
+\title{Assignment 1 of CISC 3000}
+\author{ZHANG HUAKANG}
+\begin{document}
+    \maketitle
+    \section{}
+    \paragraph{} I use a Hasp Map to count each number in $A$ and $B$, and the number that the count is $1$ is what we want find.
+
+    \begin{algorithm}[H]
+        \caption{}
+        $H$ is a hash map.
+
+        \For(){$i\in A$}{
+            \If(){$i \in H$}{
+                $H_i$+=1
+            }
+            \Else(){
+                $H_i$=1
+            }
+        }
+
+        \For(){$i\in B$}{
+            \If(){$i \in H$}{
+                $H_i$+=1
+            }
+            \Else(){
+                $H_i$=1
+            }
+        }
+
+        \For(){$i\in H$}{
+            \If(){$H_i=1$}{
+               Output: $i \in (A\cup B) \setminus  (A\cap B)$
+            }
+        }
+    \end{algorithm}
+    This algorithm is the count of each number in $A$ or $B$ is $1$. We will prove that if the count of number is 1, this number must in $(A\cup B) \setminus  (A\cap B)$
+    \begin{proof}
+        Since that elements in $A$ have different values and elements in $B$ also have different values, each element $E$ in $A$ or $B$ will only show one time in its array, denoted as $No_A(E)=1$ or $No_B(E)=1$. If we put the elements in two array together into array $C$ which allows duplicate, the number of each elements $No_C(E)$ will have two case. For element $E\in A\cup B$,
+        \begin{itemize}
+            \item[Case 1] If $E \in A$ and $E \notin B$, then $No_C(E)=1$.
+            \item[Case 2] If $E \notin A$ and $E \in B$, then $No_C(E)=1$.
+            \item[Case 3] If $E \in A$ and $E \in B$, then $No_C(E)=2$.
+        \end{itemize}
+        So, if $No_C(E)=1$, then ($E \in A$ and $E \notin B$) or ($E \notin A$ and $E \in B$), \emph{i.e.}, if $E \in (A\cup B) \setminus  (A\cap B)$
+    \end{proof}
+    \paragraph{Complexity} 
+    The hash operation complexity is $O(1)$
+    \begin{equation}
+        \begin{split}
+            T(|A|+|B|)=&|A|\times O(1)+|B|\times O(1)+|(A\cup B) \setminus  (A\cap B)|\times O(1)\\
+                        =&|A|+|B|+|(A\cup B) \setminus  (A\cap B)|\\
+                        <&|A|+|B|+|A|+|B|\\
+                        =&2(|A|+|B|)\\
+                        =&O(|A|+|B|)
+        \end{split}
+    \end{equation}
+    \section{}
+    \subsection*{a}
+    \begin{algorithm}[H]
+        \caption{}
+        $p_L=1$, $p_R=1$, $count=0$.
+
+        \While{$p_L\leq|L|$ or $p_R\leq|R|$}{
+            \If{$L_{p_L}>R_{p_R}$}{
+                $count+=1$
+
+                $p_R+=1$
+            }
+            \Else{
+                $p_L+=1$
+            }
+        }
+        Output: $count$
+    \end{algorithm}
+    \paragraph{Complexity} We have a pointer for each array. \textbf{For each while-loop, there must be only one poniter can move.} They both start from the begining of the array, and stop when both of them reach to the end of the array. $p_L$ moves $|L|$ times, and $p_R$ moves $|R|$ times. For the whole while-loop, it will be executed $|L|+|R|$ times. We know that $count\in[0,|L|+|R|] $
+    \begin{equation}
+        \begin{split}
+            T(|L|+|R|)=&2\times count +(|L|+|R|-count)\\
+                    =&count+|L|+|R|\\
+                    \leq& |L|+|R|+|L|+|R|\\
+                    =&2(|L|+|R|)\\
+                    =&O(|L|+|R|)
+        \end{split}
+    \end{equation}
+    \subsection*{b}
+    \begin{algorithm}[H]
+        \SetKwProg{Function}{function}{}{end}
+        \Function{merge($A:array,p:int,q:int,r:int$)}{
+            $n_1=q-p+1$
+
+            $n_2=r-q$
+
+            let $L[1..n_1+1]$ and $R[1..n_2+1]$
+
+            \For{$i=1$ to $n_1$}{
+                $L[i]=A[p+i-1]$
+            }
+            \For{$i=1$ to $n_2$}{
+                $R[i]=A[q+j]$
+            }
+            $L[n_1+1]=R[n_2+1]=\infty$
+            
+            $i=j=1$
+
+            \For{$k=p$ to $r$}{
+                \If{$L[i]\leq R[j]$}{
+                    $A[k]=L[i]$
+
+                    $i+=1$
+                }
+                \Else{
+                    $A[k]=R[i]$
+
+                    $j+=1$
+                }
+            }
+        }
+        \Function{merge-sort($A:array,p:int,r:int$)}{
+            \If{$p<r$}{
+                $q=\left\lfloor (p+r)/2\right\rfloor $
+
+                merge-sort(A,p,q)
+
+                merge-sort(A,q+1,r)
+
+                // Count the inversion between $A[p,q]$ and $A[q+1,r]$, $O(q-p+1)$
+
+                count-inversion(A,p,q,r) 
+                            
+                merge(A,p,q,r)
+
+            }
+        }
+    \end{algorithm}
+    \paragraph{Complexity} 
+    It is easy to find that
+    \begin{equation}
+        \begin{split}
+            T_{merge}(p,r)=&r-p+1\\
+                        =&O(r-p)
+        \end{split}
+    \end{equation}
+    \begin{equation}
+        \begin{split}
+            T(n)=&2\times T(\frac{n}{2})+T_{merge}(1,n)+cn\\
+                =&2\times T(\frac{n}{2})+c'n\\
+                =&2\log n \times c'n +c'n\\
+                =&O(n\log n)
+        \end{split}
+    \end{equation}
+    \section{}
+    \begin{proof}
+        $T(1),T(2), T(3)\leq c=O(1)$ and 
+        \begin{equation}
+            T(n)\leq T(\frac{n}{4})+T(\frac{3}{4})+cn
+        \end{equation}
+        when $n\geq 4$. Thus,
+        \begin{equation}
+            \begin{split}
+                T(4)\leq &T(1)+T(3)+cn\\
+                    =&2c+4c\\
+                    =&6c\\
+                    \leq& \frac{6c}{4\log 4} 4 \log 4\\
+                    =&O(n\log n)\\
+            \end{split}
+        \end{equation}
+        Suppose that $T(k)=O(k\log k), k\geq 4$, we have
+        \begin{equation}
+            \begin{split}
+                T(k+1)\leq&T(\frac{k+1}{4})+T(\frac{3(k+1)}{4})+c(k+1)\\
+            \end{split}
+        \end{equation}
+    \end{proof}
+\end{document}
