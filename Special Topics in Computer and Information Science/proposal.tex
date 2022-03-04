@@ -41,7 +41,7 @@ Focusing on the problems mentioned above, we are going to propose a model using 
 \begin{frame}{Related Works}{Facial Keypoint Detection}
 Facial keypoints detection is a problem of estimating the position of eyes, nose, and mouth in a facial image. This problem, also known as face alignment, has been widely studied for many years in the field of computer vision because of its relevance to various face analysis applications such as face recognition , face attribute recognition, head pose estimation, and 3D face modeling systems.
 
-In order to develop a detector that is robust to disturbances and environmental changes, existing studies have proposed a feature extraction algorithm\cite{1717463,5539992} or a method that can directly model the shape of the face\cite{Cootes2000AnIT,10.1007/BFb0054760}. Recently, various CNN-based regression methods have been proposed like deep convolutional network cascade for facial point detection\cite{6619290}.
+In order to develop a detector that is robust to disturbances and environmental changes, existing studies have proposed a feature extraction algorithm\cite{1717463,5539992} or a method that can directly model the shape of the face\cite{Cootes2000AnIT,10.1007/BFb0054760}. Various CNN-based regression methods have been proposed like deep convolutional network cascade for facial point detection\cite{6619290}.
 \end{frame}
 \subsection{CNN}
 \begin{frame}{Related Works}{CNN}
@@ -95,7 +95,7 @@ Since its convenience in representing rotations of three-dimensional vectors, in
 
 \section{Motivation}
 \begin{frame}{Motivation}
-In recent years, real-valued CNN has been widely used in the field of computer vision. CNN has a good performance in all kinds of tasks, the image classification and retrieval, target location detection, object segmentation and face recognition. In face recognition, each person's facial features vary greatly, and for the same person, due to the size, position, posture and so on, the change will be different. This is more difficult under different conditions, such as lighting, viewing Angle, occlusion, etc\cite{9065279}. Convolutional neural network with deep structure can solve these problems well.
+In recent years, real-valued CNN has been widely used in the field of computer vision. CNN has a good performance in all kinds of tasks, the image classification and retrieval, target location detection, object segmentation and face recognition. In face recognition, each person's facial features vary greatly, and for the same person, due to the size, position, posture and so on, the change will be different. This is more difficult under different conditions, such as lighting, viewing angle, occlusion, etc\cite{9065279}. Convolutional neural network with deep structure can solve these problems well.
 \end{frame}
 \begin{frame}{Motivation}
 But CNN also has some drawbacks. Its natural judgment of color images is defective\cite{parcollet:hal-02107644}.
@@ -108,7 +108,7 @@ Therefore, CNN may lose some information that depends on the internal relationsh
 \end{frame}
 \begin{frame}{Motivation}
 To solve this problem, we propose to replace CNN with QCNN, which treats a pixel as a multidimensional entity.
-In particular, each color pixel in a color image is representedas a quaternion, and accordingly, the image is represented as a quaternion ma-trix rather than three independent real-valued matrices.
+In particular, each color pixel in a color image is represented as a quaternion, and accordingly, the image is represented as a quaternion matrix rather than three independent real-valued matrices.
 QCNN enhances the ability of the model to learn the internal relations of pixels and external relations.
 % And It significantly reduces the number of neural parameters.
 % In the experimental comparison between CNN and QCNN, the number of neural parameters in QCNN was reduced by 4 times\cite{parcollet:hal-02107644}.
@@ -147,7 +147,6 @@ QCNN enhances the ability of the model to learn the internal relations of pixels
                 \item How does the pooling operation work.
                 \item How to define the fully connected layer.
             \end{itemize}
-        \item \textbf{Backpropagation} is the key of training a network, which applies the chain rule to compute gradients of the parameters and updates them.
     \end{itemize}
 \end{frame}
 \subsection{Learning Quaternion CNNs}
