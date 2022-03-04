@@ -172,11 +172,122 @@
                     =&O(n\log n)\\
             \end{split}
         \end{equation}
-        Suppose that $T(k)=O(k\log k), k\geq 4$, we have
+        Suppose that $\forall n\in [4,k-1],T(n)=O(n\log n)$, we have
         \begin{equation}
             \begin{split}
-                T(k+1)\leq&T(\frac{k+1}{4})+T(\frac{3(k+1)}{4})+c(k+1)\\
+                T(k)\leq&T(\frac{k}{4})+T(\frac{3k}{4})+ck\\
+                    \leq&c_1\frac{k}{4}\log \frac{k}{4}+c_2\frac{3k}{4}\log \frac{3k}{4}+ck\\
+                    =&\frac{c_1k}{4}\log\frac{k}{4}+\frac{c_23}{4}(\log\frac{k}{4}+\log3)+ck\\
+                    =&\frac{c_1k+3c_2k}{4}\log\frac{k}{4}+\frac{3\log 3c_3}{4}+ck\\
+                    =&O(k\log k)
             \end{split}
         \end{equation}
+        Thus, $\forall n\geq 4$, $T(n)=O(n\log n)$
     \end{proof}
+    \section{}
+    \begin{lstlisting}
+def countSort(arr:list, n:int, exp:int)->None:
+    output = [0] * n 
+    count = [0] * n
+    for i in range(n):
+        count[i] = 0
+    for i in range(n):
+        count[ (arr[i] // exp) % n ] += 1
+    for i in range(1, n):
+        count[i] += count[i - 1]
+    for i in range(n - 1, -1, -1):
+        output[count[ (arr[i] // exp) % n] - 1] = arr[i]
+        count[(arr[i] // exp) % n] -= 1
+    for i in range(n):
+        arr[i] = output[i]   
+if __name__ =="__main__":
+    arr = [33, 1, 22, 40, 12, 45, 32]
+    n = len(arr)
+    countSort(arr, n, n)
+    print(arr)
+    \end{lstlisting}
+    \paragraph{Complexity} 
+    \begin{equation}
+        \begin{split}
+            T(n)=&n+n+n+n\\
+                =&4n\\
+                =&O(n)
+        \end{split}
+    \end{equation}
+    \section{}
+    \subsection*{a}
+    \begin{algorithm}[H]
+        \SetKwProg{Function}{function}{}{end}
+        Input: A
+
+        MergeSort(A)
+
+        $max\_time=-1$
+
+        $t_n=A_0$
+
+        $t=1$
+
+        \For{$i=1$ to $lenght(A)-1$}{
+            \If{$A_i== t_n$}{
+                $t+=1$
+            }
+            \Else{
+                \If{$t\geq max_time$}{
+                    $max\_time=t$
+                }
+                
+                $t_n=A_i$
+
+                $t=1$
+            }
+        }
+
+        \If{$max\_time> length(A)$}{
+            Output :Yes
+        }
+        \Else{
+            Output :No
+        }
+    \end{algorithm}
+    \paragraph{Correctness}
+    After sort this array, the numbers that have same value will be together.  We count the number of each number in array and record the maximum value of it. If the maximum value is greater that the half of the array length, then we can say that more than half of the numbers have the same value. 
+    \paragraph{Complexity}
+    \begin{equation}
+        \begin{split}
+            T(n)=&T_{merge sort}(n)+(c_1+2\times(n-c_2)+c_3)\\
+                =&O(n\log n)+O(n)\\
+                =&O(n\log n)
+        \end{split}
+    \end{equation}
+    \newpage
+    \subsection*{b}
+    \begin{lstlisting}
+a=[2,2,2,1]
+d={}
+for i in a:
+    if i in d:
+        d[i]+=1
+    else:
+        d[i]=1
+
+flag=False
+for i in d:
+    if d[i]>len(a)/2:
+        flag=False
+        print("yes")
+    break
+if not flag:
+    print("No")  
+    \end{lstlisting}
+    \paragraph{Correctness}
+    We count the number of each number in array and record it in a hash map. If there is a value  that is greater that the half of the array length, then we can say that more than half of the numbers have the same value.
+    \paragraph{Complexity} 
+    \begin{equation}
+        \begin{split}
+            T(n)=&n\times O(1)+n\\
+                =&2n\\
+                =&O(n)
+        \end{split}
+    \end{equation}
 \end{document}
