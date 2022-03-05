@@ -1,0 +1,136 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}                                        
+\usepackage{textcomp}  
+\usepackage{xcolor,listings}
+\lstset{upquote=true}                             
+\title{Assignment 2 of CISC 3025}
+\author{ZHANG HUAKANG}
+\begin{document}
+    \maketitle
+    \section{}
+    \subsection*{a}
+    \paragraph{At nine o'clock}
+    \begin{equation}
+        \begin{split}
+            P(At\  nine\  o'clock)\approx &P(at|<s>)\times P(nine|at)\times P(o'clock|nine)\\
+                                    =&\frac{383}{383+86}\times\frac{5}{5}\times\frac{2}{2}\\
+                                    \approx&0.8166
+        \end{split}
+    \end{equation}
+    \paragraph{She worked in the Univeristy of Macau}
+    \begin{equation}
+        \begin{split}
+            A=&She\ worked\  in\  the\  Univeristy\  of\  Macau\\
+            P(A)=&P(she|<s>)\times P(worked|she)\\
+                &\times P(in|worked)\times P(the|in)\times P(univeristy|the)\\
+                &\times P(of|univeristy)\times P(macau|of)\\
+                =&\frac{86}{383+86}\times\frac{2}{2}\times\frac{11}{11}\times\frac{10}{10}\times\frac{1}{1}\times\frac{54}{54}\times\frac{0}{0}\\
+                \approx&0.1834
+        \end{split}
+    \end{equation}
+    \subsection*{b}
+    \paragraph{At nine o'clock}
+    \begin{equation}
+        \begin{split}
+            P(At\  nine\  o'clock)\approx &P(at|<s>)\times P(nine|at)\times P(o'clock|nine)\\
+                                    =&\frac{383+1}{383+86+1000}\times\frac{5+1}{5+1000}\times\frac{2+1}{2+1000}\\
+                                    \approx&4.6725\times 10^{-6}
+        \end{split}
+    \end{equation}
+    \paragraph{She worked in the Univeristy of Macau}
+    \begin{equation}
+        \begin{split}
+            A=&She\ worked\  in\  the\  Univeristy\  of\  Macau\\
+            P(A)=&P(she|<s>)\times P(worked|she)\\
+                &\times P(in|worked)\times P(the|in)\times P(univeristy|the)\\
+                &\times P(of|univeristy)\times P(macau|of)\\
+                =&\frac{86+1}{383+86+1000}\times\frac{2+1}{2+1000}\times\frac{11+1}{11+1000}\times\frac{10+1}{10+1000}\\&\times\frac{1+1}{1+1000}\times\frac{54+1}{54+1000}\times\frac{0+1}{0+1000}\\
+                \approx&2.3898\times 10^{-15}
+        \end{split}
+    \end{equation}
+
+    \subsection*{c}
+    \paragraph{At nine o'clock}
+    \begin{equation}
+        \begin{split}
+            PP(At\  nine\  o'clock)=&\sqrt[3]{\frac{1}{P(At\  nine\  o'clock)}}\\
+                                    =&59.816
+        \end{split}
+    \end{equation}
+    \paragraph{She worked in the Univeristy of Macau}
+    \begin{equation}
+        \begin{split}
+            A=&She\ worked\  in\  the\  Univeristy\  of\  Macau\\
+            PP(A)=&\sqrt[7]{\frac{1}{P(A)}}\\
+            \approx&122.69
+        \end{split}
+    \end{equation}
+    \section{}
+    \begin{equation}
+        \begin{split}
+            \hat{P}(retrieval|DB)=&\frac{1+1}{9+7}\\
+            \hat{P}(retrieval|NLP)=&\frac{3+1}{14+7}\\
+        \end{split}
+    \end{equation}
+    \begin{equation}
+        \begin{split}
+            \hat{P}(text|DB)=&\frac{1+1}{9+7}\\
+            \hat{P}(text|NLP)=&\frac{3+1}{14+7}\\
+        \end{split}
+    \end{equation}
+
+    \begin{equation}
+        \begin{split}
+            \hat{P}(model|DB)=&\frac{0+1}{9+7}\\
+            \hat{P}(model|NLP)=&\frac{2+1}{14+7}\\
+        \end{split}
+    \end{equation}
+
+    \begin{equation}
+        \begin{split}
+            \hat{P}(query|DB)=&\frac{2+1}{9+7}\\
+            \hat{P}(query|NLP)=&\frac{1+1}{14+7}\\
+        \end{split}
+    \end{equation}
+
+    \begin{equation}
+        \begin{split}
+            \hat{P}(table|DB)=&\frac{2+1}{9+7}\\
+            \hat{P}(table|NLP)=&\frac{0+1}{14+7}\\
+        \end{split}
+    \end{equation}
+    \begin{equation}
+        \begin{split}
+            \hat{P}(DB)=&\frac{9}{24}\\
+            \hat{P}(NLP)=&\frac{15}{24}\\
+        \end{split}
+    \end{equation}
+    \begin{equation}
+        \begin{split}
+            B=retrieval&,text,model,query,table\\
+            P(DB|B)=&\frac{P(B|DB)P(DB)}{P(B)}\\
+                =&\frac{1}{P(B)}\frac{1+1}{9+7}\times\frac{1+1}{9+7}\times\frac{0+1}{9+7}\\
+                &\times \frac{2+1}{9+7}\times\frac{2+1}{9+7}\times \frac{9}{24}\\
+                =&\frac{1}{P(B)}\frac{27}{2097152}\\
+                \approx&1.2875\times 10^{-5}\times\frac{1}{P(B)}
+        \end{split}
+    \end{equation}
+    \begin{equation}
+        \begin{split}
+            B=retrieval&,text,model,query,table\\
+            P(NLP|B)=&\frac{P(B|NLP)P(NLP)}{P(B)}\\
+                =&\frac{1}{P(B)}\frac{3+1}{14+7} \times\frac{3+1}{14+7} \times\frac{2+1}{14+7}\\
+                &\times \frac{1+1}{14+7}\times\frac{0+1}{14+7}\times \frac{15}{24}\\
+                =&\frac{1}{P(B)}\frac{20}{1361367}\\
+                \approx & 1.4691\times 10^{-5}\times\frac{1}{P(B)}
+        \end{split}
+    \end{equation}
+    \begin{equation}
+        \begin{split}
+            P(NLP|B)>P(DB|B)
+        \end{split}
+    \end{equation}
+    This article is NLP article.
+\end{document}
