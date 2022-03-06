@@ -15,8 +15,8 @@
     \begin{equation}
         \begin{split}
             P(At\  nine\  o'clock)\approx &P(at|<s>)\times P(nine|at)\times P(o'clock|nine)\\
-                                    =&\frac{383}{383+86}\times\frac{5}{5}\times\frac{2}{2}\\
-                                    \approx&0.8166
+                                    =&\frac{383}{5000}\times\frac{5}{386}\times\frac{2}{65}\\
+                                    \approx&3.0530\times 10^{-5}
         \end{split}
     \end{equation}
     \paragraph{She worked in the Univeristy of Macau}
@@ -26,8 +26,8 @@
             P(A)=&P(she|<s>)\times P(worked|she)\\
                 &\times P(in|worked)\times P(the|in)\times P(univeristy|the)\\
                 &\times P(of|univeristy)\times P(macau|of)\\
-                =&\frac{86}{383+86}\times\frac{2}{2}\times\frac{11}{11}\times\frac{10}{10}\times\frac{1}{1}\times\frac{54}{54}\times\frac{0}{0}\\
-                \approx&0.1834
+                =&\frac{86}{5000}\times\frac{2}{197}\times\frac{11}{115}\times\frac{10}{170}\times\frac{1}{980}\times\frac{54}{62}\times\frac{0}{31}\\
+                \approx&0
         \end{split}
     \end{equation}
     \subsection*{b}
@@ -35,8 +35,8 @@
     \begin{equation}
         \begin{split}
             P(At\  nine\  o'clock)\approx &P(at|<s>)\times P(nine|at)\times P(o'clock|nine)\\
-                                    =&\frac{383+1}{383+86+1000}\times\frac{5+1}{5+1000}\times\frac{2+1}{2+1000}\\
-                                    \approx&4.6725\times 10^{-6}
+                                    =&\frac{383+1}{5000+1000}\times\frac{5+1}{386+1000}\times\frac{2+1}{65+1000}\\
+                                    \approx&7.8044\times 10^{-7}
         \end{split}
     \end{equation}
     \paragraph{She worked in the Univeristy of Macau}
@@ -46,8 +46,8 @@
             P(A)=&P(she|<s>)\times P(worked|she)\\
                 &\times P(in|worked)\times P(the|in)\times P(univeristy|the)\\
                 &\times P(of|univeristy)\times P(macau|of)\\
-                =&\frac{86+1}{383+86+1000}\times\frac{2+1}{2+1000}\times\frac{11+1}{11+1000}\times\frac{10+1}{10+1000}\\&\times\frac{1+1}{1+1000}\times\frac{54+1}{54+1000}\times\frac{0+1}{0+1000}\\
-                \approx&2.3898\times 10^{-15}
+                =&\frac{86+1}{5000+1000}\times\frac{2+1}{197+1000}\times\frac{11+1}{115+1000}\times\frac{10+1}{170+1000}\\ & \times\frac{1+1}{980+1000}\times\frac{54+1}{62+1000}\times\frac{0+1}{31+1000}\\
+                \approx&1.8657\times 10^{-16}
         \end{split}
     \end{equation}
 
@@ -56,7 +56,7 @@
     \begin{equation}
         \begin{split}
             PP(At\  nine\  o'clock)=&\sqrt[3]{\frac{1}{P(At\  nine\  o'clock)}}\\
-                                    =&59.816
+                                    =&108.6142
         \end{split}
     \end{equation}
     \paragraph{She worked in the Univeristy of Macau}
@@ -64,7 +64,7 @@
         \begin{split}
             A=&She\ worked\  in\  the\  Univeristy\  of\  Macau\\
             PP(A)=&\sqrt[7]{\frac{1}{P(A)}}\\
-            \approx&122.69
+            \approx&176.6123
         \end{split}
     \end{equation}
     \section{}
@@ -112,9 +112,9 @@
             B=retrieval&,text,model,query,table\\
             P(DB|B)=&\frac{P(B|DB)P(DB)}{P(B)}\\
                 =&\frac{1}{P(B)}\frac{1+1}{9+7}\times\frac{1+1}{9+7}\times\frac{0+1}{9+7}\\
-                &\times \frac{2+1}{9+7}\times\frac{2+1}{9+7}\times \frac{9}{24}\\
-                =&\frac{1}{P(B)}\frac{27}{2097152}\\
-                \approx&1.2875\times 10^{-5}\times\frac{1}{P(B)}
+                &\times \frac{2+1}{9+7}\times\frac{2+1}{9+7}\times \frac{2}{5}\\
+                =&\frac{1}{P(B)}\frac{9}{655360}\\
+                \approx&1.3732\times 10^{-5}\times\frac{1}{P(B)}
         \end{split}
     \end{equation}
     \begin{equation}
@@ -122,9 +122,9 @@
             B=retrieval&,text,model,query,table\\
             P(NLP|B)=&\frac{P(B|NLP)P(NLP)}{P(B)}\\
                 =&\frac{1}{P(B)}\frac{3+1}{14+7} \times\frac{3+1}{14+7} \times\frac{2+1}{14+7}\\
-                &\times \frac{1+1}{14+7}\times\frac{0+1}{14+7}\times \frac{15}{24}\\
-                =&\frac{1}{P(B)}\frac{20}{1361367}\\
-                \approx & 1.4691\times 10^{-5}\times\frac{1}{P(B)}
+                &\times \frac{1+1}{14+7}\times\frac{0+1}{14+7}\times \frac{3}{5}\\
+                =&\frac{1}{P(B)}\frac{32}{2268945}\\
+                \approx & 1.4103\times 10^{-5}\times\frac{1}{P(B)}
         \end{split}
     \end{equation}
     \begin{equation}
